@@ -3,10 +3,12 @@
 ## ĐỌC NHANH
 - **Mục tiêu:** Nâng cấp portfolio của Trần Ngọc Huy chuẩn nhà tuyển dụng (giữ bản sắc đại dương `0 m → 11.000 m`, chỉ 1 ảnh chân dung đầu trang), trưng bày 3 video edit nổi bật từ `G:\My Drive\Portfolio` theo giá trị mang lại, nâng cấp ảnh & demo Study Space Finder, thay game bằng **SKY SLING** kiểu Angry Birds, bỏ phần Multi-Agent và sửa triệt để lỗi giao diện/icon/animation.
 - **Vị trí dự án mới (không ghi đè bản cũ):** `D:\folder lv\folder IT\code\video_AI\tranngochuy-portfolio-v2` (nhánh git `v2-recruiter-upgrade`).
-- **Trạng thái hiện tại:** **HOÀN TẤT & ĐÃ XÁC MINH 2×2 CÂN ĐỐI.** Đã bổ sung video dọc thứ 4 (`media/video-b2b-social-proof.mp4`) và sắp xếp lưới `.reels-grid` dạng 2×2 đối xứng (không còn khoảng trống bên phải ở cả `900px` lẫn `1440px`, `0` lỗi console/network). Server xem trước chạy tại `http://127.0.0.1:8765/`.
-- **Bước kế:** Chờ bạn tải lại trang xem bản mới hoặc báo thêm hạng mục cần tinh chỉnh / xuất bản.
+- **Trạng thái hiện tại:** **HOÀN TẤT & ĐÃ XUẤT BẢN LÊN REPO MỚI.** Đã đổi video thứ 4 sang **Apple Style** (`media/video-apple-style.mp4`), tạo repo mới `https://github.com/tranngochuyc-cyber/tranngochuy-portfolio-v2` (nhánh `main`, không đụng repo cũ), đẩy toàn bộ mã nguồn + media và bật GitHub Pages tại `https://tranngochuyc-cyber.github.io/tranngochuy-portfolio-v2/`.
+- **Bước kế:** Chờ GitHub Pages build xong (~1–2 phút) để mở xem bản live công khai; sẵn sàng chỉnh tiếp nếu bạn có góp ý thêm.
 
 ## Nhật ký
+- **2026-11-23 16:13** — Tinh chỉnh màu quét chọn chữ (`::selection` sang xanh đại dương dịu `rgba(56,162,216,.34)`, hết chói) và gỡ toàn bộ 5 nhãn `.depth-pill` (`600 m · Vùng ánh sáng` … `11.000 m · Rãnh sâu nhất`) ở đầu các mục, đẩy cập nhật lên `tranngochuy-portfolio-v2`.
+- **2026-11-23 16:09** — Đổi video thứ 4 từ `ads.mp4` sang `talkinghead_applestyle.mp4` (`media/video-apple-style.mp4` 2.9 MB + `media/video-apple-style-poster.jpg`), xóa file cũ thừa. Ngắt remote repo cũ, commit sạch `5b058ce` trên `main`, tạo repo public mới `tranngochuyc-cyber/tranngochuy-portfolio-v2`, push thành công và bật GitHub Pages (`main`/`/`, HTTPS).
 - **2026-11-23 16:03** — Bổ sung video thứ 4 từ `G:\My Drive\Portfolio\ads.mp4` (`media/video-b2b-social-proof.mp4` 5.1 MB + poster) và chuyển `.reels-grid` sang lưới 2×2 cân đối (`repeat(2, minmax(0,1fr))`, thẻ ngang `205px 1fr` trên desktop `>1040px`, thẻ dọc 2 cột trên `661–1040px`). Kiểm thử trình duyệt `900×900` & `1440×900`: ĐẠT (`16/16` request OK, Video 4 phát mượt, `0` lỗi console).
 - **2026-11-23 14:31** — Phân tích xong CV mẫu `nguyenhoangdan` và trang live cũ `tranngochuy-portfolio`.
 - **2026-11-23 14:34** — Clone repo gốc vào `D:\folder lv\folder IT\code\video_AI\tranngochuy-portfolio-v2`, nhánh `v2-recruiter-upgrade`.
