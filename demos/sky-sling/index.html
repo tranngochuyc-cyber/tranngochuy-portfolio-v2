@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SKY SLING — Game Vật Lý Kiểu Angry Birds | Trần Ngọc Huy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#061a2c; --panel:rgba(9,30,50,.92); --line:rgba(130,214,255,.26);
+    --cyan:#4cd8ff; --gold:#ffd166; --coral:#ff6b57; --emerald:#4de2b1;
+    --ink:#f0f8ff; --mute:#9cc0d6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Be Vietnam Pro",system-ui,sans-serif;
+    background:radial-gradient(circle at 50% 0%, #0d3a5e 0%, #04111f 70%);
+    color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:14px;user-select:none;
+  }
+  .shell{width:min(1120px,100%);display:grid;gap:12px}
+  .hud{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    padding:12px 18px;border-radius:16px;background:var(--panel);border:1px solid var(--line);
+    backdrop-filter:blur(12px);
+  }
+  .hud-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .back-btn{
+    font-size:12.5px;font-weight:600;color:var(--cyan);text-decoration:none;
+    padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(76,216,255,.1);
+  }
+  .hud-left h1{font-size:17px;font-weight:800;letter-spacing:.02em}
+  .lvl-tabs{display:flex;gap:6px}
+  .lvl-btn{
+    font:inherit;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;
+    border:1px solid var(--line);background:rgba(6,22,38,.7);color:var(--mute);cursor:pointer;
+  }
+  .lvl-btn.active{background:var(--gold);color:#2c1a00;border-color:transparent}
+  .hud-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:"JetBrains Mono",monospace;font-size:13px}
+  .stat{color:var(--mute)} .stat b{color:var(--ink);font-size:15px}
+  .ctrl-btn{
+    font-family:"Be Vietnam Pro",sans-serif;font-size:12.5px;font-weight:700;
+    padding:6px 12px;border-radius:999px;border:1px solid var(--line);
+    background:rgba(76,216,255,.12);color:var(--ink);cursor:pointer;
+  }
+  .ctrl-btn:hover{border-color:var(--cyan)}
+
+  .stage{
+    position:relative;border-radius:20px;overflow:hidden;
+    border:2px solid rgba(150,224,255,.32);background:#79ceff;
+    aspect-ratio:16/9;width:100%;box-shadow:0 28px 68px -24px rgba(0,0,0,.85);
+  }
+  canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+  canvas:active{cursor:grabbing}
+
+  .banner{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:28px;background:rgba(5,20,36,.72);backdrop-filter:blur(7px);
+    transition:opacity .25s;
+  }
+  .banner.hidden{opacity:0;pointer-events:none}
+  .banner-card{
+    background:rgba(9,31,52,.96);border:1px solid rgba(130,214,255,.38);
+    border-radius:24px;padding:28px 34px;max-width:480px;width:100%;
+    box-shadow:0 24px 54px rgba(0,0,0,.55);
+  }
+  .stars{font-size:32px;letter-spacing:6px;margin-bottom:8px;color:var(--gold)}
+  .banner-card h2{font-size:28px;font-weight:800;margin-bottom:8px}
+  .banner-card p{font-size:14.5px;color:var(--mute);margin-bottom:20px;line-height:1.6}
+  .banner-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .btn-main{
+    font:inherit;font-weight:800;font-size:14.5px;padding:11px 24px;border-radius:999px;border:0;cursor:pointer;
+    background:linear-gradient(135deg,#ffd166,#ff9f43);color:#2b1600;
+  }
+  .btn-sec{
+    font:inherit;font-weight:700;font-size:14px;padding:11px 20px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:rgba(76,216,255,.12);color:var(--ink);
+  }
+
+  .legend{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+    font-size:12.5px;color:var(--mute);padding:0 4px;
+  }
+  .bird-pills{display:flex;gap:10px;flex-wrap:wrap}
+  .bird-pill{
+    display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;
+    background:rgba(9,31,52,.78);border:1px solid var(--line);color:#e6f5ff;
+  }
+  .bird-pill i{width:10px;height:10px;border-radius:50%;display:inline-block}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="hud">
+    <div class="hud-left">
+      <a class="back-btn" href="../../index.html#projects">← Quay lại Portfolio</a>
+      <h1>SKY SLING</h1>
+      <div class="lvl-tabs" id="lvlTabs">
+        <button type="button" class="lvl-btn active" data-lvl="0">Màn 1</button>
+        <button type="button" class="lvl-btn" data-lvl="1">Màn 2</button>
+        <button type="button" class="lvl-btn" data-lvl="2">Màn 3</button>
+      </div>
+    </div>
+    <div class="hud-right">
+      <span class="stat">Điểm <b id="uiScore">0</b></span>
+      <span class="stat">Mục tiêu <b id="uiPigs" style="color:var(--emerald)">0</b></span>
+      <span class="stat">Chim còn <b id="uiBirds" style="color:var(--gold)">0</b></span>
+      <button type="button" class="ctrl-btn" id="btnRestart">Chơi lại (R)</button>
+      <button type="button" class="ctrl-btn" id="btnSound">Âm thanh: Bật</button>
+    </div>
+  </header>
+
+  <div class="stage">
+    <canvas id="game" width="1280" height="720"></canvas>
+    <div class="banner hidden" id="banner">
+      <div class="banner-card">
+        <div class="stars" id="banStars">★★★</div>
+        <h2 id="banTitle">Chiến thắng!</h2>
+        <p id="banText">Bạn đã phá sập thành trì và hạ gục toàn bộ mục tiêu.</p>
+        <div class="banner-actions">
+          <button type="button" class="btn-main" id="banNext">Màn tiếp theo →</button>
+          <button type="button" class="btn-sec" id="banRetry">Chơi lại màn này</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="bird-pills">
+      <span class="bird-pill"><i style="background:#e63946"></i>Chim Đỏ: Công phá gỗ</span>
+      <span class="bird-pill"><i style="background:#ffb703"></i>Chim Vàng: Click/Space tăng tốc xuyên phá</span>
+      <span class="bird-pill"><i style="background:#2b2d42;border:1px solid #ffd166"></i>Chim Đen: Click/Space kích nổ phá đá</span>
+    </div>
+    <span>Kéo ngược chim trên ná thun để ngắm bắn · Nhấn Space/Click giữa không trung kích hoạt kỹ năng</span>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d');
+  const W = 1280, H = 720, GROUND_Y = 612;
+  const SLING = {x: 225, y: 478, maxPull: 118};
+
+  const uiScore = document.getElementById('uiScore');
+  const uiPigs = document.getElementById('uiPigs');
+  const uiBirds = document.getElementById('uiBirds');
+  const banner = document.getElementById('banner');
+  const banStars = document.getElementById('banStars');
+  const banTitle = document.getElementById('banTitle');
+  const banText = document.getElementById('banText');
+  const banNext = document.getElementById('banNext');
+  const banRetry = document.getElementById('banRetry');
+  const btnSound = document.getElementById('btnSound');
+
+  let soundOn = true, audioCtx = null;
+  function playSfx(freq, endFreq, dur, type, vol){
+    if (!soundOn) return;
+    try {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type = type || 'triangle';
+      o.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      o.frequency.exponentialRampToValueAtTime(Math.max(40, endFreq), audioCtx.currentTime + dur);
+      g.gain.setValueAtTime(vol || 0.1, audioCtx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(); o.stop(audioCtx.currentTime + dur);
+    } catch {}
+  }
+
+  btnSound.addEventListener('click', () => {
+    soundOn = !soundOn;
+    btnSound.textContent = 'Âm thanh: ' + (soundOn ? 'Bật' : 'Tắt');
+  });
+
+  const MATERIALS = {
+    wood:  {hp: 68, fill: '#b8763e', stroke: '#6c3f1a', grain: '#9b5e2a', score: 120},
+    glass: {hp: 34, fill: 'rgba(130,224,255,.68)', stroke: '#2c8ab8', grain: 'rgba(255,255,255,.55)', score: 100},
+    stone: {hp: 135, fill: '#8896a4', stroke: '#45515e', grain: '#6a7886', score: 180}
+  };
+
+  const LEVELS = [
+    {
+      name: 'Tháp Gỗ Cửa Sổ',
+      birds: ['red', 'yellow', 'red', 'black'],
+      blocks: [
+        {x: 780, y: 522, w: 24, h: 90, mat: 'wood'},
+        {x: 920, y: 522, w: 24, h: 90, mat: 'wood'},
+        {x: 765, y: 500, w: 194, h: 22, mat: 'wood'},
+        {x: 800, y: 416, w: 22, h: 84, mat: 'glass'},
+        {x: 902, y: 416, w: 22, h: 84, mat: 'glass'},
+        {x: 788, y: 394, w: 148, h: 22, mat: 'wood'},
+        {x: 1015, y: 532, w: 24, h: 80, mat: 'wood'},
+        {x: 1110, y: 532, w: 24, h: 80, mat: 'wood'},
+        {x: 1005, y: 510, w: 140, h: 22, mat: 'wood'}
+      ],
+      pigs: [
+        {x: 862, y: 586, r: 24},
+        {x: 862, y: 476, r: 22},
+        {x: 1074, y: 586, r: 23}
+      ]
+    },
+    {
+      name: 'Pháo Đài Kính & Đá',
+      birds: ['yellow', 'black', 'red', 'black'],
+      blocks: [
+        {x: 730, y: 522, w: 26, h: 90, mat: 'stone'},
+        {x: 860, y: 522, w: 26, h: 90, mat: 'stone'},
+        {x: 720, y: 498, w: 176, h: 24, mat: 'stone'},
+        {x: 748, y: 416, w: 22, h: 82, mat: 'wood'},
+        {x: 844, y: 416, w: 22, h: 82, mat: 'wood'},
+        {x: 738, y: 394, w: 138, h: 22, mat: 'glass'},
+        {x: 950, y: 522, w: 24, h: 90, mat: 'wood'},
+        {x: 1090, y: 522, w: 24, h: 90, mat: 'stone'},
+        {x: 942, y: 500, w: 180, h: 22, mat: 'wood'},
+        {x: 970, y: 418, w: 22, h: 82, mat: 'glass'},
+        {x: 1070, y: 418, w: 22, h: 82, mat: 'glass'},
+        {x: 960, y: 396, w: 142, h: 22, mat: 'wood'}
+      ],
+      pigs: [
+        {x: 808, y: 586, r: 24},
+        {x: 808, y: 474, r: 20},
+        {x: 1032, y: 586, r: 25},
+        {x: 1032, y: 476, r: 20}
+      ]
+    },
+    {
+      name: 'Thành Trì Hai Tầng',
+      birds: ['yellow', 'black', 'yellow', 'black', 'red'],
+      blocks: [
+        {x: 700, y: 522, w: 26, h: 90, mat: 'stone'},
+        {x: 818, y: 522, w: 26, h: 90, mat: 'wood'},
+        {x: 936, y: 522, w: 26, h: 90, mat: 'wood'},
+        {x: 1054, y: 522, w: 26, h: 90, mat: 'stone'},
+        {x: 694, y: 498, w: 158, h: 24, mat: 'wood'},
+        {x: 852, y: 498, w: 234, h: 24, mat: 'stone'},
+        {x: 740, y: 416, w: 22, h: 82, mat: 'glass'},
+        {x: 860, y: 416, w: 22, h: 82, mat: 'wood'},
+        {x: 980, y: 416, w: 22, h: 82, mat: 'glass'},
+        {x: 730, y: 394, w: 280, h: 22, mat: 'wood'},
+        {x: 805, y: 318, w: 22, h: 76, mat: 'wood'},
+        {x: 915, y: 318, w: 22, h: 76, mat: 'wood'},
+        {x: 794, y: 296, w: 154, h: 22, mat: 'stone'}
+      ],
+      pigs: [
+        {x: 770, y: 586, r: 22},
+        {x: 890, y: 586, r: 24},
+        {x: 1006, y: 586, r: 22},
+        {x: 870, y: 370, r: 23}
+      ]
+    }
+  ];
+
+  let curLevel = 0, score = 0, shake = 0;
+  let queue = [], activeBird = null, blocks = [], pigs = [], particles = [], floats = [], trail = [];
+  let dragging = false, levelEnded = false, settleTimer = 0;
+  let clouds = [{x:180,y:96,s:1.05},{x:560,y:74,s:.85},{x:940,y:112,s:1.15}];
+
+  function makeBird(kind){
+    return {
+      kind, x: SLING.x, y: SLING.y, vx: 0, vy: 0,
+      r: kind === 'black' ? 22 : (kind === 'yellow' ? 19 : 20),
+      launched: false, usedAbility: false, aliveTime: 0, settled: false, angle: 0
+    };
+  }
+
+  function addParticles(x, y, color, n, spd){
+    for (let i = 0; i < n; i++){
+      const a = Math.random() * Math.PI * 2;
+      const v = (0.3 + Math.random() * 0.85) * spd;
+      particles.push({x, y, vx: Math.cos(a)*v, vy: Math.sin(a)*v - 60, life: 0.55 + Math.random()*0.4, maxLife: 0.95, r: 3 + Math.random()*5, color});
+    }
+  }
+  function addFloat(x, y, txt, color){
+    floats.push({x, y, txt, color: color || '#fff', life: 0.95, maxLife: 0.95});
+  }
+
+  function updateHud(){
+    uiScore.textContent = score;
+    uiPigs.textContent = pigs.length;
+    uiBirds.textContent = queue.length + (activeBird && !activeBird.launched ? 1 : 0);
+  }
+
+  function loadLevel(idx){
+    curLevel = idx;
+    const def = LEVELS[idx];
+    score = 0; shake = 0; dragging = false; levelEnded = false; settleTimer = 0;
+    queue = def.birds.slice();
+    blocks = def.blocks.map(b => ({...b, vx: 0, vy: 0, hp: MATERIALS[b.mat].hp, maxHp: MATERIALS[b.mat].hp}));
+    pigs = def.pigs.map(p => ({...p, vx: 0, vy: 0, hp: 38, maxHp: 38, hurt: 0}));
+    particles = []; floats = []; trail = [];
+    activeBird = queue.length ? makeBird(queue.shift()) : null;
+    banner.classList.add('hidden');
+    document.querySelectorAll('.lvl-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+    updateHud();
+  }
+
+  function nextBird(){
+    if (pigs.length === 0) return;
+    if (queue.length > 0){
+      activeBird = makeBird(queue.shift());
+      trail = [];
+      updateHud();
+    } else {
+      activeBird = null;
+      updateHud();
+      settleTimer = 1.4;
+    }
+  }
+
+  function explode(cx, cy, radius, power){
+    shake = Math.max(shake, 16);
+    addParticles(cx, cy, '#ff9f43', 34, 420);
+    addParticles(cx, cy, '#fff3c4', 18, 280);
+    playSfx(140, 42, 0.35, 'sawtooth', 0.16);
+    for (let i = blocks.length - 1; i >= 0; i--){
+      const b = blocks[i];
+      const bx = b.x + b.w/2, by = b.y + b.h/2;
+      const d = Math.hypot(bx - cx, by - cy);
+      if (d < radius){
+        const k = 1 - d / radius;
+        b.hp -= power * (0.65 + k * 0.8);
+        b.vx += ((bx - cx) / (d || 1)) * 420 * k;
+        b.vy += ((by - cy) / (d || 1)) * 360 * k - 140 * k;
+        if (b.hp <= 0) destroyBlock(i);
+      }
+    }
+    for (let i = pigs.length - 1; i >= 0; i--){
+      const p = pigs[i];
+      const d = Math.hypot(p.x - cx, p.y - cy);
+      if (d < radius){
+        p.hp -= power * 1.1;
+        p.hurt = 0.5;
+        if (p.hp <= 0) popPig(i);
+      }
+    }
+  }
+
+  function triggerAbility(){
+    if (!activeBird || !activeBird.launched || activeBird.usedAbility) return;
+    if (activeBird.kind === 'yellow'){
+      activeBird.usedAbility = true;
+      activeBird.vx *= 2.15;
+      activeBird.vy *= 0.82;
+      addParticles(activeBird.x, activeBird.y, '#ffd166', 18, 260);
+      addFloat(activeBird.x, activeBird.y - 24, 'TĂNG TỐC!', '#ffd166');
+      playSfx(760, 1280, 0.16, 'triangle', 0.11);
+    } else if (activeBird.kind === 'black'){
+      activeBird.usedAbility = true;
+      explode(activeBird.x, activeBird.y, 175, 130);
+      addFloat(activeBird.x, activeBird.y - 30, 'BÙM!!', '#ff6b57');
+      activeBird.settled = true;
+    }
+  }
+
+  function destroyBlock(i){
+    const b = blocks[i], m = MATERIALS[b.mat];
+    score += m.score;
+    addParticles(b.x + b.w/2, b.y + b.h/2, m.fill, 12, 220);
+    addFloat(b.x + b.w/2, b.y, '+' + m.score, '#fff6cc');
+    playSfx(b.mat === 'glass' ? 980 : 260, 90, 0.14, b.mat === 'glass' ? 'sine' : 'square', 0.08);
+    blocks.splice(i, 1);
+    updateHud();
+  }
+
+  function popPig(i){
+    const p = pigs[i];
+    score += 500;
+    addParticles(p.x, p.y, '#80ed99', 20, 260);
+    addParticles(p.x, p.y, '#ffffff', 12, 170);
+    addFloat(p.x, p.y - 20, '+500', '#80ed99');
+    playSfx(520, 880, 0.18, 'sine', 0.12);
+    pigs.splice(i, 1);
+    updateHud();
+  }
+
+  function resolveCircleRect(c, b){
+    const cx = Math.max(b.x, Math.min(c.x, b.x + b.w));
+    const cy = Math.max(b.y, Math.min(c.y, b.y + b.h));
+    const dx = c.x - cx, dy = c.y - cy;
+    const dist = Math.hypot(dx, dy);
+    if (dist < c.r){
+      const nx = dist > 0.001 ? dx / dist : 0;
+      const ny = dist > 0.001 ? dy / dist : -1;
+      const pen = c.r - dist;
+      c.x += nx * pen;
+      c.y += ny * pen;
+      const relSpeed = Math.hypot(c.vx - b.vx, c.vy - b.vy);
+      const vn = (c.vx - b.vx) * nx + (c.vy - b.vy) * ny;
+      if (vn < 0){
+        c.vx -= 1.32 * vn * nx;
+        c.vy -= 1.32 * vn * ny;
+        c.vx *= 0.78; c.vy *= 0.78;
+        b.vx -= vn * nx * 0.48;
+        b.vy -= vn * ny * 0.32;
+      }
+      return relSpeed;
+    }
+    return 0;
+  }
+
+  function update(dt){
+    for (const cl of clouds){
+      cl.x += 12 * dt;
+      if (cl.x > W + 140) cl.x = -140;
+    }
+    if (shake > 0) shake = Math.max(0, shake - dt * 36);
+
+    // Chim đang bay
+    if (activeBird && activeBird.launched){
+      activeBird.aliveTime += dt;
+      activeBird.vy += 860 * dt;
+      activeBird.x += activeBird.vx * dt;
+      activeBird.y += activeBird.vy * dt;
+      activeBird.angle += activeBird.vx * dt * 0.006;
+
+      if (activeBird.aliveTime < 2.2 && Math.hypot(activeBird.vx, activeBird.vy) > 90){
+        if (!trail.length || Math.hypot(activeBird.x - trail[trail.length-1].x, activeBird.y - trail[trail.length-1].y) > 22){
+          trail.push({x: activeBird.x, y: activeBird.y, r: activeBird.usedAbility ? 4.5 : 3});
+        }
+      }
+
+      if (activeBird.y + activeBird.r > GROUND_Y){
+        activeBird.y = GROUND_Y - activeBird.r;
+        activeBird.vy *= -0.42;
+        activeBird.vx *= 0.72;
+        if (activeBird.kind === 'black' && !activeBird.usedAbility && Math.abs(activeBird.vx) < 120){
+          triggerAbility();
+        }
+      }
+
+      // Va chạm chim với khối vật liệu
+      for (let i = blocks.length - 1; i >= 0; i--){
+        const b = blocks[i];
+        const impact = resolveCircleRect(activeBird, b);
+        if (impact > 75){
+          const bonus = (activeBird.kind === 'yellow' && b.mat === 'wood') ? 1.55 : (activeBird.kind === 'black' ? 1.35 : 1.0);
+          b.hp -= (impact * 0.14) * bonus;
+          shake = Math.max(shake, Math.min(8, impact * 0.01));
+          addParticles(activeBird.x, activeBird.y, MATERIALS[b.mat].fill, 5, 130);
+          playSfx(240, 110, 0.09, 'triangle', 0.06);
+          if (b.hp <= 0) destroyBlock(i);
+        }
+      }
+
+      // Va chạm chim với mục tiêu heo xanh
+      for (let i = pigs.length - 1; i >= 0; i--){
+        const p = pigs[i];
+        const d = Math.hypot(activeBird.x - p.x, activeBird.y - p.y);
+        if (d < activeBird.r + p.r){
+          const spd = Math.hypot(activeBird.vx - p.vx, activeBird.vy - p.vy);
+          p.hp -= Math.max(24, spd * 0.16);
+          p.vx += activeBird.vx * 0.45;
+          p.vy += activeBird.vy * 0.35;
+          p.hurt = 0.6;
+          if (p.hp <= 0) popPig(i);
+        }
+      }
+
+      const speed = Math.hypot(activeBird.vx, activeBird.vy);
+      if (activeBird.settled || activeBird.x > W + 80 || activeBird.x < -80 || (activeBird.aliveTime > 1.2 && speed < 26) || activeBird.aliveTime > 5.5){
+        nextBird();
+      }
+    }
+
+    // Vật lý khối gỗ / kính / đá
+    for (let i = blocks.length - 1; i >= 0; i--){
+      const b = blocks[i];
+      b.vy += 820 * dt;
+      b.x += b.vx * dt;
+      b.y += b.vy * dt;
+      b.vx *= 0.94;
+      if (b.y + b.h > GROUND_Y){
+        if (b.vy > 240) b.hp -= (b.vy - 200) * 0.09;
+        b.y = GROUND_Y - b.h;
+        b.vy = 0;
+        b.vx *= 0.78;
+      }
+      if (b.hp <= 0){ destroyBlock(i); continue; }
+    }
+
+    // Chồng khối ổn định (block-vs-block AABB)
+    for (let pass = 0; pass < 2; pass++){
+      for (let i = 0; i < blocks.length; i++){
+        for (let j = i + 1; j < blocks.length; j++){
+          const a = blocks[i], b = blocks[j];
+          const ox = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x);
+          const oy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+          if (ox > 0 && oy > 0){
+            if (oy < ox){
+              const top = a.y < b.y ? a : b, bot = a.y < b.y ? b : a;
+              top.y -= oy;
+              if (top.vy > 210){
+                const dmg = (top.vy - 180) * 0.08;
+                top.hp -= dmg; bot.hp -= dmg;
+              }
+              if (top.vy > 0) top.vy = 0;
+              top.vx *= 0.86;
+            } else {
+              const push = ox * 0.5;
+              if (a.x < b.x){ a.x -= push; b.x += push; }
+              else { a.x += push; b.x -= push; }
+              const avgVx = (a.vx + b.vx) * 0.45;
+              a.vx = avgVx; b.vx = avgVx;
+            }
+          }
+        }
+      }
+    }
+
+    // Vật lý mục tiêu heo xanh
+    for (let i = pigs.length - 1; i >= 0; i--){
+      const p = pigs[i];
+      if (p.hurt > 0) p.hurt -= dt;
+      p.vy += 820 * dt;
+      p.x += p.vx * dt;
+      p.y += p.vy * dt;
+      p.vx *= 0.94;
+      if (p.y + p.r > GROUND_Y){
+        if (p.vy > 200){ p.hp -= (p.vy - 160) * 0.14; p.hurt = 0.4; }
+        p.y = GROUND_Y - p.r;
+        p.vy *= -0.2;
+        p.vx *= 0.8;
+      }
+      for (const b of blocks){
+        const imp = resolveCircleRect(p, b);
+        if (imp > 145){ p.hp -= (imp - 110) * 0.16; p.hurt = 0.5; }
+      }
+      if (p.x > W + 40 || p.x < -40 || p.hp <= 0) popPig(i);
+    }
+
+    // Kiểm tra thắng / thua
+    if (!levelEnded){
+      if (pigs.length === 0){
+        settleTimer += dt;
+        if (settleTimer > 0.85){
+          levelEnded = true;
+          const remain = queue.length + (activeBird && !activeBird.launched ? 1 : 0);
+          score += remain * 1000;
+          updateHud();
+          const stars = remain >= 2 ? '★★★' : (remain === 1 ? '★★☆' : '★☆☆');
+          banStars.textContent = stars;
+          banTitle.textContent = 'Hoàn thành ' + LEVELS[curLevel].name + '!';
+          banText.textContent = 'Tổng điểm: ' + score.toLocaleString('vi-VN') + ' (bao gồm thưởng ' + remain + ' chim còn dư).';
+          banNext.style.display = curLevel < LEVELS.length - 1 ? 'inline-block' : 'none';
+          banner.classList.remove('hidden');
+          playSfx(520, 1040, 0.35, 'triangle', 0.12);
+        }
+      } else if (!activeBird && queue.length === 0){
+        settleTimer -= dt;
+        if (settleTimer <= 0){
+          levelEnded = true;
+          banStars.textContent = '☆☆☆';
+          banTitle.textContent = 'Hết lượt bắn!';
+          banText.textContent = 'Vẫn còn ' + pigs.length + ' mục tiêu trên thành trì. Thử góc bắn mới nhé!';
+          banNext.style.display = 'none';
+          banner.classList.remove('hidden');
+          playSfx(260, 110, 0.35, 'sawtooth', 0.1);
+        }
+      }
+    }
+
+    for (let i = particles.length - 1; i >= 0; i--){
+      const p = particles[i];
+      p.vy += 460 * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt;
+      if (p.life <= 0) particles.splice(i, 1);
+    }
+    for (let i = floats.length - 1; i >= 0; i--){
+      const f = floats[i];
+      f.y -= 36 * dt; f.life -= dt;
+      if (f.life <= 0) floats.splice(i, 1);
+    }
+  }
+
+  function drawCloud(x, y, s){
+    ctx.fillStyle = 'rgba(255,255,255,.88)';
+    ctx.beginPath();
+    ctx.arc(x, y, 26*s, 0, Math.PI*2);
+    ctx.arc(x + 28*s, y - 10*s, 32*s, 0, Math.PI*2);
+    ctx.arc(x + 60*s, y, 24*s, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  function drawBird(b){
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.rotate(b.angle);
+    const fill = b.kind === 'yellow' ? '#ffb703' : (b.kind === 'black' ? '#262936' : '#e63946');
+    const belly = b.kind === 'yellow' ? '#ffe8a3' : (b.kind === 'black' ? '#586070' : '#ffd5c2');
+    // Mào
+    ctx.fillStyle = fill;
+    ctx.beginPath();
+    if (b.kind === 'black'){
+      ctx.fillStyle = '#ffd166';
+      ctx.fillRect(-3, -b.r - 9, 6, 10);
+      ctx.beginPath(); ctx.arc(0, -b.r - 11, 4.5, 0, Math.PI*2); ctx.fillStyle = '#ff6b57'; ctx.fill();
+    } else {
+      ctx.ellipse(-4, -b.r + 2, 7, 11, -0.4, 0, Math.PI*2); ctx.fill();
+    }
+    // Thân
+    ctx.beginPath();
+    if (b.kind === 'yellow'){
+      ctx.moveTo(0, -b.r - 4); ctx.lineTo(b.r + 3, b.r - 2); ctx.lineTo(-b.r - 3, b.r - 2); ctx.closePath();
+    } else {
+      ctx.arc(0, 0, b.r, 0, Math.PI*2);
+    }
+    ctx.fillStyle = fill; ctx.fill();
+    ctx.lineWidth = 2.5; ctx.strokeStyle = '#1b1d24'; ctx.stroke();
+    // Bụng
+    ctx.beginPath(); ctx.arc(2, b.r * 0.42, b.r * 0.52, Math.PI, 0, true); ctx.fillStyle = belly; ctx.fill();
+    // Mắt + lông mày giận dữ
+    ctx.fillStyle = '#fff';
+    ctx.beginPath(); ctx.arc(5, -3, 5.2, 0, Math.PI*2); ctx.arc(13, -3, 4.6, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#111';
+    ctx.beginPath(); ctx.arc(7, -3, 2.2, 0, Math.PI*2); ctx.arc(14, -3, 2.1, 0, Math.PI*2); ctx.fill();
+    ctx.strokeStyle = '#111'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(0, -10); ctx.lineTo(10, -7); ctx.lineTo(18, -10); ctx.stroke();
+    // Mỏ
+    ctx.fillStyle = '#ff9f1c';
+    ctx.beginPath(); ctx.moveTo(14, 1); ctx.lineTo(25, 4); ctx.lineTo(14, 9); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  }
+
+  function drawPig(p){
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    // Tai
+    ctx.fillStyle = '#62d26f'; ctx.strokeStyle = '#1e5b27'; ctx.lineWidth = 2.2;
+    ctx.beginPath(); ctx.arc(-p.r*0.65, -p.r*0.72, 6, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.arc(p.r*0.65, -p.r*0.72, 6, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+    // Thân
+    ctx.beginPath(); ctx.arc(0, 0, p.r, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+    // Mắt
+    ctx.fillStyle = '#fff';
+    ctx.beginPath(); ctx.arc(-8, -4, 5.2, 0, Math.PI*2); ctx.arc(8, -4, 5.2, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#142619';
+    ctx.beginPath(); ctx.arc(-8, -4, 2.2, 0, Math.PI*2); ctx.arc(8, -4, 2.2, 0, Math.PI*2); ctx.fill();
+    // Mũi
+    ctx.fillStyle = '#9cf5a4';
+    ctx.beginPath(); ctx.ellipse(0, 4, 8.5, 6, 0, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#1e5b27';
+    ctx.beginPath(); ctx.arc(-3, 4, 1.8, 0, Math.PI*2); ctx.arc(3, 4, 1.8, 0, Math.PI*2); ctx.fill();
+    if (p.hurt > 0){
+      ctx.strokeStyle = '#ff595e'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(0, 0, p.r + 3, 0, Math.PI*2); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function draw(){
+    ctx.save();
+    if (shake > 0) ctx.translate((Math.random()-.5)*shake, (Math.random()-.5)*shake);
+
+    // Bầu trời
+    const sky = ctx.createLinearGradient(0, 0, 0, GROUND_Y);
+    sky.addColorStop(0, '#4bb3fd');
+    sky.addColorStop(0.55, '#a6e1ff');
+    sky.addColorStop(1, '#e8f8ff');
+    ctx.fillStyle = sky;
+    ctx.fillRect(0, 0, W, H);
+
+    // Mây
+    clouds.forEach(c => drawCloud(c.x, c.y, c.s));
+
+    // Đồi núi xa & gần
+    ctx.fillStyle = '#79c287';
+    ctx.beginPath(); ctx.moveTo(0, GROUND_Y);
+    ctx.quadraticCurveTo(260, 470, 560, GROUND_Y);
+    ctx.quadraticCurveTo(920, 445, W, GROUND_Y);
+    ctx.fill();
+
+    ctx.fillStyle = '#53a867';
+    ctx.beginPath(); ctx.moveTo(0, GROUND_Y);
+    ctx.quadraticCurveTo(180, 520, 420, GROUND_Y);
+    ctx.quadraticCurveTo(840, 505, W, GROUND_Y);
+    ctx.fill();
+
+    // Mặt đất & thảm cỏ
+    ctx.fillStyle = '#5a3a22';
+    ctx.fillRect(0, GROUND_Y, W, H - GROUND_Y);
+    ctx.fillStyle = '#47a44b';
+    ctx.fillRect(0, GROUND_Y, W, 18);
+    ctx.fillStyle = '#73cc5e';
+    ctx.fillRect(0, GROUND_Y, W, 7);
+
+    // Đế ná thun (nhánh sau)
+    ctx.strokeStyle = '#5c3317'; ctx.lineWidth = 14; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(SLING.x, GROUND_Y - 2); ctx.lineTo(SLING.x, SLING.y + 44); ctx.lineTo(SLING.x + 22, SLING.y - 6); ctx.stroke();
+
+    // Dây thun sau
+    if (activeBird && !activeBird.launched){
+      ctx.strokeStyle = '#331c0d'; ctx.lineWidth = 6;
+      ctx.beginPath(); ctx.moveTo(SLING.x + 20, SLING.y - 4); ctx.lineTo(activeBird.x, activeBird.y); ctx.stroke();
+    }
+
+    // Chim chờ bắn xếp hàng dưới gốc ná
+    queue.forEach((kind, idx) => {
+      drawBird({kind, x: 145 - idx * 42, y: GROUND_Y - 19, r: 17, angle: 0});
+    });
+
+    // Đường quỹ đạo dự đoán khi kéo ngắm
+    if (dragging && activeBird && !activeBird.launched){
+      const vx = (SLING.x - activeBird.x) * 9.2;
+      const vy = (SLING.y - activeBird.y) * 9.2;
+      for (let i = 1; i <= 16; i++){
+        const t = i * 0.085;
+        const px = activeBird.x + vx * t;
+        const py = activeBird.y + vy * t + 0.5 * 860 * t * t;
+        if (py > GROUND_Y) break;
+        ctx.beginPath(); ctx.arc(px, py, Math.max(2.2, 5.2 - i * 0.18), 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(255,255,255,' + (0.95 - i * 0.045).toFixed(2) + ')';
+        ctx.fill();
+      }
+    }
+
+    // Vệt bay của chim vừa bắn
+    for (const t of trail){
+      ctx.beginPath(); ctx.arc(t.x, t.y, t.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(255,255,255,.78)'; ctx.fill();
+    }
+
+    // Khối vật liệu
+    for (const b of blocks){
+      const m = MATERIALS[b.mat];
+      ctx.fillStyle = m.fill;
+      ctx.strokeStyle = m.stroke;
+      ctx.lineWidth = 2;
+      ctx.fillRect(b.x, b.y, b.w, b.h);
+      ctx.strokeRect(b.x, b.y, b.w, b.h);
+      ctx.strokeStyle = m.grain;
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      if (b.w > b.h){ ctx.moveTo(b.x + 6, b.y + b.h/2); ctx.lineTo(b.x + b.w - 6, b.y + b.h/2); }
+      else { ctx.moveTo(b.x + b.w/2, b.y + 6); ctx.lineTo(b.x + b.w/2, b.y + b.h - 6); }
+      ctx.stroke();
+      // Vết nứt nếu sắp vỡ
+      if (b.hp < b.maxHp * 0.55){
+        ctx.strokeStyle = 'rgba(20,20,20,.65)'; ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.moveTo(b.x + b.w*0.25, b.y + b.h*0.2);
+        ctx.lineTo(b.x + b.w*0.55, b.y + b.h*0.52);
+        ctx.lineTo(b.x + b.w*0.35, b.y + b.h*0.8);
+        ctx.stroke();
+      }
+    }
+
+    // Mục tiêu heo xanh
+    pigs.forEach(drawPig);
+
+    // Chim đang sử dụng
+    if (activeBird) drawBird(activeBird);
+
+    // Nhánh ná trước + dây thun trước
+    if (activeBird && !activeBird.launched){
+      ctx.strokeStyle = '#331c0d'; ctx.lineWidth = 6;
+      ctx.beginPath(); ctx.moveTo(SLING.x - 18, SLING.y - 4); ctx.lineTo(activeBird.x, activeBird.y); ctx.stroke();
+    }
+    ctx.strokeStyle = '#754422'; ctx.lineWidth = 14; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(SLING.x, SLING.y + 44); ctx.lineTo(SLING.x - 20, SLING.y - 6); ctx.stroke();
+
+    // Hạt vỡ
+    for (const p of particles){
+      ctx.globalAlpha = Math.max(0, p.life / p.maxLife);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(p.x - p.r/2, p.y - p.r/2, p.r, p.r);
+    }
+    ctx.globalAlpha = 1;
+
+    // Điểm nổi
+    ctx.font = '800 20px "Be Vietnam Pro", sans-serif';
+    ctx.textAlign = 'center';
+    for (const f of floats){
+      ctx.globalAlpha = Math.max(0, f.life / f.maxLife);
+      ctx.fillStyle = '#082032'; ctx.fillText(f.txt, f.x + 1.5, f.y + 1.5);
+      ctx.fillStyle = f.color; ctx.fillText(f.txt, f.x, f.y);
+    }
+    ctx.globalAlpha = 1;
+    ctx.restore();
+  }
+
+  function getPos(e){
+    const r = canvas.getBoundingClientRect();
+    const p = e.touches ? e.touches[0] : e;
+    return {x: (p.clientX - r.left) * (W / r.width), y: (p.clientY - r.top) * (H / r.height)};
+  }
+
+  function onDown(e){
+    if (levelEnded) return;
+    const pos = getPos(e);
+    if (activeBird && activeBird.launched){
+      triggerAbility();
+      return;
+    }
+    if (activeBird && !activeBird.launched && Math.hypot(pos.x - activeBird.x, pos.y - activeBird.y) < 58){
+      dragging = true;
+      playSfx(180, 240, 0.08, 'sine', 0.05);
+    }
+  }
+  function onMove(e){
+    if (!dragging || !activeBird) return;
+    const pos = getPos(e);
+    let dx = pos.x - SLING.x, dy = pos.y - SLING.y;
+    const d = Math.hypot(dx, dy);
+    if (d > SLING.maxPull){ dx = (dx / d) * SLING.maxPull; dy = (dy / d) * SLING.maxPull; }
+    activeBird.x = SLING.x + dx;
+    activeBird.y = SLING.y + dy;
+  }
+  function onUp(){
+    if (!dragging || !activeBird) return;
+    dragging = false;
+    const dx = SLING.x - activeBird.x, dy = SLING.y - activeBird.y;
+    if (Math.hypot(dx, dy) < 18){
+      activeBird.x = SLING.x; activeBird.y = SLING.y;
+      return;
+    }
+    activeBird.vx = dx * 9.2;
+    activeBird.vy = dy * 9.2;
+    activeBird.launched = true;
+    trail = [];
+    updateHud();
+    playSfx(260, 620, 0.16, 'triangle', 0.1);
+  }
+
+  canvas.addEventListener('mousedown', onDown);
+  addEventListener('mousemove', onMove);
+  addEventListener('mouseup', onUp);
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); onDown(e); }, {passive: false});
+  addEventListener('touchmove', e => { if (dragging) e.preventDefault(); onMove(e); }, {passive: false});
+  addEventListener('touchend', onUp);
+
+  addEventListener('keydown', e => {
+    if (e.code === 'Space'){ e.preventDefault(); triggerAbility(); }
+    if (e.code === 'KeyR') loadLevel(curLevel);
+    if (e.code === 'Digit1') loadLevel(0);
+    if (e.code === 'Digit2') loadLevel(1);
+    if (e.code === 'Digit3') loadLevel(2);
+  });
+
+  document.getElementById('btnRestart').addEventListener('click', () => loadLevel(curLevel));
+  banRetry.addEventListener('click', () => loadLevel(curLevel));
+  banNext.addEventListener('click', () => loadLevel(Math.min(LEVELS.length - 1, curLevel + 1)));
+  document.querySelectorAll('.lvl-btn').forEach(b => b.addEventListener('click', () => loadLevel(Number(b.dataset.lvl))));
+
+  let last = performance.now();
+  function loop(now){
+    const dt = Math.min(0.033, (now - last) / 1000);
+    last = now;
+    update(dt);
+    draw();
+    requestAnimationFrame(loop);
+  }
+  loadLevel(0);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
