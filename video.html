@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Edit Video &amp; Motion Graphics — Trần Ngọc Huy</title>
+<meta name="description" content="Tuyển chọn 5 sản phẩm Edit Video &amp; Motion Graphics của Trần Ngọc Huy: Before/After Talking-Head, Claude Opus 5.5, Ads chuyển đổi, Apple Style và Antigravity 2.0." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="video" data-depth-start="2200" data-depth-end="4600">
+<a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
+
+<div class="ocean" aria-hidden="true"></div>
+<div class="abyss-veil" id="veil" aria-hidden="true"></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="site-nav" aria-label="Điều hướng chính">
+  <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Trang chính</a>
+    <a href="profile.html">Hồ sơ</a>
+    <a href="video.html" class="active" aria-current="page">Edit Video</a>
+    <a href="projects.html">Dự án</a>
+    <a href="experience.html">Kinh nghiệm</a>
+    <a href="contact.html">Liên hệ</a>
+  </div>
+  <div class="nav-actions">
+    <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>
+      <span>In / Lưu CV</span>
+    </button>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobileDrawer">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
+  <a href="index.html">Trang chính</a>
+  <a href="profile.html">Hồ sơ &amp; Kỹ năng</a>
+  <a href="video.html" class="active" aria-current="page">Edit Video &amp; Motion</a>
+  <a href="projects.html">Dự án &amp; Sản phẩm</a>
+  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
+  <a href="contact.html">Liên hệ</a>
+  <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
+</div>
+
+<aside class="depth" aria-hidden="true">
+  <div class="depth-read">Độ sâu · <b id="depthVal">2.200</b> m</div>
+  <div class="depth-track"><div class="depth-fill" id="depthFill"></div></div>
+</aside>
+
+<main id="main-content">
+  <header class="sub-hero">
+    <div class="wrap">
+      <div class="sub-nav-row">
+        <nav class="breadcrumb" aria-label="Đường dẫn trang">
+          <a href="index.html">Trang chính</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Edit Video &amp; Motion</span>
+        </nav>
+        <a href="index.html" class="btn btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          <span>Về trang chính</span>
+        </a>
+      </div>
+      <div class="sub-hero-head">
+        <div>
+          <h1>Sản phẩm <span>Edit Video &amp; Motion</span></h1>
+          <p class="sec-sub">Tuyển chọn những video dựng nổi bật nhất theo 3 mục tiêu thực tế: giữ chân người xem, giải thích sản phẩm công nghệ và thúc đẩy chuyển đổi quảng cáo — bấm phát trực tiếp ngay trên trang.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-body" id="video-studio">
+    <div class="wrap">
+      <div class="video-showcase">
+        <div class="reels-grid">
+          <!-- VIDEO 01: BEFORE / AFTER -->
+          <article class="card reel-card reveal">
+            <div class="phone-theater">
+              <video id="vidBeforeAfter" src="media/video-before-after.mp4" poster="media/video-before-after-poster.jpg" playsinline controls preload="none" aria-label="Video Before After nâng tầm Talking-Head"></video>
+              <button type="button" class="play-overlay" data-play="vidBeforeAfter" aria-label="Phát video Before After">
+                <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="play-label">Phát có tiếng (60s)</span>
+              </button>
+            </div>
+            <div class="reel-body">
+              <span class="cat-pill">BEFORE / AFTER · RETENTION</span>
+              <h2>Nâng tầm Video Talking-Head giữ chân người xem</h2>
+              <p>So sánh trực tiếp giữa video quay thô đơn điệu và bản dựng hoàn thiện có nhịp điệu thị giác cao.</p>
+              <ul class="impact-list">
+                <li><strong>Chặn lướt qua trong 3 giây đầu:</strong> Tạo điểm nhấn hình ảnh và tiêu đề rõ nét ngay khoảnh khắc mở màn.</li>
+                <li><strong>Tăng thời lượng xem hết:</strong> Chèn đồ thị so sánh và minh họa bám sát lời nói để giữ mạch chú ý tới cuối clip.</li>
+                <li><strong>Nâng uy tín thương hiệu cá nhân:</strong> Giúp chuyên gia và creator truyền đạt nội dung sắc nét, chuyên nghiệp hơn trên Reels / Shorts.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- VIDEO 02: CLAUDE OPUS MOTION EXPLAINER -->
+          <article class="card reel-card reveal">
+            <div class="phone-theater">
+              <video id="vidClaudeMotion" src="media/video-claude-motion.mp4" poster="media/video-claude-motion-poster.jpg" playsinline controls preload="none" aria-label="Video Motion Explainer sản phẩm công nghệ Claude Opus 5.5"></video>
+              <button type="button" class="play-overlay" data-play="vidClaudeMotion" aria-label="Phát video Motion Explainer công nghệ">
+                <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="play-label">Phát có tiếng (21s)</span>
+              </button>
+            </div>
+            <div class="reel-body">
+              <span class="cat-pill ai">MOTION EXPLAINER · TECH</span>
+              <h2>Giới thiệu sản phẩm công nghệ — Claude Opus 5.5</h2>
+              <p>Phong cách đồ họa chuyển động editorial gọn mắt dành cho sản phẩm phần mềm, AI và công nghệ.</p>
+              <ul class="impact-list">
+                <li><strong>Biến thông số khô khan thành câu chuyện dễ hiểu:</strong> Minh họa trực quan mức giá, dung lượng xử lý và kết quả chạy code chỉ trong 21 giây.</li>
+                <li><strong>Gây ấn tượng hiện đại &amp; đáng tin cậy:</strong> Bố cục sạch, biểu đồ động và nhịp chuyển mượt tôn lên chất lượng sản phẩm số.</li>
+                <li><strong>Dễ ứng dụng truyền thông ra mắt:</strong> Phù hợp đăng LinkedIn, trang đích sản phẩm và chuỗi video giới thiệu tính năng mới.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- VIDEO 03: COMMERCIAL AD CHILDCARE -->
+          <article class="card reel-card reveal">
+            <div class="phone-theater">
+              <video id="vidCommercialAd" src="media/video-commercial-ad.mp4" poster="media/video-commercial-ad-poster.jpg" playsinline controls preload="none" aria-label="Video quảng cáo chuyển đổi kết hợp Motion Graphics"></video>
+              <button type="button" class="play-overlay" data-play="vidCommercialAd" aria-label="Phát video quảng cáo chuyển đổi">
+                <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="play-label">Phát có tiếng (27s)</span>
+              </button>
+            </div>
+            <div class="reel-body">
+              <span class="cat-pill game">COMMERCIAL AD · CONVERSION</span>
+              <h2>Video Quảng cáo Chuyển đổi Dịch vụ &amp; Giáo dục</h2>
+              <p>Kết hợp người dẫn chuyện tạo niềm tin cùng đồ họa chuyển động nhấn mạnh lợi ích dành cho khách hàng.</p>
+              <ul class="impact-list">
+                <li><strong>Thúc đẩy đăng ký &amp; chuyển đổi:</strong> Dẫn dắt mạch lạc từ nỗi đau khách hàng tới giải pháp và lời kêu gọi hành động rõ ràng.</li>
+                <li><strong>Hiệu quả ngay cả khi tắt tiếng:</strong> Chữ nhấn và biểu tượng trực quan giúp người xem di động nắm trọn thông điệp tức thì.</li>
+                <li><strong>Sẵn sàng chạy quảng cáo trả phí:</strong> Thời lượng 27 giây cô đọng, nhịp dựng gọn giúp tối ưu chi phí tiếp cận trên Meta / TikTok Ads.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- VIDEO 04: APPLE STYLE TALKING-HEAD -->
+          <article class="card reel-card reveal">
+            <div class="phone-theater">
+              <video id="vidAppleStyle" src="media/video-apple-style.mp4" poster="media/video-apple-style-poster.jpg" playsinline controls preload="none" aria-label="Video Talking-Head phong cách Apple Clean UI"></video>
+              <button type="button" class="play-overlay" data-play="vidAppleStyle" aria-label="Phát video phong cách Apple Style">
+                <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="play-label">Phát có tiếng (29s)</span>
+              </button>
+            </div>
+            <div class="reel-body">
+              <span class="cat-pill edu">APPLE STYLE · CLEAN UI</span>
+              <h2>Video Talking-Head Phong cách Apple tối giản</h2>
+              <p>Kết hợp thẻ giao diện sạch, bản đồ định vị trực quan và người dẫn chuyện tạo cảm giác hiện đại, sắc nét.</p>
+              <ul class="impact-list">
+                <li><strong>Đánh trúng nỗi đau khách hàng ngay lập tức:</strong> Các thẻ thông điệp tối giản xuất hiện rõ ràng giúp người xem gật gù đồng cảm trong vài giây đầu.</li>
+                <li><strong>Trực quan hóa dịch vụ địa phương:</strong> Đồ họa bản đồ định vị kết hợp hiệu ứng chuyển cảnh mượt giúp giải thích giá trị nhanh mà không cần nhiều chữ.</li>
+                <li><strong>Tạo cảm giác thương hiệu cao cấp:</strong> Nền sáng tối giản theo thẩm mỹ Apple giúp video nổi bật giữa nguồn tin dày đặc và tăng tỷ lệ tương tác.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- VIDEO 05: MOTION GRAPHICS 16:9 -->
+        <article class="card motion-stage reveal">
+          <div class="wide-theater">
+            <video id="motionVideo" src="media/antigravity.mp4" poster="media/antigravity-poster.jpg" playsinline controls preload="none" aria-label="Video motion graphics Antigravity 2.0"></video>
+            <button type="button" class="play-overlay" data-play="motionVideo" aria-label="Phát video Antigravity 2.0">
+              <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="play-label">Phát Motion 60fps (12s)</span>
+            </button>
+          </div>
+
+          <div>
+            <span class="cat-pill">BRAND MOTION · ONE-TAKE 16:9</span>
+            <h2 class="video-title" style="margin-top:12px">Antigravity 2.0 — Phim Giới thiệu Thương hiệu</h2>
+            <p class="video-desc">
+              Video mở màn sản phẩm dài 12 giây chạy liền mạch không cắt cảnh, phù hợp làm hero banner trang chủ hoặc đoạn mở đầu buổi ra mắt sản phẩm số.
+            </p>
+            <ul class="impact-list" style="margin-top:14px">
+              <li><strong>Tạo dấu ấn thương hiệu tức thì:</strong> Chuyển động biến hình liên tục dẫn mắt người xem thẳng tới tên và thông điệp sản phẩm.</li>
+              <li><strong>Giữ chất lượng hiển thị sắc nét:</strong> Xuất Full HD 1920×1080 ở 60 fps, phát mượt trên màn hình lớn lẫn website thương hiệu.</li>
+              <li><strong>Tối ưu tỷ lệ hoàn thành:</strong> Gói gọn trọn vẹn câu chuyện sản phẩm trong đúng 12 giây không dư thừa.</li>
+            </ul>
+            <p class="honest-note">Concept luyện tập cá nhân, không phải sản phẩm chính thức của Google.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager-wrap" aria-label="Chuyển giữa các trang nhánh">
+    <div class="wrap">
+      <div class="page-pager">
+        <a class="pager-card" href="profile.html">
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+          <div>
+            <small>Trang nhánh trước</small>
+            <strong>Hồ sơ, Học vấn &amp; Kỹ năng</strong>
+          </div>
+        </a>
+        <a class="pager-card next" href="projects.html">
+          <div>
+            <small>Trang nhánh kế tiếp</small>
+            <strong>Dự án &amp; Sản phẩm đã hoàn thiện</strong>
+          </div>
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Trần Ngọc Huy · Sinh viên CNTT, Đại học Lạc Hồng (LHU) · 0 m → 11.000 m</span>
+    <div class="foot-links">
+      <a href="index.html">Trang chính</a>
+      <a href="profile.html">Hồ sơ</a>
+      <a href="video.html">Edit Video</a>
+      <a href="projects.html">Dự án</a>
+      <a href="experience.html">Kinh nghiệm</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="cv.html">Bản in CV</a>
+      <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -3,631 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Trần Ngọc Huy — Portfolio | Software · Quality · AI & Video</title>
+<title>Trần Ngọc Huy — Portfolio | Software · Quality · AI &amp; Video</title>
 <meta name="description" content="Hồ sơ năng lực Trần Ngọc Huy — Sinh viên CNTT Đại học Lạc Hồng (LHU). Chuyên sâu Software Engineering, Quality Engineering, AI Engineering, Game và Edit Video / Motion Graphics." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --abyss:#04101d;
-    --deep:#071b2e;
-    --trench:#0a253d;
-    --sea:#0f3e61;
-    --surface:rgba(9,31,52,.84);
-    --surface-hi:rgba(13,44,72,.92);
-    --nav-bg:rgba(5,20,36,.88);
-    --cyan:#4cd8ff;
-    --glow:#a6f2ff;
-    --violet:#a796ff;
-    --coral:#ff9a6c;
-    --emerald:#4de2b1;
-    --ink:#f0f8ff;
-    --ink-2:#c4deee;
-    --mute:#8cb6cf;
-    --line:rgba(130,214,255,.22);
-    --line-hi:rgba(130,214,255,.46);
-    --display:"Unbounded","Be Vietnam Pro",system-ui,sans-serif;
-    --heading:"Be Vietnam Pro",system-ui,sans-serif;
-    --body:"Be Vietnam Pro",system-ui,sans-serif;
-    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    --r:20px;
-    --ease:cubic-bezier(.16,1,.3,1);
-    --shadow:0 24px 64px -32px rgba(0,0,0,.78);
-  }
-
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:92px;overflow-x:clip}
-  body{
-    font-family:var(--body);
-    color:var(--ink);
-    background:var(--abyss);
-    overflow-x:clip;
-    line-height:1.68;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  img,video,svg{max-width:100%;display:block}
-  a{color:inherit;text-decoration:none}
-  button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
-  ::selection{background:rgba(56,162,216,.34);color:#f2faff}
-  :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
-  ::-webkit-scrollbar{width:10px}
-  ::-webkit-scrollbar-track{background:#04111e}
-  ::-webkit-scrollbar-thumb{background:#164163;border-radius:999px;border:2px solid #04111e}
-  ::-webkit-scrollbar-thumb:hover{background:#246391}
-
-  .skip-link{
-    position:fixed;left:16px;top:-80px;z-index:200;
-    padding:10px 18px;border-radius:999px;
-    background:var(--cyan);color:#031220;font-weight:700;font-size:14px;
-    transition:top .2s var(--ease);
-  }
-  .skip-link:focus{top:16px}
-
-  /* ---------- Nền đại dương sâu ---------- */
-  .ocean{
-    position:fixed;inset:0;z-index:-3;pointer-events:none;
-    background:
-      radial-gradient(125% 68% at 50% -12%, #186e9c 0%, #0d466d 24%, #072642 52%, #05182b 78%, #04101d 100%);
-  }
-  .abyss-veil{
-    position:fixed;inset:0;z-index:-2;pointer-events:none;
-    background:linear-gradient(180deg, rgba(4,16,29,.22) 0%, rgba(3,11,21,.9) 100%);
-    opacity:0;
-    will-change:opacity;
-  }
-  #snow{position:fixed;inset:0;z-index:-1;pointer-events:none}
-
-  /* ---------- Điều hướng cố định ---------- */
-  .site-nav{
-    position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:80;
-    width:min(1180px,calc(100% - 28px));
-    display:flex;align-items:center;justify-content:space-between;gap:14px;
-    padding:10px 12px 10px 20px;border-radius:999px;
-    background:var(--nav-bg);
-    border:1px solid var(--line);
-    backdrop-filter:blur(18px) saturate(140%);
-    -webkit-backdrop-filter:blur(18px) saturate(140%);
-    box-shadow:0 12px 34px -18px rgba(0,0,0,.85);
-  }
-  .brand{
-    font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.02em;
-    display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
-  }
-  .brand-dot{
-    width:9px;height:9px;border-radius:50%;background:var(--cyan);
-    box-shadow:0 0 12px rgba(76,216,255,.85);flex-shrink:0;
-  }
-  .nav-links{display:flex;align-items:center;gap:6px}
-  .nav-links a{
-    padding:8px 13px;border-radius:999px;font-size:14px;font-weight:500;
-    color:var(--ink-2);transition:color .2s,background .2s;white-space:nowrap;
-  }
-  .nav-links a:hover{color:var(--ink);background:rgba(76,216,255,.1)}
-  .nav-links a.active{color:#031322;background:var(--cyan);font-weight:600}
-  .nav-actions{display:flex;align-items:center;gap:8px}
-  .menu-toggle{
-    display:none;width:42px;height:42px;border-radius:999px;
-    border:1px solid var(--line);background:rgba(13,44,72,.7);
-    align-items:center;justify-content:center;
-  }
-  .mobile-drawer{
-    position:fixed;inset:76px 14px auto 14px;z-index:79;
-    padding:14px;border-radius:20px;
-    background:rgba(5,20,36,.96);border:1px solid var(--line-hi);
-    backdrop-filter:blur(20px);box-shadow:var(--shadow);
-    display:none;flex-direction:column;gap:6px;
-  }
-  .mobile-drawer.open{display:flex}
-  .mobile-drawer a,.mobile-drawer button{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 16px;border-radius:12px;font-size:15px;font-weight:500;color:var(--ink);
-    background:rgba(13,44,72,.35);
-  }
-  .mobile-drawer a:hover,.mobile-drawer a.active{background:rgba(76,216,255,.18);color:var(--glow)}
-
-  /* ---------- Nút bấm ---------- */
-  .btn{
-    white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    font-weight:600;font-size:14px;padding:11px 20px;border-radius:999px;
-    border:1px solid var(--line);color:var(--ink);background:rgba(11,38,62,.65);
-    transition:transform .24s var(--ease),border-color .24s,background .24s,box-shadow .24s;
-  }
-  .btn svg{width:16px;height:16px;flex-shrink:0;transition:transform .24s var(--ease)}
-  .btn:hover{transform:translateY(-2px);border-color:var(--line-hi);background:rgba(17,56,90,.85)}
-  .btn:hover svg.arr{transform:translateX(3px)}
-  .btn-primary{
-    background:linear-gradient(135deg,#56dcff,#259be0);color:#021424;border-color:transparent;
-    box-shadow:0 10px 28px -12px rgba(76,216,255,.65);
-  }
-  .btn-primary:hover{
-    background:linear-gradient(135deg,#76e4ff,#31a9ec);color:#021424;
-    box-shadow:0 14px 34px -10px rgba(76,216,255,.8);
-  }
-  .btn-sm{padding:9px 15px;font-size:13px}
-
-  /* ---------- Đồng hồ độ sâu ---------- */
-  .depth{
-    position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:40;
-    display:flex;align-items:center;gap:12px;
-    font-family:var(--mono);font-size:11px;color:var(--mute);
-    font-variant-numeric:tabular-nums;
-  }
-  .depth-track{position:relative;width:2px;height:210px;background:rgba(130,214,255,.2);border-radius:2px}
-  .depth-fill{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(var(--glow),var(--cyan));border-radius:2px}
-  .depth-read{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.14em;text-transform:uppercase}
-  .depth-read b{color:var(--glow);font-weight:600}
-
-  /* ---------- Bố cục chung ---------- */
-  main{position:relative}
-  section{position:relative;padding:96px 24px}
-  .wrap{max-width:1160px;margin:0 auto;position:relative}
-  .card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:var(--r);
-    box-shadow:var(--shadow);
-  }
-  .sec-head{
-    display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;
-    margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid var(--line);
-  }
-  .sec-head h2{
-    font-family:var(--heading);font-weight:800;
-    font-size:clamp(28px,3.8vw,44px);line-height:1.2;letter-spacing:-.02em;
-    color:var(--ink);text-wrap:balance;
-  }
-  .sec-head h2 span{color:var(--cyan)}
-  .sec-sub{color:var(--ink-2);font-size:16px;max-width:62ch;margin-top:10px}
-
-  /* ---------- Reveal an toàn ---------- */
-  .reveal{opacity:1;transform:none}
-  .js-anim .reveal:not(.is-visible){opacity:.22;transform:translateY(16px)}
-  .js-anim .reveal{transition:opacity .48s var(--ease),transform .48s var(--ease)}
-  .js-anim .reveal.is-visible{opacity:1;transform:none}
-  @media (max-width:768px){
-    .js-anim .reveal:not(.is-visible){opacity:1;transform:none}
-  }
-  code.ic{
-    font-family:var(--mono);font-size:.86em;font-weight:500;
-    color:var(--glow);background:rgba(76,216,255,.11);
-    border:1px solid rgba(130,214,255,.22);border-radius:6px;
-    padding:1px 6px;white-space:nowrap;
-  }
-
-  /* ---------- HERO (0 m · Chỉ 1 ảnh chân dung đầu trang) ---------- */
-  .hero{position:relative;padding:126px 24px 72px;overflow:hidden}
-  .rays{position:absolute;inset:0;pointer-events:none;opacity:.42;overflow:hidden}
-  .ray{
-    position:absolute;top:-15%;left:50%;width:150px;height:125%;transform-origin:top center;
-    background:linear-gradient(180deg,rgba(166,242,255,.42),rgba(76,216,255,.12) 40%,transparent 78%);
-    filter:blur(22px);animation:sway 11s ease-in-out infinite;
-  }
-  .ray:nth-child(1){--a:-20deg;margin-left:-320px;width:110px}
-  .ray:nth-child(2){--a:-6deg;margin-left:-100px;width:190px;animation-duration:14s}
-  .ray:nth-child(3){--a:9deg;margin-left:120px;width:150px;animation-duration:9.5s}
-  .ray:nth-child(4){--a:22deg;margin-left:310px;width:95px;opacity:.65}
-  @keyframes sway{0%,100%{transform:rotate(var(--a)) scaleX(1)}50%{transform:rotate(calc(var(--a) + 3.5deg)) scaleX(1.16)}}
-
-  .jelly{position:absolute;pointer-events:none;opacity:.34;animation:drift 15s ease-in-out infinite}
-  .jelly.j1{width:130px;right:4%;top:110px}
-  .jelly.j2{width:78px;left:3%;bottom:80px;animation-duration:19s;opacity:.26}
-  @keyframes drift{0%,100%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(14px,-26px) rotate(4deg)}}
-
-  .hero-grid{
-    display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.85fr);
-    gap:44px;align-items:center;
-  }
-  .status-pill{
-    display:inline-flex;align-items:center;gap:9px;
-    padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;
-    color:var(--glow);background:rgba(10,41,68,.78);border:1px solid var(--line);
-    margin-bottom:20px;
-  }
-  .status-pill i{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 10px var(--emerald)}
-  .hero h1{
-    font-family:var(--display);font-weight:700;
-    font-size:clamp(38px,5.5vw,66px);
-    line-height:1.22;letter-spacing:-.025em;
-    color:#f3faff;
-  }
-  .hero-role{
-    margin-top:16px;font-family:var(--heading);font-weight:600;
-    font-size:clamp(18px,2.2vw,23px);line-height:1.4;color:var(--cyan);
-  }
-  .hero-lead{margin-top:18px;color:var(--ink-2);font-size:16.5px;max-width:58ch}
-  .focus-bar{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-  .focus-pill{
-    display:inline-flex;align-items:center;gap:7px;
-    padding:7px 12px;border-radius:10px;font-size:13px;font-weight:500;
-    background:rgba(9,33,56,.82);border:1px solid var(--line);color:var(--ink);
-  }
-  .focus-pill b{font-family:var(--mono);font-size:12px;color:var(--cyan)}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-
-  .hero-facts{
-    margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
-  }
-  .fact-box{
-    padding:14px 16px;border-radius:14px;
-    background:rgba(8,29,49,.78);border:1px solid var(--line);
-  }
-  .fact-box strong{
-    display:block;font-family:var(--mono);font-size:20px;font-weight:600;
-    color:var(--glow);font-variant-numeric:tabular-nums;
-  }
-  .fact-box span{display:block;font-size:12.5px;color:var(--mute);margin-top:2px;line-height:1.35}
-
-  /* Khung chân dung duy nhất đầu trang */
-  .portrait-card{
-    padding:16px;border-radius:24px;
-    background:linear-gradient(165deg,rgba(16,58,92,.88),rgba(7,25,43,.94));
-    border:1px solid var(--line-hi);box-shadow:var(--shadow);
-  }
-  .portrait-frame{
-    position:relative;border-radius:16px;overflow:hidden;
-    aspect-ratio:4/4.6;background:#0c4570;
-    border:1px solid rgba(166,242,255,.26);
-  }
-  .portrait-frame img{
-    width:100%;height:100%;object-fit:cover;object-position:50% 16%;
-    filter:contrast(1.02) saturate(.88) brightness(.97);
-  }
-  .portrait-frame::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:
-      linear-gradient(180deg,rgba(6,29,50,.48) 0%,rgba(6,29,50,.08) 24%,transparent 52%,rgba(4,18,34,.92) 100%),
-      radial-gradient(64% 58% at 50% 42%,transparent 48%,rgba(5,26,46,.68) 100%);
-  }
-  .portrait-caption{
-    position:absolute;left:14px;right:14px;bottom:12px;z-index:2;
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
-    font-size:12.5px;color:#edf7ff;
-  }
-  .portrait-caption strong{font-weight:700;display:block}
-  .portrait-caption small{color:#bfe2f7;font-size:11.5px}
-  .lhu-tag{
-    font-family:var(--mono);font-size:11px;font-weight:600;
-    padding:4px 9px;border-radius:999px;
-    background:rgba(4,18,32,.78);border:1px solid rgba(166,242,255,.35);color:var(--glow);
-    white-space:nowrap;
-  }
-  .portrait-meta{margin-top:14px;display:grid;gap:8px;font-size:13.5px}
-  .portrait-meta div{
-    display:flex;justify-content:space-between;gap:12px;
-    padding:7px 10px;border-radius:10px;background:rgba(5,19,34,.55);
-  }
-  .portrait-meta dt{color:var(--mute);font-size:12.5px}
-  .portrait-meta dd{color:var(--ink);font-weight:500;text-align:right}
-
-  /* Thanh điều hướng nhanh 4 mục (ĐÃ FIX CĂN GIỮA ICON TUYỆT ĐỐI) */
-  .quick-nav{
-    margin-top:46px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;
-  }
-  .qnav-item{
-    padding:16px 18px;border-radius:16px;
-    background:rgba(8,29,49,.8);border:1px solid var(--line);
-    display:flex;align-items:center;gap:14px;
-    transition:transform .24s var(--ease),border-color .24s,background .24s;
-  }
-  .qnav-item:hover{transform:translateY(-3px);border-color:var(--cyan);background:rgba(12,42,69,.92)}
-  .qnav-ic{
-    width:44px;height:44px;border-radius:12px;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    background:rgba(76,216,255,.12);border:1px solid rgba(76,216,255,.28);color:var(--cyan);
-  }
-  .qnav-ic svg{width:20px;height:20px;display:block;flex-shrink:0}
-  .qnav-text strong{display:block;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.3}
-  .qnav-text span{display:block;font-size:12.5px;color:var(--mute);margin-top:3px;line-height:1.35}
-
-  /* ---------- TẦNG 01: HỒ SƠ, HỌC VẤN & KỸ NĂNG ---------- */
-  .profile-grid{
-    display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);gap:24px;align-items:start;
-  }
-  .bio-card,.skill-panel{padding:28px}
-  .bio-card h3,.skill-panel h3{font-size:19px;font-weight:700;margin-bottom:16px;color:var(--ink)}
-  .info-list{display:grid;gap:10px}
-  .info-row{
-    display:grid;grid-template-columns:122px 1fr;gap:12px;
-    padding-bottom:10px;border-bottom:1px solid rgba(130,214,255,.14);font-size:14.5px;
-  }
-  .info-row:last-child{border-bottom:0;padding-bottom:0}
-  .info-row dt{color:var(--mute);font-weight:500}
-  .info-row dd{color:var(--ink)}
-
-  .ratio-wrap{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-  .ratio-label{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-2);margin-bottom:8px;font-weight:600}
-  .ratio-bar{display:flex;height:10px;border-radius:999px;overflow:hidden;gap:3px}
-  .ratio-bar span:nth-child(1){width:50%;background:var(--cyan)}
-  .ratio-bar span:nth-child(2){width:25%;background:var(--emerald)}
-  .ratio-bar span:nth-child(3){width:25%;background:var(--violet)}
-  .ratio-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12.5px;color:var(--ink-2)}
-  .ratio-legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:middle}
-
-  .skill-panel{display:grid;gap:20px}
-  .skill-group{padding-bottom:18px;border-bottom:1px solid rgba(130,214,255,.14)}
-  .skill-group:last-child{padding-bottom:0;border-bottom:0}
-  .skill-group-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-  .skill-group-head strong{font-size:15.5px;color:var(--ink)}
-  .skill-group-head span{font-family:var(--mono);font-size:11.5px;color:var(--cyan)}
-  .chip-row{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{
-    font-size:13px;padding:6px 12px;border-radius:999px;
-    background:rgba(76,216,255,.09);border:1px solid rgba(130,214,255,.22);color:#e2f4ff;
-  }
-
-  /* ---------- TẦNG 02: EDIT VIDEO & MOTION GRAPHICS (4 VIDEO DỌC 2x2 + CONCEPT FILM) ---------- */
-  .video-showcase{display:grid;gap:28px}
-  .reels-grid{
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch;
-  }
-  .reel-card{
-    padding:20px;display:grid;grid-template-columns:205px minmax(0,1fr);gap:20px;align-items:center;
-    transition:border-color .24s,transform .24s var(--ease);
-  }
-  .reel-card:hover{border-color:var(--line-hi);transform:translateY(-3px)}
-  .phone-theater{
-    position:relative;border-radius:18px;overflow:hidden;
-    background:#030d18;border:1px solid var(--line-hi);
-    aspect-ratio:9/16;width:100%;
-    box-shadow:0 20px 44px -22px rgba(0,0,0,.9);
-  }
-  .phone-theater video,.wide-theater video{
-    width:100%;height:100%;object-fit:cover;display:block;background:#030d18;
-  }
-  .wide-theater{
-    position:relative;border-radius:18px;overflow:hidden;
-    background:#030d18;border:1px solid var(--line-hi);
-    aspect-ratio:16/9;width:100%;
-  }
-  .wide-theater video{object-fit:contain}
-  .play-overlay{
-    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
-    background:linear-gradient(180deg,rgba(4,16,29,.12),rgba(4,16,29,.58));
-    transition:opacity .25s;cursor:pointer;
-  }
-  .play-overlay.hidden{opacity:0;pointer-events:none}
-  .play-circle{
-    width:58px;height:58px;border-radius:50%;
-    display:grid;place-items:center;
-    background:rgba(76,216,255,.94);color:#031220;
-    box-shadow:0 12px 30px rgba(0,0,0,.55);
-    transition:transform .24s var(--ease);
-  }
-  .play-overlay:hover .play-circle{transform:scale(1.08)}
-  .play-label{
-    font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;
-    background:rgba(4,16,29,.84);border:1px solid var(--line-hi);color:#f0f8ff;
-  }
-  .reel-body{display:flex;flex-direction:column;gap:10px;flex:1}
-  .reel-body h3{font-size:18.5px;font-weight:800;line-height:1.3;color:var(--ink)}
-  .reel-body > p{font-size:14px;color:var(--ink-2)}
-  .impact-list{
-    list-style:none;display:grid;gap:8px;margin-top:4px;
-    padding-top:12px;border-top:1px solid rgba(130,214,255,.15);
-  }
-  .impact-list li{
-    position:relative;padding-left:18px;font-size:13.5px;color:var(--ink-2);line-height:1.5;
-  }
-  .impact-list li::before{
-    content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;
-    background:var(--emerald);box-shadow:0 0 8px rgba(77,226,177,.65);
-  }
-  .impact-list strong{color:var(--ink);font-weight:600}
-
-  .motion-stage{
-    display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);
-    gap:30px;padding:28px;align-items:center;
-  }
-  .video-title{font-size:clamp(22px,2.5vw,28px);font-weight:800;line-height:1.25;color:var(--ink)}
-  .video-desc{color:var(--ink-2);margin-top:10px;font-size:15px}
-  .honest-note{
-    margin-top:14px;font-size:12.5px;color:var(--mute);
-    padding:10px 14px;border-radius:10px;background:rgba(5,20,36,.52);border:1px dashed rgba(130,214,255,.24);
-  }
-
-  /* ---------- TẦNG 03: DỰ ÁN & SẢN PHẨM THỰC TẾ ---------- */
-  .filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-  .filter-btn{
-    padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;
-    border:1px solid var(--line);background:rgba(9,31,52,.78);color:var(--ink-2);
-    transition:all .2s;
-  }
-  .filter-btn:hover{border-color:var(--line-hi);color:var(--ink)}
-  .filter-btn.active{background:var(--cyan);color:#031424;border-color:transparent}
-
-  .projects-grid{display:grid;gap:26px}
-  .project-card{
-    display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1.15fr);
-    gap:28px;padding:26px;align-items:start;
-    transition:border-color .25s,transform .25s var(--ease);
-  }
-  .project-card:hover{border-color:var(--line-hi);transform:translateY(-2px)}
-  .project-card.hidden-item{display:none}
-
-  .shot-box{
-    position:relative;border-radius:16px;overflow:hidden;
-    border:1px solid var(--line);background:#051525;
-    aspect-ratio:16/10.5;
-  }
-  .shot-box img{width:100%;height:100%;object-fit:cover;object-position:top center}
-  .shot-sub{
-    position:absolute;right:12px;bottom:12px;width:44%;aspect-ratio:16/10;
-    border-radius:10px;overflow:hidden;border:1px solid var(--line-hi);
-    box-shadow:0 14px 32px rgba(0,0,0,.78);background:#051525;
-  }
-  .shot-sub img{width:100%;height:100%;object-fit:cover;object-position:top left}
-  .diagram-box{
-    border-radius:16px;border:1px solid var(--line);
-    background:linear-gradient(155deg,#07213a,#041322);
-    padding:18px;aspect-ratio:16/10.5;display:flex;align-items:center;justify-content:center;
-  }
-  .diagram-box svg{width:100%;height:100%}
-
-  .proj-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-  .cat-pill{
-    font-family:var(--mono);font-size:11.5px;font-weight:600;
-    padding:4px 10px;border-radius:999px;
-    background:rgba(76,216,255,.12);border:1px solid rgba(76,216,255,.28);color:var(--glow);
-    width:fit-content;
-  }
-  .cat-pill.game{background:rgba(255,154,108,.14);border-color:rgba(255,154,108,.35);color:#ffc0a3}
-  .cat-pill.ai{background:rgba(167,150,255,.15);border-color:rgba(167,150,255,.35);color:#d7ceff}
-  .cat-pill.edu{background:rgba(77,226,177,.14);border-color:rgba(77,226,177,.35);color:#9bf2d5}
-  .proj-status{font-size:12px;color:var(--mute)}
-  .proj-meta h3{font-size:clamp(21px,2.3vw,26px);font-weight:800;line-height:1.25;margin:10px 0 10px;color:var(--ink)}
-  .proj-meta > p{color:var(--ink-2);font-size:15px}
-  .proj-proof{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .proof-cell{
-    padding:10px 12px;border-radius:12px;background:rgba(5,20,36,.68);border:1px solid rgba(130,214,255,.14);
-    font-size:13px;
-  }
-  .proof-cell small{display:block;font-size:11px;color:var(--mute);margin-bottom:2px}
-  .proof-cell strong{color:var(--ink);font-weight:600}
-  .proj-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-  .proj-tags span{
-    font-size:12px;padding:4px 10px;border-radius:999px;
-    background:rgba(130,214,255,.08);border:1px solid rgba(130,214,255,.2);color:var(--ink-2);
-  }
-  .proj-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-
-  details.process-acc{
-    margin-top:16px;border-radius:14px;
-    background:rgba(4,18,32,.62);border:1px solid rgba(130,214,255,.18);
-  }
-  details.process-acc summary{
-    list-style:none;padding:11px 14px;font-size:13.5px;font-weight:600;color:var(--glow);
-    display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;
-  }
-  details.process-acc summary::-webkit-details-marker{display:none}
-  details.process-acc summary svg{width:16px;height:16px;transition:transform .24s var(--ease)}
-  details.process-acc[open] summary svg{transform:rotate(180deg)}
-  .acc-steps{padding:0 14px 14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .acc-step{
-    padding:10px 12px;border-radius:10px;background:rgba(10,34,56,.62);border:1px solid rgba(130,214,255,.12);
-    font-size:12.5px;color:var(--ink-2);
-  }
-  .acc-step b{display:block;color:var(--cyan);font-size:12px;margin-bottom:3px}
-
-  /* ---------- TẦNG 04: KINH NGHIỆM & QUAN ĐIỂM LÀM VIỆC ---------- */
-  .exp-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
-  .exp-panel,.mindset-panel{padding:28px}
-  .exp-panel h3,.mindset-panel h3{font-size:20px;font-weight:800;margin-bottom:18px;color:var(--ink)}
-  .timeline,.principles{display:grid;gap:15px}
-  .tl-item,.principle{
-    padding:16px 18px;border-radius:14px;
-    background:rgba(5,20,36,.72);border:1px solid rgba(130,214,255,.16);
-  }
-  .tl-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:6px}
-  .tl-head strong{font-size:15.5px;color:var(--ink)}
-  .tl-head span{font-family:var(--mono);font-size:11.5px;color:var(--cyan)}
-  .tl-item p,.principle p{font-size:14px;color:var(--ink-2)}
-  .tl-lesson{margin-top:8px;font-size:13px;color:#a9ebda;font-weight:500}
-  .principle strong{display:block;font-size:15px;color:var(--glow);margin-bottom:5px}
-
-  /* ---------- TẦNG 05: LIÊN HỆ & XUẤT CV ---------- */
-  .contact-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.1fr);gap:24px}
-  .contact-info,.contact-form-box{padding:30px}
-  .contact-info h3,.contact-form-box h3{font-size:21px;font-weight:800;margin-bottom:10px;color:var(--ink)}
-  .contact-info > p,.contact-form-box > p{color:var(--ink-2);font-size:14.5px;margin-bottom:20px}
-  .contact-channels{display:grid;gap:10px}
-  .channel-row{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-    padding:12px 14px;border-radius:12px;
-    background:rgba(5,20,36,.75);border:1px solid rgba(130,214,255,.18);
-  }
-  .channel-row small{display:block;font-size:11.5px;color:var(--mute)}
-  .channel-row strong{font-size:14px;color:var(--ink)}
-  .qr-box{
-    margin-top:20px;padding:16px;border-radius:16px;
-    background:rgba(5,20,36,.75);border:1px solid rgba(130,214,255,.18);
-    display:flex;align-items:center;gap:16px;
-  }
-  .qr-canvas{
-    width:96px;height:96px;border-radius:10px;background:#ffffff;padding:6px;flex-shrink:0;
-    display:grid;place-items:center;
-  }
-  .qr-canvas svg{width:100%;height:100%}
-  .qr-box strong{display:block;font-size:14.5px;color:var(--ink)}
-  .qr-box p{font-size:13px;color:var(--ink-2);margin-top:4px}
-
-  .msg-form{display:grid;gap:14px}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .msg-form label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--ink-2)}
-  .msg-form input,.msg-form select,.msg-form textarea{
-    font:inherit;font-size:14.5px;font-weight:400;color:var(--ink);
-    background:rgba(4,16,29,.82);border:1px solid var(--line);border-radius:12px;
-    padding:12px 14px;outline:none;transition:border-color .2s,box-shadow .2s;
-  }
-  .msg-form textarea{min-height:104px;resize:vertical}
-  .msg-form select option{background:#061a2d;color:var(--ink)}
-  .msg-form input:focus,.msg-form select:focus,.msg-form textarea:focus{
-    border-color:var(--cyan);box-shadow:0 0 0 3px rgba(76,216,255,.16);
-  }
-  .form-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-  .form-status{font-size:13.5px;color:var(--emerald);min-height:20px}
-  .form-status.err{color:var(--coral)}
-
-  footer{padding:28px 24px 48px;color:var(--mute);font-size:13.5px}
-  footer .wrap{
-    border-top:1px solid var(--line);padding-top:24px;
-    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
-  }
-  .foot-links{display:flex;flex-wrap:wrap;gap:16px}
-  .foot-links a:hover{color:var(--glow)}
-
-  /* ---------- Responsive ---------- */
-  @media (max-width:1120px){
-    .nav-links a{padding:7px 10px;font-size:13.5px}
-  }
-  @media (max-width:1040px){
-    .depth,.nav-links,.nav-print{display:none}
-    .menu-toggle{display:inline-flex}
-    .hero-grid,.profile-grid,.motion-stage,.project-card,.exp-grid,.contact-grid{grid-template-columns:1fr}
-    .reels-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .reel-card{grid-template-columns:1fr;align-items:start}
-    .portrait-card{max-width:400px}
-    .quick-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
-  }
-  @media (max-width:860px){
-    section{padding:76px 18px}
-    .hero{padding:106px 18px 56px}
-  }
-  @media (max-width:660px){
-    .reels-grid{grid-template-columns:1fr}
-  }
-  @media (max-width:560px){
-    .hero-facts,.proj-proof,.acc-steps,.row2,.quick-nav{grid-template-columns:1fr}
-    .bio-card,.skill-panel,.motion-stage,.project-card,.exp-panel,.mindset-panel,.contact-info,.contact-form-box{padding:20px}
-    .info-row{grid-template-columns:1fr;gap:3px}
-    .qr-box{flex-direction:column;align-items:flex-start}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation:none!important;transition:none!important}
-  }
-
-  /* ---------- Chế độ In / Lưu CV PDF chuẩn sáng A4 ---------- */
-  @media print{
-    body{background:#fff!important;color:#111!important;font-size:11pt;line-height:1.45}
-    .ocean,.abyss-veil,#snow,.rays,.jelly,.site-nav,.mobile-drawer,.depth,.quick-nav,.filter-bar,.play-overlay,.contact-form-box,.hero-cta,.proj-links,.menu-toggle{display:none!important}
-    section,.hero{padding:14pt 0!important;page-break-inside:avoid}
-    .card,.portrait-card,.fact-box,.tl-item,.principle,.proof-cell,.channel-row,.qr-box{
-      background:#fff!important;color:#111!important;border:1px solid #cbd5e1!important;box-shadow:none!important;
-    }
-    .hero h1,.sec-head h2,.proj-meta h3,.video-title,.reel-body h3,.bio-card h3,.skill-panel h3,.exp-panel h3,.mindset-panel h3,strong{color:#0f172a!important}
-    p,span,dd,dt,small,li{color:#334155!important}
-    .hero-grid{grid-template-columns:1.4fr .6fr!important;gap:16pt!important}
-    .portrait-frame{max-height:190pt}
-    .portrait-frame::after,.portrait-caption{display:none!important}
-    .project-card,.reels-grid{grid-template-columns:1fr!important;page-break-inside:avoid}
-    .shot-box,.diagram-box,.phone-theater,.wide-theater{display:none!important}
-  }
-</style>
+<link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
+<body data-page="home" data-depth-start="0" data-depth-end="1200">
 <a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
 
 <div class="ocean" aria-hidden="true"></div>
@@ -659,13 +42,14 @@
 
 <!-- ============ NAVBAR ============ -->
 <nav class="site-nav" aria-label="Điều hướng chính">
-  <a href="#top" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
+  <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
   <div class="nav-links" id="navLinks">
-    <a href="#profile">Hồ sơ &amp; Kỹ năng</a>
-    <a href="#video-studio">Edit Video</a>
-    <a href="#projects">Dự án</a>
-    <a href="#experience">Kinh nghiệm</a>
-    <a href="#contact">Liên hệ</a>
+    <a href="index.html" class="active" aria-current="page">Trang chính</a>
+    <a href="profile.html">Hồ sơ</a>
+    <a href="video.html">Edit Video</a>
+    <a href="projects.html">Dự án</a>
+    <a href="experience.html">Kinh nghiệm</a>
+    <a href="contact.html">Liên hệ</a>
   </div>
   <div class="nav-actions">
     <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
@@ -679,11 +63,12 @@
 </nav>
 
 <div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
-  <a href="#profile">Hồ sơ &amp; Kỹ năng</a>
-  <a href="#video-studio">Edit Video &amp; Motion</a>
-  <a href="#projects">Dự án &amp; Sản phẩm</a>
-  <a href="#experience">Kinh nghiệm &amp; Tư duy</a>
-  <a href="#contact">Liên hệ</a>
+  <a href="index.html" class="active" aria-current="page">Trang chính</a>
+  <a href="profile.html">Hồ sơ &amp; Kỹ năng</a>
+  <a href="video.html">Edit Video &amp; Motion</a>
+  <a href="projects.html">Dự án &amp; Sản phẩm</a>
+  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
+  <a href="contact.html">Liên hệ</a>
   <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
 </div>
 
@@ -718,12 +103,12 @@
         </div>
 
         <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
+          <a href="projects.html" class="btn btn-primary">
             <span>Xem 7 dự án &amp; sản phẩm</span>
             <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#video-studio" class="btn">Xem 5 sản phẩm Video</a>
-          <a href="#contact" class="btn">Liên hệ nhanh</a>
+          <a href="video.html" class="btn">Xem 5 sản phẩm Video</a>
+          <a href="contact.html" class="btn">Liên hệ nhanh</a>
         </div>
 
         <div class="hero-facts" aria-label="Tóm tắt minh chứng thực tế">
@@ -761,1026 +146,179 @@
         </dl>
       </aside>
     </div>
-
-    <!-- Điều hướng nhanh 4 phần trọng tâm -->
-    <div class="quick-nav" aria-label="Đi nhanh tới các mục hồ sơ">
-      <a class="qnav-item" href="#profile">
-        <span class="qnav-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-        </span>
-        <div class="qnav-text"><strong>Hồ sơ &amp; Kỹ năng</strong><span>Học vấn LHU, định hướng 50/25/25</span></div>
-      </a>
-      <a class="qnav-item" href="#video-studio">
-        <span class="qnav-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg>
-        </span>
-        <div class="qnav-text"><strong>Edit Video &amp; Motion</strong><span>5 video nổi bật &amp; giá trị mang lại</span></div>
-      </a>
-      <a class="qnav-item" href="#projects">
-        <span class="qnav-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-        </span>
-        <div class="qnav-text"><strong>Dự án Web · Game · AI</strong><span>7 sản phẩm kèm bản chạy thử</span></div>
-      </a>
-      <a class="qnav-item" href="#experience">
-        <span class="qnav-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3 4 7l8 4 8-4-8-4Z"/><path d="m4 12 8 4 8-4"/><path d="m4 17 8 4 8-4"/></svg>
-        </span>
-        <div class="qnav-text"><strong>Kinh nghiệm &amp; Tư duy</strong><span>Làm nhóm, kiểm chứng &amp; nguyên tắc</span></div>
-      </a>
-    </div>
   </div>
 </header>
 
-<!-- ============ TẦNG 01: HỒ SƠ, HỌC VẤN & KỸ NĂNG ============ -->
-<section id="profile">
+<!-- ============ BẢN ĐỒ 5 TRANG NHÁNH TRONG HỒ SƠ ============ -->
+<section class="hub-section" id="directory" aria-label="Các trang nhánh trong hồ sơ">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head">
       <div>
-        <h2>Hồ sơ, Học vấn &amp; <span>Ma trận Kỹ năng</span></h2>
-        <p class="sec-sub">Tóm tắt ngắn gọn nền tảng học tập, tỷ trọng định hướng nghề nghiệp và bộ công cụ tôi sử dụng thực tế trong các sản phẩm.</p>
+        <h2>Khám phá hồ sơ theo <span>từng trang nhánh</span></h2>
+        <p class="sec-sub">Mỗi phần nội dung của CV được tách thành một trang riêng gọn nhẹ, giúp nhà tuyển dụng mở thẳng đúng nhóm minh chứng cần đánh giá mà không phải cuộn dài.</p>
       </div>
     </div>
 
-    <div class="profile-grid">
-      <article class="card bio-card reveal">
-        <h3>Thông tin &amp; Học vấn</h3>
-        <dl class="info-list">
-          <div class="info-row"><dt>Họ và tên</dt><dd><strong>Trần Ngọc Huy</strong></dd></div>
-          <div class="info-row"><dt>Trường</dt><dd>Đại học Lạc Hồng (LHU)</dd></div>
-          <div class="info-row"><dt>Ngành học</dt><dd>Công nghệ thông tin (mã lớp 25CT113)</dd></div>
-          <div class="info-row"><dt>Khu vực</dt><dd>Đồng Nai, Việt Nam</dd></div>
-          <div class="info-row"><dt>Ngoại ngữ</dt><dd>Tiếng Anh — đang ôn luyện TOEIC cho chuẩn đầu ra &amp; công việc (đọc hiểu tài liệu kỹ thuật)</dd></div>
-          <div class="info-row"><dt>Sở thích sáng tạo</dt><dd>Làm Game 2D, Edit Video Quảng Cáo &amp; Talking-Head, Motion Graphics, UI/UX</dd></div>
-        </dl>
-
-        <div class="ratio-wrap">
-          <div class="ratio-label">
-            <span>Tỷ trọng định hướng nghề nghiệp</span>
-            <span>100%</span>
+    <div class="hub-grid">
+      <!-- NHÁNH 1 (NỔI BẬT): DỰ ÁN & SẢN PHẨM -->
+      <a class="hub-card hub-feature reveal" href="projects.html">
+        <div class="hub-card-top">
+          <div class="hub-meta-row">
+            <span class="hub-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            </span>
+            <span class="hub-count">7 dự án · Có bộ lọc</span>
           </div>
-          <div class="ratio-bar" role="img" aria-label="50% Software Engineering, 25% Quality Engineering, 25% AI Engineering">
+          <div>
+            <h3>Dự án Web · Game · AI</h3>
+            <p>Tổng hợp sản phẩm chạy thật kèm bản demo trực tiếp, mã nguồn GitHub và mục mở rộng quy trình thực hiện 4 bước cho từng dự án.</p>
+          </div>
+          <div class="hub-thumbs" aria-hidden="true">
+            <div class="hub-thumb"><img src="media/bien.jpg" alt="" loading="lazy" /></div>
+            <div class="hub-thumb"><img src="media/skysling.jpg" alt="" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="hub-foot">
+          <span>Mở trang Dự án &amp; Sản phẩm</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </a>
+
+      <!-- NHÁNH 2 (NỔI BẬT): EDIT VIDEO & MOTION -->
+      <a class="hub-card hub-feature reveal" href="video.html">
+        <div class="hub-card-top">
+          <div class="hub-meta-row">
+            <span class="hub-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg>
+            </span>
+            <span class="hub-count">5 video phát trực tiếp</span>
+          </div>
+          <div>
+            <h3>Edit Video &amp; Motion Graphics</h3>
+            <p>4 video dọc chuẩn Reels/Shorts (Before/After, Claude Opus 5.5, Ads chuyển đổi, Apple Style) cùng phim giới thiệu thương hiệu 16:9 60fps.</p>
+          </div>
+          <div class="hub-thumbs video-pair" aria-hidden="true">
+            <div class="hub-thumb"><img src="media/antigravity-poster.jpg" alt="" loading="lazy" /></div>
+            <div class="hub-thumb"><img src="media/video-apple-style-poster.jpg" alt="" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="hub-foot">
+          <span>Mở trang Edit Video &amp; Motion</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </a>
+
+      <!-- NHÁNH 3: HỒ SƠ & KỸ NĂNG -->
+      <a class="hub-card reveal" href="profile.html">
+        <div class="hub-card-top">
+          <div class="hub-meta-row">
+            <span class="hub-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            </span>
+            <span class="hub-count">LHU · 50/25/25</span>
+          </div>
+          <div>
+            <h3>Hồ sơ, Học vấn &amp; Kỹ năng</h3>
+            <p>Thông tin cá nhân, nền tảng CNTT tại Đại học Lạc Hồng, tỷ trọng định hướng và 4 nhóm công cụ sử dụng thực tế.</p>
+          </div>
+          <div class="ratio-bar" aria-hidden="true">
             <span></span><span></span><span></span>
           </div>
-          <div class="ratio-legend">
-            <span><i style="background:var(--cyan)"></i>Software Engineering (50%)</span>
-            <span><i style="background:var(--emerald)"></i>Quality Engineering (25%)</span>
-            <span><i style="background:var(--violet)"></i>AI Engineering (25%)</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="card skill-panel reveal">
-        <h3>Năng lực kỹ thuật &amp; Sản xuất nội dung</h3>
-
-        <div class="skill-group">
-          <div class="skill-group-head">
-            <strong>1. Software &amp; Web Development</strong>
-            <span>50% trọng tâm</span>
-          </div>
-          <div class="chip-row">
-            <span class="chip">HTML5 / CSS3</span>
-            <span class="chip">JavaScript (ES6+)</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip">Next.js &amp; Tailwind</span>
-            <span class="chip">Three.js &amp; GLSL</span>
-            <span class="chip">HTML5 Canvas 2D</span>
-            <span class="chip">Supabase</span>
-            <span class="chip">Laravel &amp; MySQL</span>
-            <span class="chip">SQL Server 2014</span>
-            <span class="chip">Vite &amp; GitHub Actions</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-group-head">
-            <strong>2. Quality Engineering &amp; Kiểm thử</strong>
-            <span>25% trọng tâm</span>
-          </div>
-          <div class="chip-row">
-            <span class="chip">Automated Testing</span>
-            <span class="chip">Unit Test JS</span>
-            <span class="chip">AI Code Review 7 tầng</span>
-            <span class="chip">Keyboard Accessibility</span>
-            <span class="chip">Responsive &amp; Contrast Audit</span>
-            <span class="chip">Video Visual QA</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-group-head">
-            <strong>3. AI Engineering &amp; Tự động hóa</strong>
-            <span>25% trọng tâm</span>
-          </div>
-          <div class="chip-row">
-            <span class="chip">AI Workflow Automation</span>
-            <span class="chip">Prompt Engineering &amp; Audit Log</span>
-            <span class="chip">Python Scripting</span>
-            <span class="chip">Risk-Tiered Review</span>
-            <span class="chip">AI-Assisted Delivery</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-group-head">
-            <strong>4. Edit Video &amp; Motion Graphics</strong>
-            <span>Thế mạnh sáng tạo</span>
-          </div>
-          <div class="chip-row">
-            <span class="chip">Short-Form Reels / TikTok / Shorts</span>
-            <span class="chip">Video Quảng Cáo Chuyển Đổi</span>
-            <span class="chip">Motion Explainer Sản Phẩm</span>
-            <span class="chip">Talking-Head Giữ Chân Người Xem</span>
-            <span class="chip">After Effects &amp; GSAP Motion</span>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TẦNG 02: EDIT VIDEO & MOTION GRAPHICS (3 VIDEO PORTFOLIO + CONCEPT FILM) ============ -->
-<section id="video-studio">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <h2>Sản phẩm <span>Edit Video &amp; Motion</span></h2>
-        <p class="sec-sub">Tuyển chọn những video dựng nổi bật nhất theo 3 mục tiêu thực tế: giữ chân người xem, giải thích sản phẩm công nghệ và thúc đẩy chuyển đổi quảng cáo — bấm phát trực tiếp ngay trên trang.</p>
-      </div>
-    </div>
-
-    <div class="video-showcase">
-      <div class="reels-grid">
-        <!-- VIDEO 01: BEFORE / AFTER -->
-        <article class="card reel-card reveal">
-          <div class="phone-theater">
-            <video id="vidBeforeAfter" src="media/video-before-after.mp4" poster="media/video-before-after-poster.jpg" playsinline controls preload="none" aria-label="Video Before After nâng tầm Talking-Head"></video>
-            <button type="button" class="play-overlay" data-play="vidBeforeAfter" aria-label="Phát video Before After">
-              <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-              <span class="play-label">Phát có tiếng (60s)</span>
-            </button>
-          </div>
-          <div class="reel-body">
-            <span class="cat-pill">BEFORE / AFTER · RETENTION</span>
-            <h3>Nâng tầm Video Talking-Head giữ chân người xem</h3>
-            <p>So sánh trực tiếp giữa video quay thô đơn điệu và bản dựng hoàn thiện có nhịp điệu thị giác cao.</p>
-            <ul class="impact-list">
-              <li><strong>Chặn lướt qua trong 3 giây đầu:</strong> Tạo điểm nhấn hình ảnh và tiêu đề rõ nét ngay khoảnh khắc mở màn.</li>
-              <li><strong>Tăng thời lượng xem hết:</strong> Chèn đồ thị so sánh và minh họa bám sát lời nói để giữ mạch chú ý tới cuối clip.</li>
-              <li><strong>Nâng uy tín thương hiệu cá nhân:</strong> Giúp chuyên gia và creator truyền đạt nội dung sắc nét, chuyên nghiệp hơn trên Reels / Shorts.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- VIDEO 02: CLAUDE OPUS MOTION EXPLAINER -->
-        <article class="card reel-card reveal">
-          <div class="phone-theater">
-            <video id="vidClaudeMotion" src="media/video-claude-motion.mp4" poster="media/video-claude-motion-poster.jpg" playsinline controls preload="none" aria-label="Video Motion Explainer sản phẩm công nghệ Claude Opus 5.5"></video>
-            <button type="button" class="play-overlay" data-play="vidClaudeMotion" aria-label="Phát video Motion Explainer công nghệ">
-              <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-              <span class="play-label">Phát có tiếng (21s)</span>
-            </button>
-          </div>
-          <div class="reel-body">
-            <span class="cat-pill ai">MOTION EXPLAINER · TECH</span>
-            <h3>Giới thiệu sản phẩm công nghệ — Claude Opus 5.5</h3>
-            <p>Phong cách đồ họa chuyển động editorial gọn mắt dành cho sản phẩm phần mềm, AI và công nghệ.</p>
-            <ul class="impact-list">
-              <li><strong>Biến thông số khô khan thành câu chuyện dễ hiểu:</strong> Minh họa trực quan mức giá, dung lượng xử lý và kết quả chạy code chỉ trong 21 giây.</li>
-              <li><strong>Gây ấn tượng hiện đại &amp; đáng tin cậy:</strong> Bố cục sạch, biểu đồ động và nhịp chuyển mượt tôn lên chất lượng sản phẩm số.</li>
-              <li><strong>Dễ ứng dụng truyền thông ra mắt:</strong> Phù hợp đăng LinkedIn, trang đích sản phẩm và chuỗi video giới thiệu tính năng mới.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- VIDEO 03: COMMERCIAL AD CHILDCARE -->
-        <article class="card reel-card reveal">
-          <div class="phone-theater">
-            <video id="vidCommercialAd" src="media/video-commercial-ad.mp4" poster="media/video-commercial-ad-poster.jpg" playsinline controls preload="none" aria-label="Video quảng cáo chuyển đổi kết hợp Motion Graphics"></video>
-            <button type="button" class="play-overlay" data-play="vidCommercialAd" aria-label="Phát video quảng cáo chuyển đổi">
-              <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-              <span class="play-label">Phát có tiếng (27s)</span>
-            </button>
-          </div>
-          <div class="reel-body">
-            <span class="cat-pill game">COMMERCIAL AD · CONVERSION</span>
-            <h3>Video Quảng cáo Chuyển đổi Dịch vụ &amp; Giáo dục</h3>
-            <p>Kết hợp người dẫn chuyện tạo niềm tin cùng đồ họa chuyển động nhấn mạnh lợi ích dành cho khách hàng.</p>
-            <ul class="impact-list">
-              <li><strong>Thúc đẩy đăng ký &amp; chuyển đổi:</strong> Dẫn dắt mạch lạc từ nỗi đau khách hàng tới giải pháp và lời kêu gọi hành động rõ ràng.</li>
-              <li><strong>Hiệu quả ngay cả khi tắt tiếng:</strong> Chữ nhấn và biểu tượng trực quan giúp người xem di động nắm trọn thông điệp tức thì.</li>
-              <li><strong>Sẵn sàng chạy quảng cáo trả phí:</strong> Thời lượng 27 giây cô đọng, nhịp dựng gọn giúp tối ưu chi phí tiếp cận trên Meta / TikTok Ads.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- VIDEO 04: APPLE STYLE TALKING-HEAD -->
-        <article class="card reel-card reveal">
-          <div class="phone-theater">
-            <video id="vidAppleStyle" src="media/video-apple-style.mp4" poster="media/video-apple-style-poster.jpg" playsinline controls preload="none" aria-label="Video Talking-Head phong cách Apple Clean UI"></video>
-            <button type="button" class="play-overlay" data-play="vidAppleStyle" aria-label="Phát video phong cách Apple Style">
-              <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-              <span class="play-label">Phát có tiếng (29s)</span>
-            </button>
-          </div>
-          <div class="reel-body">
-            <span class="cat-pill edu">APPLE STYLE · CLEAN UI</span>
-            <h3>Video Talking-Head Phong cách Apple tối giản</h3>
-            <p>Kết hợp thẻ giao diện sạch, bản đồ định vị trực quan và người dẫn chuyện tạo cảm giác hiện đại, sắc nét.</p>
-            <ul class="impact-list">
-              <li><strong>Đánh trúng nỗi đau khách hàng ngay lập tức:</strong> Các thẻ thông điệp tối giản xuất hiện rõ ràng giúp người xem gật gù đồng cảm trong vài giây đầu.</li>
-              <li><strong>Trực quan hóa dịch vụ địa phương:</strong> Đồ họa bản đồ định vị kết hợp hiệu ứng chuyển cảnh mượt giúp giải thích giá trị nhanh mà không cần nhiều chữ.</li>
-              <li><strong>Tạo cảm giác thương hiệu cao cấp:</strong> Nền sáng tối giản theo thẩm mỹ Apple giúp video nổi bật giữa nguồn tin dày đặc và tăng tỷ lệ tương tác.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-
-      <!-- VIDEO 04: MOTION GRAPHICS 16:9 -->
-      <article class="card motion-stage reveal">
-        <div class="wide-theater">
-          <video id="motionVideo" src="media/antigravity.mp4" poster="media/antigravity-poster.jpg" playsinline controls preload="none" aria-label="Video motion graphics Antigravity 2.0"></video>
-          <button type="button" class="play-overlay" data-play="motionVideo" aria-label="Phát video Antigravity 2.0">
-            <span class="play-circle"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-            <span class="play-label">Phát Motion 60fps (12s)</span>
-          </button>
-        </div>
-
-        <div>
-          <span class="cat-pill">BRAND MOTION · ONE-TAKE 16:9</span>
-          <h3 class="video-title" style="margin-top:12px">Antigravity 2.0 — Phim Giới thiệu Thương hiệu</h3>
-          <p class="video-desc">
-            Video mở màn sản phẩm dài 12 giây chạy liền mạch không cắt cảnh, phù hợp làm hero banner trang chủ hoặc đoạn mở đầu buổi ra mắt sản phẩm số.
-          </p>
-          <ul class="impact-list" style="margin-top:14px">
-            <li><strong>Tạo dấu ấn thương hiệu tức thì:</strong> Chuyển động biến hình liên tục dẫn mắt người xem thẳng tới tên và thông điệp sản phẩm.</li>
-            <li><strong>Giữ chất lượng hiển thị sắc nét:</strong> Xuất Full HD 1920×1080 ở 60 fps, phát mượt trên màn hình lớn lẫn website thương hiệu.</li>
-            <li><strong>Tối ưu tỷ lệ hoàn thành:</strong> Gói gọn trọn vẹn câu chuyện sản phẩm trong đúng 12 giây không dư thừa.</li>
+          <ul class="hub-mini-list">
+            <li><strong>Software &amp; Web</strong><span>50% trọng tâm</span></li>
+            <li><strong>Quality Engineering</strong><span>25% trọng tâm</span></li>
+            <li><strong>AI &amp; Video Motion</strong><span>25% + Sáng tạo</span></li>
           </ul>
-          <p class="honest-note">Concept luyện tập cá nhân, không phải sản phẩm chính thức của Google.</p>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TẦNG 03: DỰ ÁN & SẢN PHẨM THỰC TẾ ============ -->
-<section id="projects">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <h2>Dự án &amp; <span>Sản phẩm đã hoàn thiện</span></h2>
-        <p class="sec-sub">Mỗi sản phẩm đều nêu rõ vai trò, bằng chứng kỹ thuật và có mục mở rộng <strong>“Xem quy trình thực hiện”</strong> để nhà tuyển dụng đánh giá cách tôi giải quyết bài toán.</p>
-      </div>
-    </div>
-
-    <div class="filter-bar" role="toolbar" aria-label="Lọc dự án theo lĩnh vực">
-      <button type="button" class="filter-btn active" data-filter="all">Tất cả (7)</button>
-      <button type="button" class="filter-btn" data-filter="web">Web &amp; Full-stack (3)</button>
-      <button type="button" class="filter-btn" data-filter="game">Game (1)</button>
-      <button type="button" class="filter-btn" data-filter="ai">AI &amp; Kiểm thử (1)</button>
-      <button type="button" class="filter-btn" data-filter="edu">Học thuật &amp; Nhóm (2)</button>
-    </div>
-
-    <div class="projects-grid" id="projectsGrid">
-      <!-- 01 BIỂN -->
-      <article class="card project-card reveal" data-cat="web">
-        <div class="shot-box">
-          <img src="media/bien.jpg" alt="Trang chủ BIỂN: cá đuối manta bơi dưới mặt nước xanh" loading="lazy" />
-          <div class="shot-sub"><img src="media/bien-2.jpg" alt="Tầng chạng vạng của BIỂN" loading="lazy" /></div>
+        <div class="hub-foot">
+          <span>Mở trang Hồ sơ &amp; Kỹ năng</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </div>
-        <div class="proj-meta">
-          <div class="proj-top">
-            <span class="cat-pill">WEB 3D · INTERACTIVE</span>
-            <span class="proj-status">Đang chạy live</span>
+      </a>
+
+      <!-- NHÁNH 4: KINH NGHIỆM & QUAN ĐIỂM -->
+      <a class="hub-card reveal" href="experience.html">
+        <div class="hub-card-top">
+          <div class="hub-meta-row">
+            <span class="hub-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3 4 7l8 4 8-4-8-4Z"/><path d="m4 12 8 4 8-4"/><path d="m4 17 8 4 8-4"/></svg>
+            </span>
+            <span class="hub-count">3 mốc · 4 nguyên tắc</span>
           </div>
-          <h3>BIỂN — Hành trình khám phá đại dương 3D</h3>
-          <p>Website kể chuyện cuộn từ mặt nước xuống biển sâu dựng bằng Three.js: mô phỏng cá đuối manta bơi, shader mặt nước, tia sáng xuyên nước và hiệu ứng caustics. Tích hợp thư viện sinh vật có tìm kiếm, bộ lọc và dẫn nguồn khoa học Smithsonian Ocean &amp; MBARI.</p>
-          <div class="proj-proof">
-            <div class="proof-cell"><small>Vai trò</small><strong>Thiết kế &amp; Lập trình toàn bộ</strong></div>
-            <div class="proof-cell"><small>Điểm kiểm chứng</small><strong>CI/CD GitHub Actions · Reduced Motion</strong></div>
-          </div>
-          <div class="proj-tags"><span>Three.js</span><span>GLSL Shader</span><span>Vite</span><span>GitHub Actions</span></div>
-          <details class="process-acc">
-            <summary><span>Xem quy trình thực hiện (4 bước)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="acc-steps">
-              <div class="acc-step"><b>01. Ý tưởng &amp; Dữ liệu</b>Chia các tầng độ sâu đại dương và đối chiếu thông tin sinh vật từ nguồn Smithsonian Ocean &amp; MBARI.</div>
-              <div class="acc-step"><b>02. Dựng cảnh 3D</b>Viết GLSL shader cho mặt nước, caustics và lập trình animation bơi mượt cho cá đuối manta.</div>
-              <div class="acc-step"><b>03. Tối ưu trải nghiệm</b>Thêm tìm kiếm, lọc sinh vật và chế độ giảm chuyển động cho máy cấu hình yếu.</div>
-              <div class="acc-step"><b>04. Triển khai tự động</b>Đóng gói với Vite và cấu hình GitHub Actions tự build, phát hành lên GitHub Pages.</div>
-            </div>
-          </details>
-          <div class="proj-links">
-            <a href="https://tranngochuyc-cyber.github.io/web-bien-s2/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Xem trực tiếp <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-            <a href="https://github.com/tranngochuyc-cyber/web-bien-s2" target="_blank" rel="noopener" class="btn btn-sm">Mã nguồn GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 02 INDIEVERSE -->
-      <article class="card project-card reveal" data-cat="web">
-        <div class="shot-box">
-          <img src="media/indieverse.jpg" alt="Trang chủ Indieverse với các bài review game indie" loading="lazy" />
-          <div class="shot-sub"><img src="media/indieverse-2.jpg" alt="Mục Review mới nhất của Indieverse" loading="lazy" /></div>
-        </div>
-        <div class="proj-meta">
-          <div class="proj-top">
-            <span class="cat-pill">WEB FULL-STACK · CONTENT</span>
-            <span class="proj-status">Đang chạy live</span>
-          </div>
-          <h3>Indieverse — Nền tảng Review &amp; Khám phá 250 Game Indie</h3>
-          <p>Web tra cứu và đánh giá game indie với dữ liệu 250 tựa game. Xây dựng tính năng Play Lab gợi ý game theo thời gian rảnh &amp; tâm trạng, Game DNA phân tích gu chơi từ nhật ký người dùng, công cụ so sánh hai game, kèm đăng nhập và chấm điểm 1–5 sao qua Supabase.</p>
-          <div class="proj-proof">
-            <div class="proof-cell"><small>Vai trò</small><strong>Full-stack &amp; Kiến trúc dữ liệu</strong></div>
-            <div class="proof-cell"><small>Điểm kiểm chứng</small><strong>250 game · Supabase Auth &amp; Rating</strong></div>
-          </div>
-          <div class="proj-tags"><span>JavaScript</span><span>Supabase Auth/DB</span><span>Play Lab</span><span>Kiểm thử nội dung</span></div>
-          <details class="process-acc">
-            <summary><span>Xem quy trình thực hiện (4 bước)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="acc-steps">
-              <div class="acc-step"><b>01. Chuẩn hóa dữ liệu</b>Tổ chức cấu trúc danh mục 250 game indie theo thể loại, thời lượng chơi và tâm trạng.</div>
-              <div class="acc-step"><b>02. Tính năng tương tác</b>Thiết kế thuật toán lọc Play Lab, thẻ hồ sơ Game DNA và chế độ so sánh song song hai game.</div>
-              <div class="acc-step"><b>03. Tích hợp Backend</b>Kết nối Supabase để xác thực tài khoản và lưu lượt đánh giá 1–5 sao theo thời gian thực.</div>
-              <div class="acc-step"><b>04. Kiểm thử &amp; Phát hành</b>Rà soát toàn bộ liên kết/nội dung và triển khai bản ổn định trên GitHub Pages.</div>
-            </div>
-          </details>
-          <div class="proj-links">
-            <a href="https://tranngochuyc-cyber.github.io/indieverse/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Xem trực tiếp <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-            <a href="https://github.com/tranngochuyc-cyber/indieverse" target="_blank" rel="noopener" class="btn btn-sm">Mã nguồn GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 03 SKY SLING (GAME VẬT LÝ KIỂU ANGRY BIRDS MỚI) -->
-      <article class="card project-card reveal" data-cat="game">
-        <div class="shot-box">
-          <img src="media/skysling.jpg" alt="Game vật lý SKY SLING kéo ná ngắm bắn quỹ đạo" loading="lazy" />
-          <div class="shot-sub"><img src="media/skysling-2.jpg" alt="Khoảnh khắc Chim Đỏ đập vỡ tháp gỗ trong SKY SLING" loading="lazy" /></div>
-        </div>
-        <div class="proj-meta">
-          <div class="proj-top">
-            <span class="cat-pill game">WEB GAME · PHYSICS 2D</span>
-            <span class="proj-status">Chơi trực tiếp tại trang</span>
-          </div>
-          <h3>SKY SLING — Game Vật Lý Ná Thun (Kiểu Angry Birds)</h3>
-          <p>Game bắn ná vật lý 2D tự xây dựng hoàn toàn bằng HTML5 Canvas và JavaScript thuần không cần game engine ngoài. Gồm 3 màn phá thành tăng dần độ khó, 3 loại chim có kỹ năng riêng giữa không trung (Chim Đỏ phá gỗ, Chim Vàng tăng tốc xuyên phá, Chim Đen kích nổ phá đá), đường quỹ đạo dự đoán, 3 chất liệu gỗ/kính/đá và âm thanh Web Audio.</p>
-          <div class="proj-proof">
-            <div class="proof-cell"><small>Vai trò</small><strong>Game Design, Physics Engine &amp; Audio</strong></div>
-            <div class="proof-cell"><small>Điểm nổi bật</small><strong>3 màn chơi · 3 kỹ năng chim · 60 fps</strong></div>
-          </div>
-          <div class="proj-tags"><span>HTML5 Canvas</span><span>2D Impulse Physics</span><span>Web Audio SFX</span><span>Touch &amp; Mouse</span></div>
-          <details class="process-acc">
-            <summary><span>Xem quy trình thực hiện (4 bước)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="acc-steps">
-              <div class="acc-step"><b>01. Cơ chế ná &amp; quỹ đạo</b>Tính toán lực đàn hồi theo độ kéo dây thun và vẽ đường cong parabol dự đoán điểm rơi thời gian thực.</div>
-              <div class="acc-step"><b>02. Vật lý va chạm 2D</b>Xây dựng hệ xử lý va chạm hình tròn–hình chữ nhật, xếp tầng ổn định cho khối gỗ, kính, đá và truyền xung lực.</div>
-              <div class="acc-step"><b>03. Kỹ năng &amp; thiết kế màn</b>Tạo 3 loại chim có kỹ năng kích hoạt giữa không trung, thiết kế 3 thành trì khác nhau và hệ thống chấm 1–3 sao.</div>
-              <div class="acc-step"><b>04. Cảm giác chơi &amp; SFX</b>Bổ sung rung màn hình, vết nứt vật liệu, hạt vỡ và âm thanh tổng hợp bằng Web Audio API.</div>
-            </div>
-          </details>
-          <div class="proj-links">
-            <a href="demos/sky-sling/index.html" class="btn btn-primary btn-sm">Chơi thử ngay <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 04 STUDY SPACE FINDER (ĐÃ NÂNG CẤP GIAO DIỆN & ẢNH ĐẸP) -->
-      <article class="card project-card reveal" data-cat="web">
-        <div class="shot-box">
-          <img src="media/studyspace.jpg" alt="Giao diện mới Study Space Finder với quán cà phê tràn nắng" loading="lazy" />
-          <div class="shot-sub"><img src="media/studyspace-2.jpg" alt="Danh mục không gian học tập với ảnh nội thất đa dạng" loading="lazy" /></div>
-        </div>
-        <div class="proj-meta">
-          <div class="proj-top">
-            <span class="cat-pill">WEB ỨNG DỤNG · UI/UX</span>
-            <span class="proj-status">Bản nâng cấp mới · Có live</span>
-          </div>
-          <h3>Study Space Finder — Ứng dụng tìm góc học sinh viên</h3>
-          <p>Web tìm quán cà phê học tập, thư viện và coworking cho sinh viên viết bằng JavaScript thuần, không framework. Hỗ trợ tìm kiếm tiếng Việt không dấu, lọc đa tiêu chí (khu vực, độ yên tĩnh, tiện ích Wi-Fi/ổ điện), đánh giá không gian và lưu yêu thích cục bộ.</p>
-          <div class="proj-proof">
-            <div class="proof-cell"><small>Vai trò</small><strong>UI/UX Redesign, Front-end &amp; Unit Test</strong></div>
-            <div class="proof-cell"><small>Điểm kiểm chứng</small><strong>Tìm không dấu · Keyboard A11y</strong></div>
-          </div>
-          <div class="proj-tags"><span>Vanilla JS</span><span>UI/UX Editorial</span><span>Tìm không dấu</span><span>Accessibility</span><span>Unit Test</span></div>
-          <details class="process-acc">
-            <summary><span>Xem quy trình thực hiện (4 bước)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="acc-steps">
-              <div class="acc-step"><b>01. Bài toán thực tế</b>Giải quyết nhu cầu sinh viên tìm không gian yên tĩnh, có ổ điện, Wi-Fi mạnh và mức giá hợp lý.</div>
-              <div class="acc-step"><b>02. Nâng cấp hình ảnh</b>Thiết kế lại giao diện editorial ấm áp, thay ảnh minh họa lặp bằng bộ ảnh nội thất đặc trưng cho từng nhóm không gian.</div>
-              <div class="acc-step"><b>03. Tìm kiếm thông minh</b>Chuẩn hóa chuỗi tiếng Việt bỏ dấu để gõ nhanh vẫn trả chính xác kết quả theo tên, quận hoặc mức yên tĩnh.</div>
-              <div class="acc-step"><b>04. Kiểm thử đơn vị</b>Kiểm tra thao tác bàn phím, responsive di động và unit test các nhánh bộ lọc.</div>
-            </div>
-          </details>
-          <div class="proj-links">
-            <a href="demos/study-space-finder/index.html" class="btn btn-primary btn-sm">Xem bản nâng cấp <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a href="https://github.com/tranngochuyc-cyber/study-space-finder-solo" target="_blank" rel="noopener" class="btn btn-sm">Mã nguồn GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 05 AI CODE REVIEW 7 TẦNG -->
-      <article class="card project-card reveal" data-cat="ai">
-        <div class="diagram-box" aria-label="Sơ đồ quy trình AI Code Review 7 tầng">
-          <svg viewBox="0 0 520 330" role="img" aria-label="Quy trình AI Code Review 7 tầng">
-            <rect x="14" y="14" width="492" height="302" rx="14" fill="#06192c" stroke="#235b84" stroke-width="1.2"/>
-            <text x="32" y="42" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="11">QUALITY ENGINEERING · 7-LAYER AI CODE REVIEW</text>
-            <g font-family="Be Vietnam Pro, sans-serif" font-size="11.5">
-              <rect x="32" y="58" width="212" height="32" rx="8" fill="#0a2c4a" stroke="#4cd8ff"/>
-              <text x="44" y="78" fill="#f0f8ff" font-weight="600">L1 · Verify trước khi mở PR</text>
-
-              <rect x="32" y="98" width="212" height="32" rx="8" fill="#0e3a5f" stroke="#4cd8ff" stroke-width="1.6"/>
-              <text x="44" y="118" fill="#a6f2ff" font-weight="700">L2 · Detect → Verify → Lọc nhiễu</text>
-
-              <rect x="32" y="138" width="212" height="32" rx="8" fill="#0a2c4a" stroke="#ff9a6c"/>
-              <text x="44" y="158" fill="#f0f8ff" font-weight="600">L3 · Security Review</text>
-
-              <rect x="32" y="178" width="212" height="32" rx="8" fill="#0a2c4a" stroke="#4de2b1"/>
-              <text x="44" y="198" fill="#f0f8ff" font-weight="600">L4 · CI bắt buộc (Test / Lint)</text>
-
-              <rect x="32" y="218" width="212" height="32" rx="8" fill="#0a2c4a" stroke="#a796ff"/>
-              <text x="44" y="238" fill="#f0f8ff" font-weight="600">L5 · Duyệt theo Risk Tier</text>
-
-              <rect x="32" y="258" width="212" height="32" rx="8" fill="#0a2c4a" stroke="#367099"/>
-              <text x="44" y="278" fill="#c4deee" font-weight="600">L6–L7 · Merge Queue &amp; Rollback</text>
-            </g>
-            <rect x="266" y="58" width="222" height="232" rx="12" fill="#09243d" stroke="#2d6691"/>
-            <text x="282" y="84" fill="#4cd8ff" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">CORE ENGINE (L2)</text>
-            <text x="282" y="110" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12.5" font-weight="700">1. Tìm lỗi song song</text>
-            <text x="282" y="128" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="11">Đòi hỏi bằng chứng file:line</text>
-
-            <text x="282" y="158" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12.5" font-weight="700">2. Xác minh phản biện</text>
-            <text x="282" y="176" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="11">Loại bỏ cảnh báo sai (false positive)</text>
-
-            <text x="282" y="206" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12.5" font-weight="700">3. Phân hạng &amp; Risk Tier</text>
-            <text x="282" y="224" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="11">Important / Nit · Low / Med / High</text>
-
-            <rect x="282" y="246" width="190" height="30" rx="8" fill="#06192c" stroke="#4de2b1"/>
-            <text x="377" y="265" text-anchor="middle" fill="#9bf2d5" font-family="JetBrains Mono, monospace" font-size="10.5">Áp dụng tự review mọi dự án</text>
-          </svg>
-        </div>
-        <div class="proj-meta">
-          <div class="proj-top">
-            <span class="cat-pill ai">QUALITY &amp; AI ENGINEERING</span>
-            <span class="proj-status">Bộ quy trình chuẩn hóa</span>
-          </div>
-          <h3>Hệ thống AI Code Review 7 Tầng &amp; Tự kiểm duyệt Mã nguồn</h3>
-          <p>Nghiên cứu và đóng gói skill <code class="ic">ai-code-review</code> gồm 7 lớp phòng thủ liên tục từ trước khi mở PR đến rollback sau phát hành. Trọng tâm là lõi <em>Tìm → Xác minh phản biện → Lọc nhiễu</em>, gắn nhãn <code class="ic">Important / Nit</code>, đòi bằng chứng <code class="ic">file:line</code> và phân tầng duyệt theo mức độ rủi ro thay đổi.</p>
-          <div class="proj-proof">
-            <div class="proof-cell"><small>Ứng dụng</small><strong>Chuẩn tự review trước khi bàn giao</strong></div>
-            <div class="proof-cell"><small>Trọng tâm QE</small><strong>Giảm nhiễu · Ngăn lỗi hồi quy</strong></div>
-          </div>
-          <div class="proj-tags"><span>AI Code Review</span><span>Risk-Tiered Approval</span><span>REVIEW.md</span><span>Quality Engineering</span></div>
-          <details class="process-acc">
-            <summary><span>Xem quy trình thực hiện (4 bước)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="acc-steps">
-              <div class="acc-step"><b>01. Chuẩn hóa 7 tầng</b>Tách bạch việc máy bắt được (lint/CI/AI detect) và việc con người quyết định (risk/architecture).</div>
-              <div class="acc-step"><b>02. Thiết kế lõi lọc nhiễu</b>Áp dụng cơ chế xác minh phản biện và giới hạn 3 vòng hội tụ để không spam comment thừa.</div>
-              <div class="acc-step"><b>03. Viết tài liệu chuẩn</b>Đóng gói <code class="ic">SKILL.md</code> cùng 6 tài liệu tham chiếu (layers, risk-tiers, convergence, find-verify-filter).</div>
-              <div class="acc-step"><b>04. Áp dụng thực chiến</b>Dùng trực tiếp làm bước tự kiểm tra mã nguồn cho các dự án web, game và script cá nhân.</div>
-            </div>
-          </details>
-        </div>
-      </article>
-
-      <!-- 06 ĐỒ ÁN CSDL LHU -->
-      <article class="card project-card reveal" data-cat="edu">
-        <div class="diagram-box" aria-label="Sơ đồ CSDL Quản lý Giải Bóng Đá">
-          <svg viewBox="0 0 520 330" role="img" aria-label="Lược đồ CSDL Quản lý Giải Bóng Đá SQL Server 2014">
-            <rect x="14" y="14" width="492" height="302" rx="14" fill="#06192c" stroke="#235b84" stroke-width="1.2"/>
-            <text x="32" y="42" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="11">LHU · HỆ QUẢN TRỊ CSDL (111170) · SQL SERVER 2014</text>
-            <rect x="34" y="68" width="132" height="72" rx="9" fill="#0a2c4a" stroke="#4de2b1"/>
-            <text x="100" y="92" text-anchor="middle" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700">DOI_BONG</text>
-            <text x="100" y="112" text-anchor="middle" fill="#9bf2d5" font-family="JetBrains Mono, monospace" font-size="10">MaDoi (PK) · TenDoi</text>
-            <text x="100" y="128" text-anchor="middle" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="10">SanNha · HLV</text>
-
-            <rect x="194" y="68" width="132" height="72" rx="9" fill="#0a2c4a" stroke="#4cd8ff"/>
-            <text x="260" y="92" text-anchor="middle" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700">TRAN_DAU</text>
-            <text x="260" y="112" text-anchor="middle" fill="#a6f2ff" font-family="JetBrains Mono, monospace" font-size="10">MaTran (PK) · Vong</text>
-            <text x="260" y="128" text-anchor="middle" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="10">DoiNha · DoiKhach</text>
-
-            <rect x="354" y="68" width="132" height="72" rx="9" fill="#0a2c4a" stroke="#a796ff"/>
-            <text x="420" y="92" text-anchor="middle" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700">CAU_THU</text>
-            <text x="420" y="112" text-anchor="middle" fill="#d7ceff" font-family="JetBrains Mono, monospace" font-size="10">MaCT (PK) · MaDoi</text>
-            <text x="420" y="128" text-anchor="middle" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="10">ViTri · SoAo</text>
-
-            <path d="M166 104 L194 104 M326 104 L354 104 M260 140 L260 184" stroke="#4cd8ff" stroke-width="1.4"/>
-
-            <rect x="114" y="184" width="292" height="58" rx="9" fill="#0d3557" stroke="#ff9a6c"/>
-            <text x="260" y="208" text-anchor="middle" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12" font-weight="700">KET_QUA · BAN_THANG · BANG_XEP_HANG</text>
-            <text x="260" y="227" text-anchor="middle" fill="#ffc0a3" font-family="JetBrains Mono, monospace" font-size="10">Stored Procedures · Triggers · Constraints · Views</text>
-
-            <rect x="34" y="262" width="452" height="36" rx="8" fill="#082036" stroke="#2d6691"/>
-            <text x="260" y="284" text-anchor="middle" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="11.5">Nhóm 4 sinh viên LHU · Phụ trách lõi SQL Server 2014 &amp; tài liệu hướng dẫn nhóm</text>
-          </svg>
-        </div>
-        <div class="proj-meta">
-          <div class="proj-top">
-            <span class="cat-pill edu">ĐỒ ÁN HỌC PHẦN · SQL SERVER</span>
-            <span class="proj-status">Nhóm 4 thành viên (LHU)</span>
-          </div>
-          <h3>Đồ án Hệ quản trị CSDL — Quản lý Giải Bóng Đá</h3>
-          <p>Đề tài 12 môn Hệ quản trị Cơ sở dữ liệu (111170) tại Đại học Lạc Hồng. Thiết kế cấu trúc bảng, ràng buộc toàn vẹn, truy vấn tổng hợp và kịch bản tương thích chuẩn máy phòng thực hành SQL Server 2014; đồng thời biên soạn tài liệu hướng dẫn chi tiết để 3 thành viên cùng nhóm triển khai đồng bộ và thuyết trình.</p>
-          <div class="proj-proof">
-            <div class="proof-cell"><small>Vai trò</small><strong>Phụ trách lõi SQL &amp; Chốt bảo vệ</strong></div>
-            <div class="proof-cell"><small>Môi trường</small><strong>SQL Server 2014 (Tương thích phòng lab)</strong></div>
-          </div>
-          <div class="proj-tags"><span>SQL Server 2014</span><span>Database Design</span><span>Stored Procedures</span><span>Team Coordination</span></div>
-          <details class="process-acc">
-            <summary><span>Xem quy trình thực hiện (4 bước)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="acc-steps">
-              <div class="acc-step"><b>01. Phân tích nghiệp vụ</b>Xác định thực thể đội bóng, cầu thủ, lịch thi đấu, bàn thắng và quy tắc tính bảng xếp hạng.</div>
-              <div class="acc-step"><b>02. Chuẩn hóa SQL 2014</b>Viết kịch bản tạo bảng, khóa ngoại, truy vấn và kiểm tra cú pháp chạy sạch trên SQL Server 2014.</div>
-              <div class="acc-step"><b>03. Hướng dẫn đồng đội</b>Soạn tài liệu Word phân chia phần thực hành rõ ràng cho các thành viên Nhật, Khoa và Trường.</div>
-              <div class="acc-step"><b>04. Ghép báo cáo &amp; Chốt bài</b>Tổng hợp bài nộp cuối kỳ và đảm nhận phần chốt báo cáo của nhóm.</div>
-            </div>
-          </details>
-        </div>
-      </article>
-
-      <!-- 07 NHÓM 3 & BÀI THI REVIEW GAME -->
-      <article class="card project-card reveal" data-cat="edu">
-        <div class="diagram-box" aria-label="Tóm tắt 2 dự án nhóm và bài thi Web">
-          <svg viewBox="0 0 520 330" role="img" aria-label="Dự án Nhóm 3 và Bài thi Review Game">
-            <rect x="14" y="14" width="492" height="302" rx="14" fill="#06192c" stroke="#235b84" stroke-width="1.2"/>
-            <text x="32" y="42" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="11">TEAM LEADERSHIP &amp; WEB OPTIMIZATION</text>
-
-            <rect x="32" y="64" width="456" height="106" rx="12" fill="#0a2b48" stroke="#4de2b1"/>
-            <text x="50" y="92" fill="#9bf2d5" font-family="JetBrains Mono, monospace" font-size="11">01 · TRƯỞNG NHÓM 3 SINH VIÊN · 6 TUẦN</text>
-            <text x="50" y="118" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="15" font-weight="700">Nhóm 3 — Website Portfolio Nhóm (4 trang)</text>
-            <text x="50" y="142" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="12">Phân công nhiệm vụ, theo dõi commit và đối soát đóng góp minh bạch qua GitHub.</text>
-
-            <rect x="32" y="188" width="456" height="106" rx="12" fill="#0a2b48" stroke="#4cd8ff"/>
-            <text x="50" y="216" fill="#a6f2ff" font-family="JetBrains Mono, monospace" font-size="11">02 · BÀI THI CHUYỂN ĐỔI KIẾN TRÚC TĨNH</text>
-            <text x="50" y="242" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="15" font-weight="700">Review Game — Đóng gói 4 tệp tĩnh + Nhật ký Prompt AI</text>
-            <text x="50" y="266" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="12">Rút gọn Indieverse thành cấu trúc 4 file gọn nhẹ kèm nhật ký quá trình cộng tác cùng AI.</text>
-          </svg>
-        </div>
-        <div class="proj-meta">
-          <div class="proj-top">
-            <span class="cat-pill edu">LÀM NHÓM &amp; BÀI THI WEB</span>
-            <span class="proj-status">Có Live &amp; GitHub công khai</span>
-          </div>
-          <h3>Nhóm 3 — Portfolio nhóm &amp; Bài thi tối ưu Review Game</h3>
-          <p>Hai sản phẩm học phần thể hiện năng lực dẫn dắt nhóm và khả năng tối giản mã nguồn: (1) Đảm nhận vai trò Trưởng nhóm 3 sinh viên hoàn thiện website 4 trang trong 6 tuần qua GitHub; (2) Chuyển đổi dự án Indieverse thành bản web tĩnh 4 file gọn nhẹ, lưu đầy đủ nhật ký prompt làm việc cùng AI.</p>
-          <div class="proj-proof">
-            <div class="proof-cell"><small>Vai trò</small><strong>Trưởng nhóm (3 SV) · Tác giả</strong></div>
-            <div class="proof-cell"><small>Điểm kiểm chứng</small><strong>GitHub Commit Log · Nhật ký Prompt</strong></div>
-          </div>
-          <div class="proj-tags"><span>Team Leadership</span><span>GitHub Workflow</span><span>Static Optimization</span><span>AI Prompt Log</span></div>
-          <div class="proj-links">
-            <a href="https://tranngochuyc-cyber.github.io/nhom3/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Xem web Nhóm 3 <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-            <a href="https://github.com/tranngochuyc-cyber/Huy_TranNgoc_125001758" target="_blank" rel="noopener" class="btn btn-sm">Repo Bài thi Review Game</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TẦNG 04: KINH NGHIỆM & QUAN ĐIỂM LÀM VIỆC ============ -->
-<section id="experience">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <h2>Kinh nghiệm thực chiến &amp; <span>Quan điểm làm việc</span></h2>
-        <p class="sec-sub">Điều tôi rút ra từ quá trình dẫn nhóm học phần, tự xây dựng sản phẩm chạy thật và dựng các video truyền thông hiệu quả.</p>
-      </div>
-    </div>
-
-    <div class="exp-grid">
-      <article class="card exp-panel reveal">
-        <h3>Kinh nghiệm dự án &amp; Làm việc nhóm</h3>
-        <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-head">
-              <strong>Trưởng nhóm dự án Web học phần (Nhóm 3)</strong>
-              <span>6 tuần · 3 thành viên</span>
-            </div>
-            <p>Chia đầu việc cho 3 sinh viên, thống nhất cấu trúc 4 trang web, kiểm tra tiến độ và lập báo cáo đóng góp dựa trên lịch sử commit GitHub.</p>
-            <p class="tl-lesson">Bài học rút ra: Phân việc rõ ràng và kiểm tra tiến độ sớm giúp tránh dồn lỗi sát hạn nộp.</p>
-          </div>
-
-          <div class="tl-item">
-            <div class="tl-head">
-              <strong>Phụ trách lõi CSDL &amp; Tài liệu nhóm (LHU)</strong>
-              <span>Môn HQT CSDL · 4 thành viên</span>
-            </div>
-            <p>Thiết kế lược đồ quản lý giải bóng đá tương thích SQL Server 2014 và soạn hướng dẫn từng bước để các bạn cùng nhóm cài đặt, chạy thử trơn tru.</p>
-            <p class="tl-lesson">Bài học rút ra: Code chạy trên máy mình chưa đủ — phải chạy đúng môi trường thật và đồng đội dùng được.</p>
-          </div>
-
-          <div class="tl-item">
-            <div class="tl-head">
-              <strong>Sản xuất Video Quảng cáo, Motion &amp; Sản phẩm Web/Game độc lập</strong>
-              <span>Thực hành liên tục</span>
-            </div>
-            <p>Tự lên ý tưởng, dựng hoàn chỉnh nhiều thể loại video (Before/After, Motion Explainer công nghệ, Ads chuyển đổi) song song với triển khai các dự án Web 3D, Web App và Game 2D.</p>
-            <p class="tl-lesson">Bài học rút ra: Sản phẩm tốt không chỉ đúng kỹ thuật mà còn phải tạo giá trị nhìn thấy ngay cho người dùng cuối.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="card mindset-panel reveal">
-        <h3>Quan điểm công việc</h3>
-        <div class="principles">
-          <div class="principle">
-            <strong>1. Minh chứng thật, không thổi phồng</strong>
-            <p>Mọi sản phẩm trên hồ sơ đều có bản chạy thử, video phát được hoặc tài liệu kiến trúc thật. Cái nào là bản luyện tập hay concept đều ghi chú thẳng thắn.</p>
-          </div>
-          <div class="principle">
-            <strong>2. Làm xong phải có kiểm chứng</strong>
-            <p>Không dừng ở mức “chạy tạm được”: web kiểm tra responsive &amp; bàn phím, game kiểm thử va chạm mượt 60 fps, video rà soát kỹ từng nhịp chuyển và trải nghiệm xem.</p>
-          </div>
-          <div class="principle">
-            <strong>3. Ghi nhật ký đến đâu rõ đến đó</strong>
-            <p>Thói quen cập nhật file <code class="ic">PROGRESS.md</code> sau mỗi mốc kết quả giúp tôi không mất mạch khi dự án kéo dài và hỗ trợ bàn giao cho người khác nhanh chóng.</p>
-          </div>
-          <div class="principle">
-            <strong>4. Cầu thị và chịu sửa đến cùng</strong>
-            <p>Khi một phiên bản giao diện hay sản phẩm chưa đủ thuyết phục, tôi sẵn sàng tiếp thu góp ý và làm lại tử tế cho đến khi đạt chuẩn.</p>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TẦNG 05: LIÊN HỆ & XUẤT CV ============ -->
-<section id="contact">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <h2>Liên hệ &amp; <span>Kết nối nhanh</span></h2>
-        <p class="sec-sub">Rất mong được trao đổi với anh/chị tuyển dụng hoặc đối tác về các dự án Web, Quality/AI Engineering, Game hoặc Edit Video.</p>
-      </div>
-    </div>
-
-    <div class="contact-grid">
-      <article class="card contact-info reveal">
-        <h3>Kênh liên hệ trực tiếp</h3>
-        <p>Thông tin liên hệ được xác thực từ hồ sơ cá nhân. Anh/chị có thể sao chép email, quét mã QR để xem toàn bộ mã nguồn trên GitHub hoặc in ngay bản CV PDF.</p>
-
-        <div class="contact-channels">
-          <div class="channel-row">
-            <div>
-              <small>Email</small>
-              <strong>tranngochuyc@gmail.com</strong>
-            </div>
-            <div style="display:flex;gap:8px">
-              <button type="button" class="btn btn-sm" id="copyEmailBtn">Sao chép</button>
-              <a href="mailto:tranngochuyc@gmail.com" class="btn btn-primary btn-sm">Gửi mail</a>
-            </div>
-          </div>
-
-          <div class="channel-row">
-            <div>
-              <small>GitHub (Mã nguồn &amp; Demo)</small>
-              <strong>github.com/tranngochuyc-cyber</strong>
-            </div>
-            <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener" class="btn btn-sm">Mở GitHub</a>
-          </div>
-
-          <div class="channel-row">
-            <div>
-              <small>Trường &amp; Khu vực</small>
-              <strong>Đại học Lạc Hồng (LHU) · Đồng Nai</strong>
-            </div>
-            <button type="button" class="btn btn-sm" id="printCvContact">In / Lưu CV (PDF)</button>
-          </div>
-        </div>
-
-        <div class="qr-box">
-          <div class="qr-canvas" id="githubQr" aria-label="Mã QR dẫn tới GitHub Trần Ngọc Huy"></div>
           <div>
-            <strong>Quét mã QR xem GitHub</strong>
-            <p>Mở nhanh trang tổng hợp toàn bộ mã nguồn, commit history và các bản demo đang chạy trực tiếp của tôi.</p>
+            <h3>Kinh nghiệm &amp; Tư duy làm việc</h3>
+            <p>Vai trò Trưởng nhóm web, phụ trách lõi SQL Server 2014, sản xuất sản phẩm độc lập và 4 nguyên tắc đảm bảo chất lượng.</p>
           </div>
+          <ul class="hub-mini-list">
+            <li><strong>Trưởng nhóm Nhóm 3</strong><span>6 tuần · 3 SV</span></li>
+            <li><strong>Phụ trách lõi CSDL</strong><span>SQL Server 2014</span></li>
+            <li><strong>Sản xuất độc lập</strong><span>Web · Game · Video</span></li>
+          </ul>
         </div>
-      </article>
+        <div class="hub-foot">
+          <span>Mở trang Kinh nghiệm</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </a>
 
-      <article class="card contact-form-box reveal">
-        <h3>Gửi lời nhắn trao đổi</h3>
-        <p>Điền nhanh nội dung bên dưới để mở ngay ứng dụng Email đã điền sẵn hoặc sao chép trọn nội dung gửi qua kênh liên lạc của anh/chị.</p>
+      <!-- NHÁNH 5: LIÊN HỆ & KẾT NỐI -->
+      <a class="hub-card reveal" href="contact.html">
+        <div class="hub-card-top">
+          <div class="hub-meta-row">
+            <span class="hub-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            </span>
+            <span class="hub-count">Email · GitHub QR</span>
+          </div>
+          <div>
+            <h3>Liên hệ &amp; Kết nối nhanh</h3>
+            <p>Kênh trao đổi trực tiếp, nút sao chép email 1 chạm, mã QR mở kho mã nguồn GitHub và biểu mẫu soạn lời nhắn sẵn.</p>
+          </div>
+          <ul class="hub-mini-list">
+            <li><strong>Email</strong><span>tranngochuyc@gmail.com</span></li>
+            <li><strong>GitHub</strong><span>tranngochuyc-cyber</span></li>
+            <li><strong>Khu vực</strong><span>Biên Hòa, Đồng Nai</span></li>
+          </ul>
+        </div>
+        <div class="hub-foot">
+          <span>Mở trang Liên hệ</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </a>
+    </div>
 
-        <form class="msg-form" id="contactForm" novalidate>
-          <div class="row2">
-            <label>Tên anh/chị hoặc Công ty
-              <input name="sender" required placeholder="VD: Nguyễn Minh — HR Tech" />
-            </label>
-            <label>Email hoặc Kênh phản hồi
-              <input name="replyTo" required placeholder="email@congty.com / Zalo" />
-            </label>
-          </div>
-          <label>Chủ đề trao đổi
-            <select name="topic">
-              <option value="Trao đổi cơ hội Thực tập / Tuyển dụng">Trao đổi cơ hội Thực tập / Tuyển dụng</option>
-              <option value="Hợp tác dự án Website / Full-stack">Hợp tác dự án Website / Full-stack</option>
-              <option value="Hợp tác Edit Video / Motion Graphics">Hợp tác Edit Video / Motion Graphics</option>
-              <option value="Trao đổi khác">Trao đổi khác</option>
-            </select>
-          </label>
-          <label>Nội dung ngắn
-            <textarea name="body" required placeholder="Vị trí, dự án hoặc thời gian thuận tiện để trao đổi..."></textarea>
-          </label>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Mở Email điền sẵn</button>
-            <button type="button" class="btn" id="copyMsgBtn">Sao chép lời nhắn</button>
-          </div>
-          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-        </form>
-      </article>
+    <!-- Thanh mở bản CV tổng hợp 1 trang để in PDF A4 -->
+    <div class="hub-cv-banner reveal">
+      <div>
+        <h3>Cần xem bản CV đầy đủ trên 1 trang hoặc in PDF A4?</h3>
+        <p>Bản tổng hợp giữ trọn thông tin học vấn, kỹ năng, 5 video, 7 dự án, kinh nghiệm và kênh liên hệ — căn sẵn khổ giấy sáng A4 khi in.</p>
+      </div>
+      <div class="hub-cv-actions">
+        <a href="cv.html" class="btn">Xem bản CV tổng hợp</a>
+        <a href="cv.html?print=1" class="btn btn-primary">In / Lưu CV (PDF)</a>
+      </div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Trần Ngọc Huy · Sinh viên CNTT, Đại học Lạc Hồng (LHU) · 0 m → 11.000 m</span>
     <div class="foot-links">
-      <a href="#top">Đầu trang</a>
-      <a href="#profile">Hồ sơ</a>
-      <a href="#video-studio">Edit Video</a>
-      <a href="#projects">Dự án</a>
+      <a href="index.html">Trang chính</a>
+      <a href="profile.html">Hồ sơ</a>
+      <a href="video.html">Edit Video</a>
+      <a href="projects.html">Dự án</a>
+      <a href="experience.html">Kinh nghiệm</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="cv.html">Bản in CV</a>
       <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js" defer></script>
-<script>
-(function(){
-  'use strict';
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isCompact = window.matchMedia('(max-width: 960px)').matches;
-
-  /* 1. Tuyết biển nhẹ */
-  const cv = document.getElementById('snow');
-  if (cv && !reduce) {
-    const ctx = cv.getContext('2d');
-    let W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.75), rafId = 0;
-    const count = isCompact ? 38 : 82;
-    const parts = Array.from({length: count}, () => ({
-      x: Math.random(), y: Math.random(),
-      r: Math.random() * 1.6 + 0.4,
-      v: Math.random() * 0.00028 + 0.00008,
-      s: Math.random() * Math.PI * 2,
-      bubble: Math.random() < 0.14
-    }));
-    function resize(){
-      W = cv.width = Math.floor(innerWidth * dpr);
-      H = cv.height = Math.floor(innerHeight * dpr);
-      cv.style.width = innerWidth + 'px';
-      cv.style.height = innerHeight + 'px';
-    }
-    resize();
-    addEventListener('resize', resize, {passive: true});
-    function frame(t){
-      ctx.clearRect(0, 0, W, H);
-      for (const p of parts){
-        p.y -= p.bubble ? p.v * 2.4 : p.v;
-        p.x += Math.sin(t * 0.00035 + p.s) * 0.0001;
-        if (p.y < -0.02){ p.y = 1.02; p.x = Math.random(); }
-        const a = 0.18 + 0.28 * Math.abs(Math.sin(t * 0.0008 + p.s));
-        const x = p.x * W, y = p.y * H, r = p.r * dpr * (p.bubble ? 2 : 1);
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-        if (p.bubble){
-          ctx.strokeStyle = 'rgba(180,242,255,' + a.toFixed(2) + ')';
-          ctx.lineWidth = dpr * 0.75;
-          ctx.stroke();
-        } else {
-          ctx.fillStyle = 'rgba(166,232,255,' + a.toFixed(2) + ')';
-          ctx.fill();
-        }
-      }
-      rafId = requestAnimationFrame(frame);
-    }
-    rafId = requestAnimationFrame(frame);
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden){ cancelAnimationFrame(rafId); }
-      else { rafId = requestAnimationFrame(frame); }
-    });
-  }
-
-  /* 2. Đồng hồ độ sâu + veil + active scroll-spy */
-  const veil = document.getElementById('veil');
-  const depthVal = document.getElementById('depthVal');
-  const depthFill = document.getElementById('depthFill');
-  const navLinks = Array.from(document.querySelectorAll('#navLinks a, #mobileDrawer a'));
-  const sections = ['profile', 'video-studio', 'projects', 'experience', 'contact']
-    .map(id => document.getElementById(id)).filter(Boolean);
-
-  let ticking = false;
-  function updateScrollUI(){
-    ticking = false;
-    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-    const p = Math.min(1, Math.max(0, scrollY / max));
-    const depth = Math.round(Math.pow(p, 1.45) * 11000);
-    if (depthVal) depthVal.textContent = depth.toLocaleString('vi-VN');
-    if (depthFill) depthFill.style.height = (p * 100).toFixed(1) + '%';
-    if (veil) veil.style.opacity = Math.min(0.42, p * 0.5).toFixed(3);
-
-    let currentId = '';
-    for (const sec of sections){
-      if (sec.getBoundingClientRect().top <= 180) currentId = sec.id;
-    }
-    navLinks.forEach(a => {
-      const target = a.getAttribute('href') || '';
-      a.classList.toggle('active', currentId && target === '#' + currentId);
-    });
-  }
-  addEventListener('scroll', () => {
-    if (!ticking){ ticking = true; requestAnimationFrame(updateScrollUI); }
-  }, {passive: true});
-  updateScrollUI();
-
-  /* 3. Reveal mượt & an toàn tuyệt đối */
-  const reveals = Array.from(document.querySelectorAll('.reveal'));
-  if (!reduce && 'IntersectionObserver' in window){
-    document.documentElement.classList.add('js-anim');
-    const showEl = (el) => {
-      el.classList.add('is-visible');
-      io.unobserve(el);
-    };
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries){
-        if (e.isIntersecting) showEl(e.target);
-      }
-    }, {rootMargin: '260px 0px 260px 0px', threshold: 0});
-
-    const flushPassed = () => {
-      const limit = innerHeight + 220;
-      for (const el of reveals){
-        if (!el.classList.contains('is-visible') && el.getBoundingClientRect().top <= limit){
-          showEl(el);
-        }
-      }
-    };
-
-    reveals.forEach(el => {
-      if (el.getBoundingClientRect().top <= innerHeight + 160) el.classList.add('is-visible');
-      else io.observe(el);
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', () => {
-        const id = (link.getAttribute('href') || '').slice(1);
-        const target = id ? document.getElementById(id) : null;
-        if (target){
-          const targetBottom = target.getBoundingClientRect().bottom + scrollY + 400;
-          reveals.forEach(el => {
-            const elTop = el.getBoundingClientRect().top + scrollY;
-            if (elTop <= targetBottom || target.contains(el)) showEl(el);
-          });
-        }
-        setTimeout(flushPassed, 450);
-        setTimeout(flushPassed, 950);
-      });
-    });
-
-    addEventListener('scroll', flushPassed, {passive: true});
-    addEventListener('scrollend', flushPassed, {passive: true});
-    addEventListener('resize', flushPassed, {passive: true});
-    addEventListener('hashchange', () => {
-      flushPassed();
-      setTimeout(flushPassed, 500);
-    });
-  }
-
-  /* 4. Menu di động */
-  const menuBtn = document.getElementById('menuToggle');
-  const drawer = document.getElementById('mobileDrawer');
-  if (menuBtn && drawer){
-    const closeDrawer = () => {
-      drawer.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    };
-    menuBtn.addEventListener('click', () => {
-      const open = drawer.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    drawer.querySelectorAll('a, button').forEach(el => el.addEventListener('click', closeDrawer));
-    addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-  }
-
-  /* 5. Nút In / Lưu CV (PDF) */
-  ['printCvNav', 'printCvMobile', 'printCvContact'].forEach(id => {
-    const btn = document.getElementById(id);
-    if (btn) btn.addEventListener('click', () => window.print());
-  });
-
-  /* 6. Trình phát 4 Video tương tác (tự tạm dừng video khác khi phát) */
-  const allVideos = Array.from(document.querySelectorAll('video'));
-  document.querySelectorAll('.play-overlay').forEach(overlay => {
-    const v = document.getElementById(overlay.dataset.play);
-    if (!v) return;
-    overlay.addEventListener('click', () => {
-      allVideos.forEach(other => { if (other !== v) other.pause(); });
-      overlay.classList.add('hidden');
-      v.play().catch(() => { overlay.classList.remove('hidden'); });
-    });
-    v.addEventListener('play', () => {
-      allVideos.forEach(other => { if (other !== v) other.pause(); });
-      overlay.classList.add('hidden');
-    });
-    v.addEventListener('ended', () => overlay.classList.remove('hidden'));
-  });
-
-  /* 7. Bộ lọc dự án theo lĩnh vực */
-  const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
-  const projectCards = Array.from(document.querySelectorAll('#projectsGrid .project-card'));
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.dataset.filter;
-      filterBtns.forEach(b => b.classList.toggle('active', b === btn));
-      projectCards.forEach(card => {
-        const show = cat === 'all' || card.dataset.cat === cat;
-        card.classList.toggle('hidden-item', !show);
-        if (show) card.classList.add('is-visible');
-      });
-    });
-  });
-
-  /* 8. Mã QR dẫn tới GitHub */
-  function renderQr(){
-    const box = document.getElementById('githubQr');
-    if (!box) return;
-    if (typeof window.qrcode === 'function'){
-      const qr = window.qrcode(0, 'M');
-      qr.addData('https://github.com/tranngochuyc-cyber');
-      qr.make();
-      box.innerHTML = qr.createSvgTag({cellSize: 3, margin: 0, scalable: true});
-    } else {
-      box.innerHTML = '<a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener" style="color:#031424;font-weight:700;font-size:11px;text-align:center;line-height:1.3">GitHub<br>tranngochuyc</a>';
-    }
-  }
-  if (document.readyState === 'complete') renderQr();
-  else addEventListener('load', renderQr);
-
-  /* 9. Sao chép Email & Trình tạo lời nhắn liên hệ */
-  const copyEmailBtn = document.getElementById('copyEmailBtn');
-  if (copyEmailBtn){
-    copyEmailBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText('tranngochuyc@gmail.com');
-        copyEmailBtn.textContent = 'Đã sao chép';
-        setTimeout(() => { copyEmailBtn.textContent = 'Sao chép'; }, 2200);
-      } catch {
-        copyEmailBtn.textContent = 'tranngochuyc@gmail.com';
-      }
-    });
-  }
-
-  const form = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-  const copyMsgBtn = document.getElementById('copyMsgBtn');
-
-  function buildMessage(){
-    const sender = form.sender.value.trim();
-    const replyTo = form.replyTo.value.trim();
-    const topic = form.topic.value;
-    const body = form.body.value.trim();
-    if (!sender || !replyTo || !body){
-      formStatus.className = 'form-status err';
-      formStatus.textContent = 'Vui lòng điền đủ tên, kênh phản hồi và nội dung ngắn trước khi gửi.';
-      return null;
-    }
-    const text = 'Chào Trần Ngọc Huy,\n\n'
-      + 'Người liên hệ: ' + sender + '\n'
-      + 'Kênh phản hồi: ' + replyTo + '\n'
-      + 'Chủ đề: ' + topic + '\n\n'
-      + 'Nội dung:\n' + body;
-    return {subject: '[Portfolio] ' + topic + ' — ' + sender, text};
-  }
-
-  if (form){
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const built = buildMessage();
-      if (!built) return;
-      const mailto = 'mailto:tranngochuyc@gmail.com?subject=' + encodeURIComponent(built.subject) + '&body=' + encodeURIComponent(built.text);
-      formStatus.className = 'form-status';
-      formStatus.textContent = 'Đang mở ứng dụng Email đã điền sẵn nội dung...';
-      window.location.href = mailto;
-    });
-  }
-
-  if (copyMsgBtn){
-    copyMsgBtn.addEventListener('click', async () => {
-      const built = buildMessage();
-      if (!built) return;
-      try {
-        await navigator.clipboard.writeText(built.text);
-        formStatus.className = 'form-status';
-        formStatus.textContent = 'Đã sao chép lời nhắn vào bộ nhớ tạm — anh/chị có thể dán gửi ngay.';
-      } catch {
-        formStatus.className = 'form-status err';
-        formStatus.textContent = 'Trình duyệt không cho phép sao chép tự động; vui lòng dùng nút Mở Email điền sẵn.';
-      }
-    });
-  }
-})();
-</script>
+<script src="assets/app.js"></script>
 </body>
 </html>

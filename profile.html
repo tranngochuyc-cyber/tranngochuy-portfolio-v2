@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hồ sơ &amp; Ma trận Kỹ năng — Trần Ngọc Huy</title>
+<meta name="description" content="Thông tin học vấn CNTT Đại học Lạc Hồng (LHU), tỷ trọng định hướng nghề nghiệp 50/25/25 và ma trận kỹ năng thực chiến của Trần Ngọc Huy." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="profile" data-depth-start="600" data-depth-end="2200">
+<a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
+
+<div class="ocean" aria-hidden="true"></div>
+<div class="abyss-veil" id="veil" aria-hidden="true"></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="site-nav" aria-label="Điều hướng chính">
+  <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Trang chính</a>
+    <a href="profile.html" class="active" aria-current="page">Hồ sơ</a>
+    <a href="video.html">Edit Video</a>
+    <a href="projects.html">Dự án</a>
+    <a href="experience.html">Kinh nghiệm</a>
+    <a href="contact.html">Liên hệ</a>
+  </div>
+  <div class="nav-actions">
+    <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>
+      <span>In / Lưu CV</span>
+    </button>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobileDrawer">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
+  <a href="index.html">Trang chính</a>
+  <a href="profile.html" class="active" aria-current="page">Hồ sơ &amp; Kỹ năng</a>
+  <a href="video.html">Edit Video &amp; Motion</a>
+  <a href="projects.html">Dự án &amp; Sản phẩm</a>
+  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
+  <a href="contact.html">Liên hệ</a>
+  <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
+</div>
+
+<aside class="depth" aria-hidden="true">
+  <div class="depth-read">Độ sâu · <b id="depthVal">600</b> m</div>
+  <div class="depth-track"><div class="depth-fill" id="depthFill"></div></div>
+</aside>
+
+<main id="main-content">
+  <header class="sub-hero">
+    <div class="wrap">
+      <div class="sub-nav-row">
+        <nav class="breadcrumb" aria-label="Đường dẫn trang">
+          <a href="index.html">Trang chính</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Hồ sơ &amp; Kỹ năng</span>
+        </nav>
+        <a href="index.html" class="btn btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          <span>Về trang chính</span>
+        </a>
+      </div>
+      <div class="sub-hero-head">
+        <div>
+          <h1>Hồ sơ, Học vấn &amp; <span>Ma trận Kỹ năng</span></h1>
+          <p class="sec-sub">Tóm tắt ngắn gọn nền tảng học tập, tỷ trọng định hướng nghề nghiệp và bộ công cụ tôi sử dụng thực tế trong các sản phẩm.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-body" id="profile">
+    <div class="wrap">
+      <div class="profile-grid">
+        <article class="card bio-card reveal">
+          <h2>Thông tin &amp; Học vấn</h2>
+          <dl class="info-list">
+            <div class="info-row"><dt>Họ và tên</dt><dd><strong>Trần Ngọc Huy</strong></dd></div>
+            <div class="info-row"><dt>Trường</dt><dd>Đại học Lạc Hồng (LHU)</dd></div>
+            <div class="info-row"><dt>Ngành học</dt><dd>Công nghệ thông tin (mã lớp 25CT113)</dd></div>
+            <div class="info-row"><dt>Khu vực</dt><dd>Đồng Nai, Việt Nam</dd></div>
+            <div class="info-row"><dt>Ngoại ngữ</dt><dd>Tiếng Anh — đang ôn luyện TOEIC cho chuẩn đầu ra &amp; công việc (đọc hiểu tài liệu kỹ thuật)</dd></div>
+            <div class="info-row"><dt>Sở thích sáng tạo</dt><dd>Làm Game 2D, Edit Video Quảng Cáo &amp; Talking-Head, Motion Graphics, UI/UX</dd></div>
+          </dl>
+
+          <div class="ratio-wrap">
+            <div class="ratio-label">
+              <span>Tỷ trọng định hướng nghề nghiệp</span>
+              <span>100%</span>
+            </div>
+            <div class="ratio-bar" role="img" aria-label="50% Software Engineering, 25% Quality Engineering, 25% AI Engineering">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="ratio-legend">
+              <span><i style="background:var(--cyan)"></i>Software Engineering (50%)</span>
+              <span><i style="background:var(--emerald)"></i>Quality Engineering (25%)</span>
+              <span><i style="background:var(--violet)"></i>AI Engineering (25%)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card skill-panel reveal">
+          <h2>Năng lực kỹ thuật &amp; Sản xuất nội dung</h2>
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <strong>1. Software &amp; Web Development</strong>
+              <span>50% trọng tâm</span>
+            </div>
+            <div class="chip-row">
+              <span class="chip">HTML5 / CSS3</span>
+              <span class="chip">JavaScript (ES6+)</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Next.js &amp; Tailwind</span>
+              <span class="chip">Three.js &amp; GLSL</span>
+              <span class="chip">HTML5 Canvas 2D</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">Laravel &amp; MySQL</span>
+              <span class="chip">SQL Server 2014</span>
+              <span class="chip">Vite &amp; GitHub Actions</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <strong>2. Quality Engineering &amp; Kiểm thử</strong>
+              <span>25% trọng tâm</span>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Automated Testing</span>
+              <span class="chip">Unit Test JS</span>
+              <span class="chip">AI Code Review 7 tầng</span>
+              <span class="chip">Keyboard Accessibility</span>
+              <span class="chip">Responsive &amp; Contrast Audit</span>
+              <span class="chip">Video Visual QA</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <strong>3. AI Engineering &amp; Tự động hóa</strong>
+              <span>25% trọng tâm</span>
+            </div>
+            <div class="chip-row">
+              <span class="chip">AI Workflow Automation</span>
+              <span class="chip">Prompt Engineering &amp; Audit Log</span>
+              <span class="chip">Python Scripting</span>
+              <span class="chip">Risk-Tiered Review</span>
+              <span class="chip">AI-Assisted Delivery</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <strong>4. Edit Video &amp; Motion Graphics</strong>
+              <span>Thế mạnh sáng tạo</span>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Short-Form Reels / TikTok / Shorts</span>
+              <span class="chip">Video Quảng Cáo Chuyển Đổi</span>
+              <span class="chip">Motion Explainer Sản Phẩm</span>
+              <span class="chip">Talking-Head Giữ Chân Người Xem</span>
+              <span class="chip">After Effects &amp; GSAP Motion</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager-wrap" aria-label="Chuyển giữa các trang nhánh">
+    <div class="wrap">
+      <div class="page-pager">
+        <a class="pager-card" href="index.html">
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+          <div>
+            <small>Quay về</small>
+            <strong>Trang chính tổng quan</strong>
+          </div>
+        </a>
+        <a class="pager-card next" href="video.html">
+          <div>
+            <small>Trang nhánh kế tiếp</small>
+            <strong>Edit Video &amp; Motion Graphics</strong>
+          </div>
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Trần Ngọc Huy · Sinh viên CNTT, Đại học Lạc Hồng (LHU) · 0 m → 11.000 m</span>
+    <div class="foot-links">
+      <a href="index.html">Trang chính</a>
+      <a href="profile.html">Hồ sơ</a>
+      <a href="video.html">Edit Video</a>
+      <a href="projects.html">Dự án</a>
+      <a href="experience.html">Kinh nghiệm</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="cv.html">Bản in CV</a>
+      <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

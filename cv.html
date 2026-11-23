@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bản CV Tổng hợp &amp; In PDF — Trần Ngọc Huy</title>
+<meta name="description" content="Bản CV tổng hợp 1 trang chuẩn in PDF A4 của Trần Ngọc Huy — Sinh viên CNTT Đại học Lạc Hồng (LHU)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="cv" data-depth-start="0" data-depth-end="11000">
+<a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
+
+<div class="ocean" aria-hidden="true"></div>
+<div class="abyss-veil" id="veil" aria-hidden="true"></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="site-nav" aria-label="Điều hướng chính">
+  <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Trang chính</a>
+    <a href="profile.html">Hồ sơ</a>
+    <a href="video.html">Edit Video</a>
+    <a href="projects.html">Dự án</a>
+    <a href="experience.html">Kinh nghiệm</a>
+    <a href="contact.html">Liên hệ</a>
+  </div>
+  <div class="nav-actions">
+    <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>
+      <span>In / Lưu PDF</span>
+    </button>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobileDrawer">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
+  <a href="index.html">Trang chính</a>
+  <a href="profile.html">Hồ sơ &amp; Kỹ năng</a>
+  <a href="video.html">Edit Video &amp; Motion</a>
+  <a href="projects.html">Dự án &amp; Sản phẩm</a>
+  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
+  <a href="contact.html">Liên hệ</a>
+  <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
+</div>
+
+<main id="main-content">
+  <header class="sub-hero">
+    <div class="wrap">
+      <div class="sub-nav-row">
+        <nav class="breadcrumb" aria-label="Đường dẫn trang">
+          <a href="index.html">Trang chính</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Bản CV tổng hợp (PDF A4)</span>
+        </nav>
+        <div class="hub-cv-actions">
+          <a href="index.html" class="btn btn-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            <span>Về trang chính</span>
+          </a>
+          <button type="button" class="btn btn-primary btn-sm" id="printCvDirect">In / Lưu CV (PDF A4)</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-body">
+    <div class="wrap">
+      <div class="cv-sheet">
+        <!-- TỔNG QUAN ỨNG VIÊN -->
+        <article class="card cv-block">
+          <div class="cv-header-grid">
+            <div>
+              <h1 style="font-family:var(--display);font-size:clamp(28px,3.6vw,40px);line-height:1.2">Trần Ngọc Huy</h1>
+              <p class="hero-role" style="margin-top:8px;font-size:18px">Software · Quality · AI Engineering — kết hợp Game &amp; Edit Video</p>
+              <p style="margin-top:12px;color:var(--ink-2);font-size:14.5px">
+                Sinh viên Công nghệ thông tin tại Đại học Lạc Hồng (LHU, mã lớp 25CT113), Đồng Nai. Xây dựng sản phẩm số hoàn chỉnh từ mã nguồn đến trải nghiệm thị giác: website full-stack, web game vật lý 2D, quy trình kiểm thử chất lượng và video edit / motion graphics.
+              </p>
+              <div class="focus-bar" style="margin-top:14px">
+                <span class="focus-pill"><b>Email</b> tranngochuyc@gmail.com</span>
+                <span class="focus-pill"><b>GitHub</b> github.com/tranngochuyc-cyber</span>
+                <span class="focus-pill"><b>Khu vực</b> Biên Hòa, Đồng Nai</span>
+              </div>
+            </div>
+            <div class="cv-avatar">
+              <img src="media/avatar-huy.jpg" alt="Ảnh chân dung Trần Ngọc Huy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- HỌC VẤN & KỸ NĂNG -->
+        <article class="card cv-block">
+          <h2>Học vấn &amp; Ma trận Kỹ năng</h2>
+          <div class="cv-two-col">
+            <div class="cv-item">
+              <small>HỌC VẤN &amp; ĐỊNH HƯỚNG</small>
+              <strong>Đại học Lạc Hồng (LHU) — Công nghệ thông tin</strong>
+              <p>Mã lớp 25CT113 · Định hướng: 50% Software Engineering, 25% Quality Engineering, 25% AI Engineering. Ngoại ngữ: Tiếng Anh (đang ôn luyện TOEIC, đọc hiểu tài liệu kỹ thuật).</p>
+            </div>
+            <div class="cv-item">
+              <small>SOFTWARE &amp; WEB (50%)</small>
+              <strong>Ngôn ngữ &amp; Nền tảng</strong>
+              <p>HTML5/CSS3, JavaScript (ES6+), TypeScript, Next.js, Tailwind, Three.js &amp; GLSL, HTML5 Canvas 2D, Supabase, Laravel &amp; MySQL, SQL Server 2014, Vite, GitHub Actions.</p>
+            </div>
+            <div class="cv-item">
+              <small>QUALITY &amp; AI ENGINEERING (50%)</small>
+              <strong>Kiểm thử &amp; Tự động hóa</strong>
+              <p>Automated Testing, Unit Test JS, AI Code Review 7 tầng, Keyboard Accessibility, Responsive &amp; Contrast Audit, Video Visual QA, Prompt Engineering &amp; Audit Log, Python Scripting.</p>
+            </div>
+            <div class="cv-item">
+              <small>SÁNG TẠO NỘI DUNG</small>
+              <strong>Edit Video &amp; Motion Graphics</strong>
+              <p>Short-Form Reels / TikTok / Shorts, Video Quảng Cáo Chuyển Đổi, Motion Explainer sản phẩm, Talking-Head giữ chân người xem, After Effects &amp; GSAP Motion.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- DỰ ÁN TIÊU BIỂU -->
+        <article class="card cv-block">
+          <h2>7 Dự án &amp; Sản phẩm đã hoàn thiện</h2>
+          <div class="cv-two-col">
+            <div class="cv-item">
+              <small>WEB 3D · THREE.JS &amp; GLSL</small>
+              <strong>BIỂN — Hành trình khám phá đại dương 3D</strong>
+              <p>Website kể chuyện cuộn từ mặt nước xuống biển sâu, mô phỏng cá đuối manta, shader nước, caustics, thư viện sinh vật dẫn nguồn Smithsonian Ocean &amp; MBARI. CI/CD GitHub Actions.</p>
+            </div>
+            <div class="cv-item">
+              <small>WEB FULL-STACK · SUPABASE</small>
+              <strong>Indieverse — Review &amp; Khám phá 250 Game Indie</strong>
+              <p>Dữ liệu 250 tựa game, gợi ý Play Lab theo thời gian/tâm trạng, Game DNA, so sánh song song hai game, đăng nhập &amp; chấm điểm 1–5 sao qua Supabase.</p>
+            </div>
+            <div class="cv-item">
+              <small>WEB GAME · HTML5 CANVAS 2D</small>
+              <strong>SKY SLING — Game Vật Lý Ná Thun</strong>
+              <p>Tự viết vật lý va chạm 2D bằng JavaScript thuần không engine ngoài: 3 màn chơi, 3 loại chim có kỹ năng giữa không trung, 3 chất liệu gỗ/kính/đá, 60 fps và Web Audio SFX.</p>
+            </div>
+            <div class="cv-item">
+              <small>WEB APP · UI/UX &amp; UNIT TEST</small>
+              <strong>Study Space Finder — Tìm góc học sinh viên</strong>
+              <p>Viết bằng Vanilla JS, tìm kiếm tiếng Việt không dấu, lọc đa tiêu chí, keyboard accessibility, thiết kế lại giao diện editorial và kiểm thử đơn vị.</p>
+            </div>
+            <div class="cv-item">
+              <small>QUALITY &amp; AI ENGINEERING</small>
+              <strong>Hệ thống AI Code Review 7 Tầng</strong>
+              <p>Chuẩn hóa 7 lớp kiểm duyệt từ trước PR đến rollback; lõi Tìm → Xác minh phản biện → Lọc nhiễu, bằng chứng file:line và duyệt theo Risk Tier.</p>
+            </div>
+            <div class="cv-item">
+              <small>HỌC THUẬT &amp; LÀM NHÓM (LHU)</small>
+              <strong>Đồ án SQL Server 2014 · Nhóm 3 · Bài thi Review Game</strong>
+              <p>Phụ trách lõi SQL Server 2014 đề tài Quản lý Giải Bóng Đá (nhóm 4 SV); Trưởng nhóm 3 hoàn thiện web 4 trang trong 6 tuần; tối giản Review Game 4 tệp tĩnh kèm nhật ký Prompt AI.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM EDIT VIDEO -->
+        <article class="card cv-block">
+          <h2>5 Sản phẩm Edit Video &amp; Motion Graphics</h2>
+          <div class="cv-two-col">
+            <div class="cv-item">
+              <small>TALKING-HEAD · BEFORE / AFTER (60s)</small>
+              <strong>Nâng tầm Video Talking-Head giữ chân người xem</strong>
+              <p>Hook mạnh 3 giây đầu, chèn đồ thị so sánh &amp; minh họa bám sát lời nói giúp tăng thời lượng xem hết trên Reels / Shorts.</p>
+            </div>
+            <div class="cv-item">
+              <small>MOTION EXPLAINER · TECH (21s)</small>
+              <strong>Giới thiệu sản phẩm công nghệ — Claude Opus 5.5</strong>
+              <p>Đồ họa chuyển động editorial minh họa mức giá, dung lượng xử lý và kết quả chạy code gọn mắt, dễ ứng dụng ra mắt sản phẩm.</p>
+            </div>
+            <div class="cv-item">
+              <small>COMMERCIAL AD · CONVERSION (27s)</small>
+              <strong>Video Quảng cáo Chuyển đổi Dịch vụ &amp; Giáo dục</strong>
+              <p>Kết hợp người dẫn chuyện và motion graphics nhấn lợi ích, chữ rõ cả khi tắt tiếng, tối ưu chạy Meta / TikTok Ads.</p>
+            </div>
+            <div class="cv-item">
+              <small>APPLE STYLE (29s) &amp; BRAND MOTION 16:9 (12s)</small>
+              <strong>Talking-Head Apple Clean UI &amp; Antigravity 2.0 (60 fps)</strong>
+              <p>Thẻ UI tối giản kèm bản đồ định vị trực quan; phim giới thiệu thương hiệu 12s one-take Full HD 60 fps (concept luyện tập cá nhân).</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- KINH NGHIỆM & QUAN ĐIỂM -->
+        <article class="card cv-block">
+          <h2>Kinh nghiệm thực chiến &amp; Quan điểm làm việc</h2>
+          <div class="cv-two-col">
+            <div class="cv-item">
+              <small>KINH NGHIỆM DỰ ÁN &amp; NHÓM</small>
+              <strong>Trưởng nhóm Web · Lõi CSDL · Sản xuất độc lập</strong>
+              <p>Dẫn nhóm 3 sinh viên theo lịch sử commit GitHub; chuẩn hóa SQL Server 2014 &amp; hướng dẫn đồng đội LHU; tự dựng trọn gói sản phẩm Web, Game 2D và Video thương mại.</p>
+            </div>
+            <div class="cv-item">
+              <small>4 NGUYÊN TẮC NGHỀ NGHIỆP</small>
+              <strong>Minh chứng thật · Có kiểm chứng · Ghi nhật ký · Chịu sửa đến cùng</strong>
+              <p>Mọi sản phẩm có bản chạy thử hoặc video thật; kiểm thử responsive, bàn phím, 60 fps và nhịp video; duy trì nhật ký PROGRESS.md rõ ràng.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Trần Ngọc Huy · Bản CV Tổng hợp · Portfolio: tranngochuyc-cyber.github.io/tranngochuy-portfolio-v2</span>
+    <div class="foot-links">
+      <a href="index.html">Trang chính</a>
+      <a href="profile.html">Hồ sơ</a>
+      <a href="video.html">Edit Video</a>
+      <a href="projects.html">Dự án</a>
+      <a href="experience.html">Kinh nghiệm</a>
+      <a href="contact.html">Liên hệ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

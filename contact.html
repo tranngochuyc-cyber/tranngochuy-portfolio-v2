@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Liên hệ &amp; Kết nối nhanh — Trần Ngọc Huy</title>
+<meta name="description" content="Kênh liên hệ trực tiếp, email, mã QR GitHub, biểu mẫu trao đổi nhanh và xuất CV PDF của Trần Ngọc Huy." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="contact" data-depth-start="9500" data-depth-end="11000">
+<a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
+
+<div class="ocean" aria-hidden="true"></div>
+<div class="abyss-veil" id="veil" aria-hidden="true"></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="site-nav" aria-label="Điều hướng chính">
+  <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Trang chính</a>
+    <a href="profile.html">Hồ sơ</a>
+    <a href="video.html">Edit Video</a>
+    <a href="projects.html">Dự án</a>
+    <a href="experience.html">Kinh nghiệm</a>
+    <a href="contact.html" class="active" aria-current="page">Liên hệ</a>
+  </div>
+  <div class="nav-actions">
+    <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>
+      <span>In / Lưu CV</span>
+    </button>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobileDrawer">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
+  <a href="index.html">Trang chính</a>
+  <a href="profile.html">Hồ sơ &amp; Kỹ năng</a>
+  <a href="video.html">Edit Video &amp; Motion</a>
+  <a href="projects.html">Dự án &amp; Sản phẩm</a>
+  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
+  <a href="contact.html" class="active" aria-current="page">Liên hệ</a>
+  <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
+</div>
+
+<aside class="depth" aria-hidden="true">
+  <div class="depth-read">Độ sâu · <b id="depthVal">9.500</b> m</div>
+  <div class="depth-track"><div class="depth-fill" id="depthFill"></div></div>
+</aside>
+
+<main id="main-content">
+  <header class="sub-hero">
+    <div class="wrap">
+      <div class="sub-nav-row">
+        <nav class="breadcrumb" aria-label="Đường dẫn trang">
+          <a href="index.html">Trang chính</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Liên hệ</span>
+        </nav>
+        <a href="index.html" class="btn btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          <span>Về trang chính</span>
+        </a>
+      </div>
+      <div class="sub-hero-head">
+        <div>
+          <h1>Liên hệ &amp; <span>Kết nối nhanh</span></h1>
+          <p class="sec-sub">Rất mong được trao đổi với anh/chị tuyển dụng hoặc đối tác về các dự án Web, Quality/AI Engineering, Game hoặc Edit Video.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-body" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <article class="card contact-info reveal">
+          <h2>Kênh liên hệ trực tiếp</h2>
+          <p>Thông tin liên hệ được xác thực từ hồ sơ cá nhân. Anh/chị có thể sao chép email, quét mã QR để xem toàn bộ mã nguồn trên GitHub hoặc in ngay bản CV PDF.</p>
+
+          <div class="contact-channels">
+            <div class="channel-row">
+              <div>
+                <small>Email</small>
+                <strong>tranngochuyc@gmail.com</strong>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button type="button" class="btn btn-sm" id="copyEmailBtn">Sao chép</button>
+                <a href="mailto:tranngochuyc@gmail.com" class="btn btn-primary btn-sm">Gửi mail</a>
+              </div>
+            </div>
+
+            <div class="channel-row">
+              <div>
+                <small>GitHub (Mã nguồn &amp; Demo)</small>
+                <strong>github.com/tranngochuyc-cyber</strong>
+              </div>
+              <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener" class="btn btn-sm">Mở GitHub</a>
+            </div>
+
+            <div class="channel-row">
+              <div>
+                <small>Trường &amp; Khu vực</small>
+                <strong>Đại học Lạc Hồng (LHU) · Đồng Nai</strong>
+              </div>
+              <button type="button" class="btn btn-sm" id="printCvContact">In / Lưu CV (PDF)</button>
+            </div>
+          </div>
+
+          <div class="qr-box">
+            <div class="qr-canvas" id="githubQr" aria-label="Mã QR dẫn tới GitHub Trần Ngọc Huy"></div>
+            <div>
+              <strong>Quét mã QR xem GitHub</strong>
+              <p>Mở nhanh trang tổng hợp toàn bộ mã nguồn, commit history và các bản demo đang chạy trực tiếp của tôi.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card contact-form-box reveal">
+          <h2>Gửi lời nhắn trao đổi</h2>
+          <p>Điền nhanh nội dung bên dưới để mở ngay ứng dụng Email đã điền sẵn hoặc sao chép trọn nội dung gửi qua kênh liên lạc của anh/chị.</p>
+
+          <form class="msg-form" id="contactForm" novalidate>
+            <div class="row2">
+              <label>Tên anh/chị hoặc Công ty
+                <input name="sender" required placeholder="VD: Nguyễn Minh — HR Tech" />
+              </label>
+              <label>Email hoặc Kênh phản hồi
+                <input name="replyTo" required placeholder="email@congty.com / Zalo" />
+              </label>
+            </div>
+            <label>Chủ đề trao đổi
+              <select name="topic">
+                <option value="Trao đổi cơ hội Thực tập / Tuyển dụng">Trao đổi cơ hội Thực tập / Tuyển dụng</option>
+                <option value="Hợp tác dự án Website / Full-stack">Hợp tác dự án Website / Full-stack</option>
+                <option value="Hợp tác Edit Video / Motion Graphics">Hợp tác Edit Video / Motion Graphics</option>
+                <option value="Trao đổi khác">Trao đổi khác</option>
+              </select>
+            </label>
+            <label>Nội dung ngắn
+              <textarea name="body" required placeholder="Vị trí, dự án hoặc thời gian thuận tiện để trao đổi..."></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Mở Email điền sẵn</button>
+              <button type="button" class="btn" id="copyMsgBtn">Sao chép lời nhắn</button>
+            </div>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager-wrap" aria-label="Chuyển giữa các trang nhánh">
+    <div class="wrap">
+      <div class="page-pager">
+        <a class="pager-card" href="experience.html">
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+          <div>
+            <small>Trang nhánh trước</small>
+            <strong>Kinh nghiệm &amp; Quan điểm làm việc</strong>
+          </div>
+        </a>
+        <a class="pager-card next" href="index.html">
+          <div>
+            <small>Quay về điểm xuất phát</small>
+            <strong>Trang chính tổng quan</strong>
+          </div>
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Trần Ngọc Huy · Sinh viên CNTT, Đại học Lạc Hồng (LHU) · 0 m → 11.000 m</span>
+    <div class="foot-links">
+      <a href="index.html">Trang chính</a>
+      <a href="profile.html">Hồ sơ</a>
+      <a href="video.html">Edit Video</a>
+      <a href="projects.html">Dự án</a>
+      <a href="experience.html">Kinh nghiệm</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="cv.html">Bản in CV</a>
+      <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js" defer></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
