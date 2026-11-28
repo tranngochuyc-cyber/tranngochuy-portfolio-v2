@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Triết lý sống — Trần Ngọc Huy</title>
+<meta name="description" content="Triết lý sống 'Thực sự cầu thị' và 4 nguyên tắc làm việc kèm hình ảnh minh họa của Trần Ngọc Huy." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2304101d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%234cd8ff'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="philosophy" data-depth-start="9400" data-depth-end="11000">
+<a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
+
+<div class="ocean" aria-hidden="true"></div>
+<div class="abyss-veil" id="veil" aria-hidden="true"></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<!-- ============ NAVBAR (5 PHẦN CHÍNH) ============ -->
+<nav class="site-nav" aria-label="Điều hướng chính">
+  <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Trang chủ</a>
+    <a href="profile.html">Giới thiệu</a>
+    <a href="projects.html">Dự án của tôi</a>
+    <a href="experience.html">Kinh nghiệm</a>
+    <a href="philosophy.html" class="active" aria-current="page">Triết lý sống</a>
+  </div>
+  <div class="nav-actions">
+    <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>
+      <span>In / Lưu CV</span>
+    </button>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobileDrawer">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
+  <a href="index.html">Trang chủ</a>
+  <a href="profile.html">Giới thiệu</a>
+  <a href="projects.html">Dự án của tôi</a>
+  <a href="experience.html">Kinh nghiệm</a>
+  <a href="philosophy.html" class="active" aria-current="page">Triết lý sống</a>
+  <a href="contact.html">Liên hệ nhanh</a>
+  <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
+</div>
+
+<aside class="depth" aria-hidden="true">
+  <div class="depth-read">Độ sâu · <b id="depthVal">9.400</b> m</div>
+  <div class="depth-track"><div class="depth-fill" id="depthFill"></div></div>
+</aside>
+
+<main id="main-content">
+  <header class="sub-hero">
+    <div class="wrap">
+      <div class="sub-nav-row">
+        <nav class="breadcrumb" aria-label="Đường dẫn trang">
+          <a href="index.html">Trang chủ</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Triết lý sống</span>
+        </nav>
+        <a href="index.html" class="btn btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          <span>Về trang chủ</span>
+        </a>
+      </div>
+      <div class="sub-hero-head">
+        <div>
+          <h1>Triết lý sống &amp; <span>Giá trị theo đuổi</span></h1>
+          <p class="sec-sub">Những nguyên tắc tôi giữ cho riêng mình trong quá trình học CNTT tại Đại học Lạc Hồng và tự tay hoàn thiện từng sản phẩm số — trình bày trực quan cùng bằng chứng thực tế.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-body" id="philosophy">
+    <div class="wrap">
+      <!-- TUYÊN NGÔN CỐT LÕI + MINH HỌA LA BÀN ĐỘ SÂU -->
+      <article class="card manifesto-stage reveal">
+        <div>
+          <blockquote class="manifesto-quote">
+            “Thực sự cầu thị.”
+          </blockquote>
+          <p class="manifesto-sub">
+            Với tôi, cầu thị không phải lời nói xã giao mà là cách hành động: nhìn thẳng vào thiếu sót, lắng nghe góp ý không phòng thủ, kiểm chứng bằng kết quả thật và sẵn sàng làm lại cho tới khi sản phẩm đủ tử tế.
+          </p>
+        </div>
+
+        <div class="compass-art" aria-label="Minh họa La bàn Độ sâu định hướng từ 0 m đến 11.000 m">
+          <svg viewBox="0 0 360 270" role="img" aria-label="La bàn độ sâu đại dương 0 m đến 11.000 m">
+            <defs>
+              <radialGradient id="compassGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#4cd8ff" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#4cd8ff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="180" cy="135" r="108" fill="url(#compassGlow)"/>
+            <circle cx="180" cy="135" r="96" fill="none" stroke="rgba(130,214,255,.22)" stroke-dasharray="3 5"/>
+            <circle cx="180" cy="135" r="72" fill="none" stroke="rgba(76,216,255,.36)"/>
+            <circle cx="180" cy="135" r="44" fill="rgba(5,20,36,.85)" stroke="rgba(167,150,255,.45)"/>
+            <path d="M180 26 V46 M180 224 V244 M71 135 H91 M269 135 H289" stroke="#8cb6cf" stroke-width="1.5"/>
+            <polygon points="180,68 193,135 180,148 167,135" fill="#4cd8ff"/>
+            <polygon points="180,202 193,135 180,122 167,135" fill="#4de2b1" opacity=".78"/>
+            <circle cx="180" cy="135" r="6" fill="#f0f8ff"/>
+            <text x="180" y="18" text-anchor="middle" fill="#a6f2ff" font-family="JetBrains Mono, monospace" font-size="10">0 M · THẬT</text>
+            <text x="180" y="261" text-anchor="middle" fill="#9bf2d5" font-family="JetBrains Mono, monospace" font-size="10">11.000 M · BỀN BỈ</text>
+            <text x="12" y="138" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="9.5">KIỂM CHỨNG</text>
+            <text x="296" y="138" fill="#d7ceff" font-family="JetBrains Mono, monospace" font-size="9.5">CẦU THỊ</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- 4 NGUYÊN TẮC XEN KẼ HÌNH MINH HỌA ↔ CHỮ -->
+      <div class="story-stack">
+        <!-- NGUYÊN TẮC 01: ẢNH MINH CHỨNG THẬT -->
+        <article class="card story-band reveal">
+          <div class="story-media proof-mosaic" aria-label="Ảnh chụp thực tế từ các sản phẩm web, game và video đã hoàn thiện">
+            <div class="vc-tile vc-main">
+              <img src="media/indieverse.jpg" alt="Trang web Indieverse chạy thực tế" loading="lazy" />
+              <span class="vc-label">Live Web · 250 Game</span>
+            </div>
+            <div class="vc-tile">
+              <img src="media/skysling-2.jpg" alt="Game vật lý SKY SLING thực tế" loading="lazy" />
+              <span class="vc-label">Demo Game 2D</span>
+            </div>
+            <div class="vc-tile">
+              <img src="media/antigravity-poster.jpg" alt="Video motion Antigravity 2.0" loading="lazy" />
+              <span class="vc-label">Video 60fps</span>
+            </div>
+          </div>
+
+          <div class="story-copy">
+            <div class="story-meta">
+              <span class="story-tag">NGUYÊN TẮC 01</span>
+              <span class="story-time">Minh bạch</span>
+            </div>
+            <h2>Trung thực với năng lực và minh chứng thật</h2>
+            <p>
+              Không thổi phồng tên gọi hay số liệu. Mọi dự án giới thiệu trên portfolio đều đi kèm bản demo chạy thật, video phát trực tiếp hoặc tài liệu kiến trúc rõ ràng; phần nào là sản phẩm luyện tập hay concept cá nhân đều ghi chú thẳng thắn.
+            </p>
+          </div>
+        </article>
+
+        <!-- NGUYÊN TẮC 02: MINH HỌA KIỂM CHỨNG ĐA MÀN HÌNH & 60FPS -->
+        <article class="card story-band reverse reveal">
+          <div class="story-media story-diagram" aria-label="Minh họa kiểm chứng đa màn hình, bàn phím và khung hình 60 fps">
+            <svg viewBox="0 0 520 325" role="img" aria-label="Cổng kiểm chứng chất lượng Desktop, Mobile và 60 fps">
+              <rect x="12" y="12" width="496" height="301" rx="14" fill="#06192c" stroke="#235b84" stroke-width="1.2"/>
+              <text x="30" y="39" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="11">VERIFICATION GATE · CHẠY ĐÚNG MÔI TRƯỜNG THẬT</text>
+              <line x1="30" y1="54" x2="490" y2="54" stroke="rgba(130,214,255,.18)"/>
+
+              <!-- Desktop + Mobile mockup -->
+              <rect x="34" y="76" width="210" height="134" rx="10" fill="#09243d" stroke="#4cd8ff"/>
+              <rect x="46" y="92" width="186" height="12" rx="4" fill="#10385c"/>
+              <rect x="46" y="114" width="114" height="80" rx="6" fill="#0d3152"/>
+              <rect x="168" y="114" width="64" height="80" rx="6" fill="#0d3152"/>
+              <text x="139" y="228" text-anchor="middle" fill="#a6f2ff" font-family="JetBrains Mono, monospace" font-size="10">DESKTOP 1440px · 0 TRÀN NGANG</text>
+
+              <rect x="268" y="92" width="76" height="118" rx="10" fill="#09243d" stroke="#4de2b1"/>
+              <rect x="278" y="106" width="56" height="90" rx="5" fill="#0d3152"/>
+              <text x="306" y="228" text-anchor="middle" fill="#9bf2d5" font-family="JetBrains Mono, monospace" font-size="10">MOBILE 390px</text>
+
+              <!-- 60fps & pass pills -->
+              <rect x="364" y="76" width="124" height="58" rx="10" fill="#09243d" stroke="#a796ff"/>
+              <text x="426" y="103" text-anchor="middle" fill="#f0f8ff" font-family="Unbounded, sans-serif" font-size="18" font-weight="700">60 fps</text>
+              <text x="426" y="122" text-anchor="middle" fill="#d7ceff" font-family="JetBrains Mono, monospace" font-size="9.5">GAME &amp; VIDEO</text>
+
+              <rect x="364" y="148" width="124" height="62" rx="10" fill="#08283e" stroke="#4de2b1"/>
+              <text x="426" y="176" text-anchor="middle" fill="#4de2b1" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="700">A11Y · PASS</text>
+              <text x="426" y="195" text-anchor="middle" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="10.5">Bàn phím &amp; Tương phản</text>
+
+              <rect x="34" y="248" width="454" height="44" rx="10" fill="#082036" stroke="#2d6691"/>
+              <text x="261" y="274" text-anchor="middle" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="12">Không dừng ở “chạy tạm được” — mọi tính năng đều qua bước kiểm chứng thực tế</text>
+            </svg>
+          </div>
+
+          <div class="story-copy">
+            <div class="story-meta">
+              <span class="story-tag">NGUYÊN TẮC 02</span>
+              <span class="story-time">Quality First</span>
+            </div>
+            <h2>Kỷ luật kiểm chứng — làm xong chưa phải là kết thúc</h2>
+            <p>
+              Một sản phẩm chỉ thật sự hoàn tất khi chạy ổn định ngoài đời thực: website phải kiểm tra responsive và bàn phím, game 2D phải mượt 60 fps không kẹt va chạm, video phải rà soát từng nhịp cắt và phụ đề trước khi gửi ra ngoài.
+            </p>
+          </div>
+        </article>
+
+        <!-- NGUYÊN TẮC 03: MINH HỌA NHẬT KÝ PROGRESS.MD & TIẾN HÓA -->
+        <article class="card story-band reveal">
+          <div class="story-media story-diagram" aria-label="Minh họa thói quen ghi nhật ký PROGRESS.md từng bước">
+            <svg viewBox="0 0 520 325" role="img" aria-label="Sổ nhật ký PROGRESS.md và lộ trình nâng cấp từng bước">
+              <rect x="12" y="12" width="496" height="301" rx="14" fill="#06192c" stroke="#235b84" stroke-width="1.2"/>
+              <text x="30" y="39" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="11">PROGRESS.MD · GHI ĐẾN ĐÂU RÕ ĐẾN ĐÓ</text>
+              <line x1="30" y1="54" x2="490" y2="54" stroke="rgba(130,214,255,.18)"/>
+
+              <rect x="32" y="72" width="456" height="58" rx="10" fill="#09243d" stroke="#4cd8ff"/>
+              <circle cx="58" cy="101" r="10" fill="rgba(76,216,255,.2)" stroke="#4cd8ff"/>
+              <text x="58" y="105" text-anchor="middle" fill="#a6f2ff" font-family="JetBrains Mono, monospace" font-size="10">01</text>
+              <text x="82" y="96" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="13" font-weight="700">Khối ĐỌC NHANH ở đầu file</text>
+              <text x="82" y="114" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="11.5">Tóm tắt đúng trạng thái hiện tại, mở ra là tiếp tục được ngay</text>
+
+              <rect x="32" y="144" width="456" height="58" rx="10" fill="#09243d" stroke="#4de2b1"/>
+              <circle cx="58" cy="173" r="10" fill="rgba(77,226,177,.2)" stroke="#4de2b1"/>
+              <text x="58" y="177" text-anchor="middle" fill="#9bf2d5" font-family="JetBrains Mono, monospace" font-size="10">02</text>
+              <text x="82" y="168" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="13" font-weight="700">Ghi từng mốc hoàn thành + kết quả thật</text>
+              <text x="82" y="186" fill="#c4deee" font-family="Be Vietnam Pro, sans-serif" font-size="11.5">Không dồn cuối ngày — bảo vệ mạch làm việc khi dự án kéo dài</text>
+
+              <rect x="32" y="216" width="456" height="72" rx="10" fill="#09243d" stroke="#a796ff"/>
+              <text x="50" y="242" fill="#d7ceff" font-family="JetBrains Mono, monospace" font-size="10.5">TIẾN ĐỘ TÍCH LŨY BỀN BỈ</text>
+              <rect x="50" y="256" width="120" height="16" rx="8" fill="#4cd8ff"/>
+              <rect x="176" y="256" width="140" height="16" rx="8" fill="#4de2b1"/>
+              <rect x="322" y="256" width="146" height="16" rx="8" fill="#a796ff"/>
+            </svg>
+          </div>
+
+          <div class="story-copy">
+            <div class="story-meta">
+              <span class="story-tag">NGUYÊN TẮC 03</span>
+              <span class="story-time">Bền bỉ &amp; Rõ ràng</span>
+            </div>
+            <h2>Ghi chép mạch lạc, tiến bộ bền bỉ từng bước</h2>
+            <p>
+              Tôi giữ thói quen ghi nhật ký <code class="ic">PROGRESS.md</code> sau mỗi mốc hoàn thành và viết tài liệu hướng dẫn cẩn thận. Làm chậm mà chắc giúp không mất mạch khi dự án kéo dài và giúp người khác tiếp nhận công việc dễ dàng.
+            </p>
+          </div>
+        </article>
+
+        <!-- NGUYÊN TẮC 04: MINH HỌA VÒNG LẶP CẢI TIẾN -->
+        <article class="card story-band reverse reveal">
+          <div class="story-media story-diagram" aria-label="Minh họa vòng lặp cầu thị lắng nghe và làm lại đến khi đạt chuẩn">
+            <svg viewBox="0 0 520 325" role="img" aria-label="Chu trình 4 bước cải tiến liên tục">
+              <rect x="12" y="12" width="496" height="301" rx="14" fill="#06192c" stroke="#235b84" stroke-width="1.2"/>
+              <text x="30" y="39" fill="#8cb6cf" font-family="JetBrains Mono, monospace" font-size="11">ITERATION LOOP · SỬA ĐẾN KHI ĐẠT CHUẨN</text>
+              <line x1="30" y1="54" x2="490" y2="54" stroke="rgba(130,214,255,.18)"/>
+
+              <circle cx="260" cy="176" r="82" fill="none" stroke="rgba(76,216,255,.28)" stroke-width="2" stroke-dasharray="6 5"/>
+
+              <rect x="172" y="68" width="176" height="44" rx="10" fill="#0a2c4a" stroke="#4cd8ff"/>
+              <text x="260" y="94" text-anchor="middle" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12.5" font-weight="700">1. Dựng phiên bản thật</text>
+
+              <rect x="334" y="152" width="154" height="48" rx="10" fill="#0a2c4a" stroke="#ff9a6c"/>
+              <text x="411" y="180" text-anchor="middle" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12.5" font-weight="700">2. Nhận góp ý thẳng</text>
+
+              <rect x="172" y="242" width="176" height="44" rx="10" fill="#0a2c4a" stroke="#a796ff"/>
+              <text x="260" y="268" text-anchor="middle" fill="#f0f8ff" font-family="Be Vietnam Pro, sans-serif" font-size="12.5" font-weight="700">3. Sửa lại tử tế</text>
+
+              <rect x="32" y="152" width="154" height="48" rx="10" fill="#0a2c4a" stroke="#4de2b1"/>
+              <text x="109" y="180" text-anchor="middle" fill="#9bf2d5" font-family="Be Vietnam Pro, sans-serif" font-size="12.5" font-weight="700">4. Đạt chuẩn mới</text>
+
+              <text x="260" y="181" text-anchor="middle" fill="#a6f2ff" font-family="Unbounded, sans-serif" font-size="14" font-weight="700">v1 → v2</text>
+            </svg>
+          </div>
+
+          <div class="story-copy">
+            <div class="story-meta">
+              <span class="story-tag">NGUYÊN TẮC 04</span>
+              <span class="story-time">Growth Mindset</span>
+            </div>
+            <h2>Cầu thị và sẵn sàng làm lại cho tới khi đạt chuẩn</h2>
+            <p>
+              Khi một bố cục giao diện, đoạn code hay nhịp video chưa đủ thuyết phục, tôi không chống chế. Lắng nghe góp ý thẳng thắn, nhìn ra chỗ chưa tới và làm lại tử tế là cách nhanh nhất để nâng chuẩn tay nghề.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- CHẶNG ĐƯỜNG TIẾP THEO -->
+      <article class="card next-horizon-card reveal">
+        <div>
+          <h2>Chặng đường tiếp theo</h2>
+          <p>
+            Tôi tiếp tục củng cố nền tảng Software, Quality và AI Engineering trong chương trình học tại Đại học Lạc Hồng (LHU), đồng thời hoàn thiện thêm các sản phẩm Web, Game 2D và Video Motion có chiều sâu hơn.
+          </p>
+        </div>
+        <div class="next-horizon-actions">
+          <a href="projects.html" class="btn btn-primary">Xem Dự án của tôi</a>
+          <a href="contact.html" class="btn">Liên hệ &amp; Kết nối nhanh</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <nav class="pager-wrap" aria-label="Chuyển giữa các trang nhánh">
+    <div class="wrap">
+      <div class="page-pager">
+        <a class="pager-card" href="experience.html">
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+          <div>
+            <small>Trang nhánh trước</small>
+            <strong>Kinh nghiệm</strong>
+          </div>
+        </a>
+        <a class="pager-card next" href="index.html">
+          <div>
+            <small>Quay về điểm xuất phát</small>
+            <strong>Trang chủ tổng quan</strong>
+          </div>
+          <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Trần Ngọc Huy · Sinh viên CNTT, Đại học Lạc Hồng (LHU) · 0 m → 11.000 m</span>
+    <div class="foot-links">
+      <a href="index.html">Trang chủ</a>
+      <a href="profile.html">Giới thiệu</a>
+      <a href="projects.html">Dự án của tôi</a>
+      <a href="experience.html">Kinh nghiệm</a>
+      <a href="philosophy.html">Triết lý sống</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="cv.html">Bản in CV</a>
+      <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# PORTFOLIO v2 — TRẦN NGỌC HUY (Bản nâng cấp hướng Nhà tuyển dụng)
+# PORTFOLIO v2 — TRẦN NGỌC HUY
 
 **Software Engineering (50%) · Quality Engineering (25%) · AI Engineering (25%) · Game & Edit Video / Motion Graphics**
 
@@ -6,22 +6,20 @@
 
 > **Lưu ý:** Đây là repository phiên bản nâng cấp độc lập (`tranngochuy-portfolio-v2`), **không ghi đè** lên trang gốc [`tranngochuy-portfolio`](https://github.com/tranngochuyc-cyber/tranngochuy-portfolio).
 
-## Điểm nổi bật bản v2
+## Cấu trúc 5 phần chính
 
-1. **Cấu trúc chuẩn Nhà tuyển dụng (giữ bản sắc Đại dương `0 m → 11.000 m`, chỉ 1 ảnh chân dung đầu trang):**
-   - Ảnh chân dung duy nhất tại Hero (`media/avatar-huy.jpg`); toàn bộ phần dưới dùng ảnh sản phẩm thật, video phát trực tiếp và sơ đồ kiến trúc SVG.
-   - Đầy đủ Học vấn (ĐH Lạc Hồng — CNTT `25CT113`), tỷ trọng định hướng `50/25/25`, Ma trận Kỹ năng 4 trụ cột, Kinh nghiệm làm nhóm, Quan điểm làm việc, Mã QR GitHub thật và nút **In / Lưu bản CV (PDF)** chuẩn A4.
-2. **Chuyên mục Edit Video & Motion (`#video-studio` — 5 video phát trực tiếp, tập trung giá trị mang lại):**
-   - **Before / After Talking-Head** (`media/video-before-after.mp4`): Chặn lướt 3 giây đầu, tăng watch time và độ chuyên nghiệp thương hiệu.
-   - **Motion Explainer Công Nghệ — Claude Opus 5.5** (`media/video-claude-motion.mp4`): Đơn giản hóa thông số kỹ thuật phức tạp thành câu chuyện trực quan 21 giây.
-   - **Video Quảng Cáo Chuyển Đổi** (`media/video-commercial-ad.mp4`): Thúc đẩy đăng ký, rõ thông điệp cả khi tắt tiếng, sẵn sàng chạy Ads.
-   - **Video Talking-Head Phong cách Apple tối giản** (`media/video-apple-style.mp4`): Đánh trúng nỗi đau khách hàng bằng thẻ giao diện sạch, bản đồ định vị địa phương và cảm giác thương hiệu cao cấp.
-   - **Antigravity 2.0 — Concept Film (16:9 · 60fps)** (`media/antigravity.mp4`): Video mở màn thương hiệu liền mạch 12 giây.
-3. **Danh mục 7 Dự án & Sản phẩm (kèm bộ lọc + quy trình 4 bước thu gọn/mở rộng):**
-   - **Web & Full-stack (3):** BIỂN 3D (`Three.js`), Indieverse (`250 game + Supabase`), **Study Space Finder** (bản nâng cấp giao diện & ảnh nội thất mới tại `demos/study-space-finder/index.html`).
-   - **Game (1):** **SKY SLING — Game Vật Lý Ná Thun (Kiểu Angry Birds)** chơi trực tiếp tại `demos/sky-sling/index.html` (3 màn, 3 loại chim có kỹ năng riêng, 3 chất liệu gỗ/kính/đá, Web Audio SFX).
+1. **Trang chủ (`index.html`):** Hero tổng quan cùng ảnh chân dung `media/avatar-huy.jpg`, tỷ trọng định hướng `50/25/25`, bản đồ 4 trang nhánh cân đối `2×2` và thanh mở nhanh bản CV in PDF A4 / Liên hệ.
+2. **Giới thiệu (`profile.html`):** Khối thông tin cá nhân kèm ảnh chân dung thứ 2 (`media/huy-profile.jpg`), nền tảng học tập CNTT tại Đại học Lạc Hồng (`25CT113`, Biên Hòa, Đồng Nai), định hướng phát triển và 4 nhóm kỹ năng thực hành.
+3. **Dự án của tôi (`projects.html`):** Gộp trọn 7 dự án kỹ thuật/học thuật và 5 sản phẩm Edit Video & Motion Graphics kèm bộ lọc 6 nhóm (`Tất cả`, `Edit Video & Motion`, `Web & Full-stack`, `Game`, `AI & Kiểm thử`, `Học thuật & Nhóm`) và quy trình thực hiện 4 bước cho từng dự án:
+   - **Web & Full-stack (3):** BIỂN 3D (`Three.js`), Indieverse (`250 game + Supabase`), Study Space Finder (`demos/study-space-finder/index.html`).
+   - **Game (1):** SKY SLING — Game Vật Lý Ná Thun (`demos/sky-sling/index.html`).
    - **AI & Kiểm thử (1):** Hệ thống AI Code Review 7 Tầng.
    - **Học thuật & Nhóm (2):** Đồ án Hệ quản trị CSDL (SQL Server 2014 — Quản lý Giải Bóng Đá), Nhóm 3 (Trưởng nhóm 6 tuần) & Bài thi Review Game.
+   - **Edit Video & Motion (5):** Before/After Talking-Head, Motion Explainer Claude Opus 5.5, Commercial Ad Dịch vụ & Giáo dục, Talking-Head Apple Style và Antigravity 2.0 (`16:9`, `60fps`).
+4. **Kinh nghiệm (`experience.html`):** 4 mốc thực chiến (Trưởng nhóm Nhóm 3, phụ trách lõi SQL Server 2014, phát triển Web/Game 2D độc lập, sản xuất Video & Motion) cùng 4 cách tổ chức công việc & kiểm soát chất lượng.
+5. **Triết lý sống (`philosophy.html`):** Tuyên ngôn cốt lõi, 4 nguyên tắc sống & làm việc (Minh chứng thật, Kỷ luật kiểm chứng, Ghi chép mạch lạc, Cầu thị làm lại cho đạt chuẩn) và chặng đường tiếp theo.
+
+*Trang bổ trợ:* `contact.html` (kênh liên hệ, mã QR GitHub, form soạn mail), `cv.html` (bản CV tổng hợp 1 trang chuẩn in PDF A4), `video.html` (chuyển hướng tương thích ngược sang `projects.html?cat=video`).
 
 ## Chạy xem trước cục bộ
 

@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2304101d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%234cd8ff'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body data-page="cv" data-depth-start="0" data-depth-end="11000">
@@ -17,16 +18,15 @@
 <div class="abyss-veil" id="veil" aria-hidden="true"></div>
 <canvas id="snow" aria-hidden="true"></canvas>
 
-<!-- ============ NAVBAR ============ -->
+<!-- ============ NAVBAR (5 PHẦN CHÍNH) ============ -->
 <nav class="site-nav" aria-label="Điều hướng chính">
   <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
   <div class="nav-links" id="navLinks">
-    <a href="index.html">Trang chính</a>
-    <a href="profile.html">Hồ sơ</a>
-    <a href="video.html">Edit Video</a>
-    <a href="projects.html">Dự án</a>
+    <a href="index.html">Trang chủ</a>
+    <a href="profile.html">Giới thiệu</a>
+    <a href="projects.html">Dự án của tôi</a>
     <a href="experience.html">Kinh nghiệm</a>
-    <a href="contact.html">Liên hệ</a>
+    <a href="philosophy.html">Triết lý sống</a>
   </div>
   <div class="nav-actions">
     <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
@@ -40,12 +40,12 @@
 </nav>
 
 <div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
-  <a href="index.html">Trang chính</a>
-  <a href="profile.html">Hồ sơ &amp; Kỹ năng</a>
-  <a href="video.html">Edit Video &amp; Motion</a>
-  <a href="projects.html">Dự án &amp; Sản phẩm</a>
-  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
-  <a href="contact.html">Liên hệ</a>
+  <a href="index.html">Trang chủ</a>
+  <a href="profile.html">Giới thiệu</a>
+  <a href="projects.html">Dự án của tôi</a>
+  <a href="experience.html">Kinh nghiệm</a>
+  <a href="philosophy.html">Triết lý sống</a>
+  <a href="contact.html">Liên hệ nhanh</a>
   <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
 </div>
 
@@ -54,14 +54,14 @@
     <div class="wrap">
       <div class="sub-nav-row">
         <nav class="breadcrumb" aria-label="Đường dẫn trang">
-          <a href="index.html">Trang chính</a>
+          <a href="index.html">Trang chủ</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">Bản CV tổng hợp (PDF A4)</span>
         </nav>
         <div class="hub-cv-actions">
           <a href="index.html" class="btn btn-sm">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-            <span>Về trang chính</span>
+            <span>Về trang chủ</span>
           </a>
           <button type="button" class="btn btn-primary btn-sm" id="printCvDirect">In / Lưu CV (PDF A4)</button>
         </div>
@@ -79,7 +79,7 @@
               <h1 style="font-family:var(--display);font-size:clamp(28px,3.6vw,40px);line-height:1.2">Trần Ngọc Huy</h1>
               <p class="hero-role" style="margin-top:8px;font-size:18px">Software · Quality · AI Engineering — kết hợp Game &amp; Edit Video</p>
               <p style="margin-top:12px;color:var(--ink-2);font-size:14.5px">
-                Sinh viên Công nghệ thông tin tại Đại học Lạc Hồng (LHU, mã lớp 25CT113), Đồng Nai. Xây dựng sản phẩm số hoàn chỉnh từ mã nguồn đến trải nghiệm thị giác: website full-stack, web game vật lý 2D, quy trình kiểm thử chất lượng và video edit / motion graphics.
+                Sinh viên Công nghệ thông tin tại Đại học Lạc Hồng (LHU, mã lớp 25CT113), Biên Hòa, Đồng Nai. Học và tự tay xây dựng sản phẩm số từ mã nguồn đến trải nghiệm thị giác: website full-stack, web game vật lý 2D, quy trình kiểm thử chất lượng và video edit / motion graphics.
               </p>
               <div class="focus-bar" style="margin-top:14px">
                 <span class="focus-pill"><b>Email</b> tranngochuyc@gmail.com</span>
@@ -93,14 +93,14 @@
           </div>
         </article>
 
-        <!-- HỌC VẤN & KỸ NĂNG -->
+        <!-- GIỚI THIỆU & KỸ NĂNG -->
         <article class="card cv-block">
-          <h2>Học vấn &amp; Ma trận Kỹ năng</h2>
+          <h2>Giới thiệu · Học vấn &amp; Kỹ năng</h2>
           <div class="cv-two-col">
             <div class="cv-item">
-              <small>HỌC VẤN &amp; ĐỊNH HƯỚNG</small>
+              <small>THÔNG TIN &amp; HỌC VẤN</small>
               <strong>Đại học Lạc Hồng (LHU) — Công nghệ thông tin</strong>
-              <p>Mã lớp 25CT113 · Định hướng: 50% Software Engineering, 25% Quality Engineering, 25% AI Engineering. Ngoại ngữ: Tiếng Anh (đang ôn luyện TOEIC, đọc hiểu tài liệu kỹ thuật).</p>
+              <p>Giới tính: Nam · Mã lớp 25CT113 · Định hướng: 50% Software Engineering, 25% Quality Engineering, 25% AI Engineering. Ngoại ngữ: Tiếng Anh (đọc hiểu tài liệu kỹ thuật).</p>
             </div>
             <div class="cv-item">
               <small>SOFTWARE &amp; WEB (50%)</small>
@@ -120,9 +120,9 @@
           </div>
         </article>
 
-        <!-- DỰ ÁN TIÊU BIỂU -->
+        <!-- DỰ ÁN CỦA TÔI: 7 DỰ ÁN + 5 VIDEO -->
         <article class="card cv-block">
-          <h2>7 Dự án &amp; Sản phẩm đã hoàn thiện</h2>
+          <h2>Dự án của tôi — 7 Sản phẩm Kỹ thuật &amp; Học thuật</h2>
           <div class="cv-two-col">
             <div class="cv-item">
               <small>WEB 3D · THREE.JS &amp; GLSL</small>
@@ -159,7 +159,7 @@
 
         <!-- SẢN PHẨM EDIT VIDEO -->
         <article class="card cv-block">
-          <h2>5 Sản phẩm Edit Video &amp; Motion Graphics</h2>
+          <h2>Dự án của tôi — 5 Sản phẩm Edit Video &amp; Motion Graphics</h2>
           <div class="cv-two-col">
             <div class="cv-item">
               <small>TALKING-HEAD · BEFORE / AFTER (60s)</small>
@@ -169,7 +169,7 @@
             <div class="cv-item">
               <small>MOTION EXPLAINER · TECH (21s)</small>
               <strong>Giới thiệu sản phẩm công nghệ — Claude Opus 5.5</strong>
-              <p>Đồ họa chuyển động editorial minh họa mức giá, dung lượng xử lý và kết quả chạy code gọn mắt, dễ ứng dụng ra mắt sản phẩm.</p>
+              <p>Đồ họa chuyển động editorial minh họa mức giá, dung lượng xử lý và kết quả chạy code gọn mắt (sản phẩm luyện tập cá nhân).</p>
             </div>
             <div class="cv-item">
               <small>COMMERCIAL AD · CONVERSION (27s)</small>
@@ -184,19 +184,19 @@
           </div>
         </article>
 
-        <!-- KINH NGHIỆM & QUAN ĐIỂM -->
+        <!-- KINH NGHIỆM & TRIẾT LÝ SỐNG -->
         <article class="card cv-block">
-          <h2>Kinh nghiệm thực chiến &amp; Quan điểm làm việc</h2>
+          <h2>Kinh nghiệm &amp; Triết lý sống</h2>
           <div class="cv-two-col">
             <div class="cv-item">
               <small>KINH NGHIỆM DỰ ÁN &amp; NHÓM</small>
               <strong>Trưởng nhóm Web · Lõi CSDL · Sản xuất độc lập</strong>
-              <p>Dẫn nhóm 3 sinh viên theo lịch sử commit GitHub; chuẩn hóa SQL Server 2014 &amp; hướng dẫn đồng đội LHU; tự dựng trọn gói sản phẩm Web, Game 2D và Video thương mại.</p>
+              <p>Dẫn nhóm 3 sinh viên theo lịch sử commit GitHub; chuẩn hóa SQL Server 2014 &amp; hướng dẫn đồng đội LHU; tự dựng trọn gói sản phẩm Web, Game 2D và Video.</p>
             </div>
             <div class="cv-item">
-              <small>4 NGUYÊN TẮC NGHỀ NGHIỆP</small>
-              <strong>Minh chứng thật · Có kiểm chứng · Ghi nhật ký · Chịu sửa đến cùng</strong>
-              <p>Mọi sản phẩm có bản chạy thử hoặc video thật; kiểm thử responsive, bàn phím, 60 fps và nhịp video; duy trì nhật ký PROGRESS.md rõ ràng.</p>
+              <small>TRIẾT LÝ SỐNG</small>
+              <strong>Thực sự cầu thị</strong>
+              <p>Làm thật, kiểm chứng thật trên môi trường thực tế; duy trì nhật ký PROGRESS.md rõ ràng và lắng nghe góp ý để làm lại cho tới khi đạt chuẩn.</p>
             </div>
           </div>
         </article>
@@ -209,11 +209,11 @@
   <div class="wrap">
     <span>© 2026 Trần Ngọc Huy · Bản CV Tổng hợp · Portfolio: tranngochuyc-cyber.github.io/tranngochuy-portfolio-v2</span>
     <div class="foot-links">
-      <a href="index.html">Trang chính</a>
-      <a href="profile.html">Hồ sơ</a>
-      <a href="video.html">Edit Video</a>
-      <a href="projects.html">Dự án</a>
+      <a href="index.html">Trang chủ</a>
+      <a href="profile.html">Giới thiệu</a>
+      <a href="projects.html">Dự án của tôi</a>
       <a href="experience.html">Kinh nghiệm</a>
+      <a href="philosophy.html">Triết lý sống</a>
       <a href="contact.html">Liên hệ</a>
     </div>
   </div>

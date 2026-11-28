@@ -8,9 +8,11 @@
   if (pageName === 'home' && window.location.hash) {
     const legacyMap = {
       '#profile': 'profile.html',
-      '#video-studio': 'video.html',
+      '#about': 'profile.html',
+      '#video-studio': 'projects.html?cat=video',
       '#projects': 'projects.html',
       '#experience': 'experience.html',
+      '#philosophy': 'philosophy.html',
       '#contact': 'contact.html'
     };
     const dest = legacyMap[window.location.hash];
@@ -182,18 +184,39 @@
     });
   }
 
-  /* 7. Bộ lọc dự án theo lĩnh vực (hỗ trợ cả ?cat=web|game|ai|edu) */
+  /* 7. Bộ lọc dự án & video theo lĩnh vực (hỗ trợ cả ?cat=video|web|game|ai|edu) */
   const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
   const projectCards = Array.from(document.querySelectorAll('#projectsGrid .project-card'));
-  if (filterBtns.length && projectCards.length) {
+  const projectsCodeGroup = document.getElementById('projectsCodeGroup');
+  const videoStudioGroup = document.getElementById('videoStudioGroup');
+  if (filterBtns.length && (projectCards.length || videoStudioGroup)) {
+    const revealGroup = (group) => {
+      if (!group) return;
+      group.classList.remove('hidden-item');
+      group.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    };
     const applyFilter = (cat) => {
       const valid = filterBtns.some(b => b.dataset.filter === cat) ? cat : 'all';
       filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === valid));
+      if (valid === 'video') {
+        if (projectsCodeGroup) projectsCodeGroup.classList.add('hidden-item');
+        revealGroup(videoStudioGroup);
+        return;
+      }
+      if (projectsCodeGroup) projectsCodeGroup.classList.remove('hidden-item');
       projectCards.forEach(card => {
         const show = valid === 'all' || card.dataset.cat === valid;
         card.classList.toggle('hidden-item', !show);
         if (show) card.classList.add('is-visible');
       });
+      if (videoStudioGroup) {
+        if (valid === 'all') {
+          revealGroup(videoStudioGroup);
+        } else {
+          videoStudioGroup.classList.add('hidden-item');
+          videoStudioGroup.querySelectorAll('video').forEach(v => v.pause());
+        }
+      }
     };
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
@@ -280,6 +303,43 @@
         formStatus.className = 'form-status err';
         formStatus.textContent = 'Trình duyệt không cho phép sao chép tự động; vui lòng dùng nút Mở Email điền sẵn.';
       }
+    });
+  }
+
+  /* 10. Tương tác Bento kỹ năng & trụ cột 50/25/25 trên profile.html */
+  const bentoCards = Array.from(document.querySelectorAll('.bento-skill'));
+  const pillarBtns = Array.from(document.querySelectorAll('.pillar-btn[data-pillar]'));
+  if (bentoCards.length && !reduce) {
+    bentoCards.forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left).toFixed(0) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top).toFixed(0) + 'px');
+      });
+    });
+  }
+  if (pillarBtns.length && bentoCards.length) {
+    const activatePillar = (key, shouldScroll) => {
+      pillarBtns.forEach(b => {
+        const active = b.dataset.pillar === key;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-pressed', String(active));
+      });
+      let targetCard = null;
+      bentoCards.forEach(c => {
+        const match = c.dataset.pillar === key;
+        c.classList.toggle('is-spotlight', match);
+        if (match) targetCard = c;
+      });
+      if (shouldScroll && targetCard) {
+        const rect = targetCard.getBoundingClientRect();
+        if (rect.top > innerHeight - 120 || rect.bottom < 80) {
+          targetCard.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        }
+      }
+    };
+    pillarBtns.forEach(btn => {
+      btn.addEventListener('click', () => activatePillar(btn.dataset.pillar, true));
     });
   }
 })();

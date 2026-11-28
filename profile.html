@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hồ sơ &amp; Ma trận Kỹ năng — Trần Ngọc Huy</title>
-<meta name="description" content="Thông tin học vấn CNTT Đại học Lạc Hồng (LHU), tỷ trọng định hướng nghề nghiệp 50/25/25 và ma trận kỹ năng thực chiến của Trần Ngọc Huy." />
+<title>Giới thiệu — Trần Ngọc Huy</title>
+<meta name="description" content="Giới thiệu Trần Ngọc Huy — Thông tin cá nhân, ảnh chân dung, định hướng 50/25/25 và ma trận Bento năng lực kỹ thuật tại Đại học Lạc Hồng (LHU)." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2304101d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%234cd8ff'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body data-page="profile" data-depth-start="600" data-depth-end="2200">
+<body data-page="profile" data-depth-start="1500" data-depth-end="3800">
 <a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
 
 <div class="ocean" aria-hidden="true"></div>
 <div class="abyss-veil" id="veil" aria-hidden="true"></div>
 <canvas id="snow" aria-hidden="true"></canvas>
 
-<!-- ============ NAVBAR ============ -->
+<!-- ============ NAVBAR (5 PHẦN CHÍNH) ============ -->
 <nav class="site-nav" aria-label="Điều hướng chính">
   <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
   <div class="nav-links" id="navLinks">
-    <a href="index.html">Trang chính</a>
-    <a href="profile.html" class="active" aria-current="page">Hồ sơ</a>
-    <a href="video.html">Edit Video</a>
-    <a href="projects.html">Dự án</a>
+    <a href="index.html">Trang chủ</a>
+    <a href="profile.html" class="active" aria-current="page">Giới thiệu</a>
+    <a href="projects.html">Dự án của tôi</a>
     <a href="experience.html">Kinh nghiệm</a>
-    <a href="contact.html">Liên hệ</a>
+    <a href="philosophy.html">Triết lý sống</a>
   </div>
   <div class="nav-actions">
     <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
@@ -40,17 +40,17 @@
 </nav>
 
 <div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
-  <a href="index.html">Trang chính</a>
-  <a href="profile.html" class="active" aria-current="page">Hồ sơ &amp; Kỹ năng</a>
-  <a href="video.html">Edit Video &amp; Motion</a>
-  <a href="projects.html">Dự án &amp; Sản phẩm</a>
-  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
-  <a href="contact.html">Liên hệ</a>
+  <a href="index.html">Trang chủ</a>
+  <a href="profile.html" class="active" aria-current="page">Giới thiệu</a>
+  <a href="projects.html">Dự án của tôi</a>
+  <a href="experience.html">Kinh nghiệm</a>
+  <a href="philosophy.html">Triết lý sống</a>
+  <a href="contact.html">Liên hệ nhanh</a>
   <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
 </div>
 
 <aside class="depth" aria-hidden="true">
-  <div class="depth-read">Độ sâu · <b id="depthVal">600</b> m</div>
+  <div class="depth-read">Độ sâu · <b id="depthVal">1.500</b> m</div>
   <div class="depth-track"><div class="depth-fill" id="depthFill"></div></div>
 </aside>
 
@@ -59,19 +59,19 @@
     <div class="wrap">
       <div class="sub-nav-row">
         <nav class="breadcrumb" aria-label="Đường dẫn trang">
-          <a href="index.html">Trang chính</a>
+          <a href="index.html">Trang chủ</a>
           <span aria-hidden="true">/</span>
-          <span aria-current="page">Hồ sơ &amp; Kỹ năng</span>
+          <span aria-current="page">Giới thiệu</span>
         </nav>
         <a href="index.html" class="btn btn-sm">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-          <span>Về trang chính</span>
+          <span>Về trang chủ</span>
         </a>
       </div>
       <div class="sub-hero-head">
         <div>
-          <h1>Hồ sơ, Học vấn &amp; <span>Ma trận Kỹ năng</span></h1>
-          <p class="sec-sub">Tóm tắt ngắn gọn nền tảng học tập, tỷ trọng định hướng nghề nghiệp và bộ công cụ tôi sử dụng thực tế trong các sản phẩm.</p>
+          <h1>Giới thiệu &amp; <span>Thông tin cá nhân</span></h1>
+          <p class="sec-sub">Thông tin cơ bản, nền tảng học tập tại Đại học Lạc Hồng (LHU), cấu trúc định hướng 50/25/25 và ma trận kỹ năng thực hành qua sản phẩm thật.</p>
         </div>
       </div>
     </div>
@@ -79,42 +79,125 @@
 
   <section class="sub-body" id="profile">
     <div class="wrap">
-      <div class="profile-grid">
-        <article class="card bio-card reveal">
-          <h2>Thông tin &amp; Học vấn</h2>
+      <!-- KHỐI 1: THÔNG TIN CÁ NHÂN & ẢNH CHÂN DUNG SỐ 2 -->
+      <article class="card intro-spotlight reveal">
+        <div class="profile-photo-frame">
+          <img src="media/huy-profile.jpg" alt="Ảnh chân dung Trần Ngọc Huy đứng tại ban công lúc hoàng hôn" width="819" height="1024" fetchpriority="high" />
+          <div class="profile-photo-caption">
+            <div>
+              <strong>Trần Ngọc Huy</strong>
+              <small>Đại học Lạc Hồng · LHU</small>
+            </div>
+            <span class="lhu-tag">25CT113</span>
+          </div>
+        </div>
+
+        <div class="intro-details">
+          <h2>Thông tin cá nhân</h2>
           <dl class="info-list">
             <div class="info-row"><dt>Họ và tên</dt><dd><strong>Trần Ngọc Huy</strong></dd></div>
+            <div class="info-row"><dt>Giới tính</dt><dd>Nam</dd></div>
             <div class="info-row"><dt>Trường</dt><dd>Đại học Lạc Hồng (LHU)</dd></div>
             <div class="info-row"><dt>Ngành học</dt><dd>Công nghệ thông tin (mã lớp 25CT113)</dd></div>
-            <div class="info-row"><dt>Khu vực</dt><dd>Đồng Nai, Việt Nam</dd></div>
-            <div class="info-row"><dt>Ngoại ngữ</dt><dd>Tiếng Anh — đang ôn luyện TOEIC cho chuẩn đầu ra &amp; công việc (đọc hiểu tài liệu kỹ thuật)</dd></div>
-            <div class="info-row"><dt>Sở thích sáng tạo</dt><dd>Làm Game 2D, Edit Video Quảng Cáo &amp; Talking-Head, Motion Graphics, UI/UX</dd></div>
+            <div class="info-row"><dt>Nơi ở hiện tại</dt><dd>Biên Hòa, Đồng Nai, Việt Nam</dd></div>
+            <div class="info-row"><dt>Ngoại ngữ</dt><dd>Tiếng Anh — đọc hiểu tài liệu kỹ thuật</dd></div>
+            <div class="info-row"><dt>Sở thích sáng tạo</dt><dd>Làm Game 2D, Edit Video &amp; Motion Graphics, UI/UX</dd></div>
+            <div class="info-row"><dt>Liên hệ</dt><dd><a href="mailto:tranngochuyc@gmail.com">tranngochuyc@gmail.com</a> · <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">github.com/tranngochuyc-cyber</a></dd></div>
           </dl>
+        </div>
+      </article>
 
-          <div class="ratio-wrap">
-            <div class="ratio-label">
-              <span>Tỷ trọng định hướng nghề nghiệp</span>
-              <span>100%</span>
-            </div>
-            <div class="ratio-bar" role="img" aria-label="50% Software Engineering, 25% Quality Engineering, 25% AI Engineering">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="ratio-legend">
-              <span><i style="background:var(--cyan)"></i>Software Engineering (50%)</span>
-              <span><i style="background:var(--emerald)"></i>Quality Engineering (25%)</span>
-              <span><i style="background:var(--violet)"></i>AI Engineering (25%)</span>
+      <!-- KHỐI 2: BẢNG ĐIỀU HƯỚNG ĐỊNH HƯỚNG 50 · 25 · 25 -->
+      <article class="card direction-stage reveal" aria-label="Định hướng phát triển nghề nghiệp">
+        <div class="direction-top">
+          <div class="direction-copy">
+            <h2>Định hướng phát triển</h2>
+            <p>
+              Tôi theo đuổi hướng kỹ sư xây sản phẩm hoàn chỉnh: lấy lập trình phần mềm làm lõi (<strong style="color:var(--cyan)">50%</strong>), giữ kỷ luật kiểm thử chất lượng (<strong style="color:var(--emerald)">25%</strong>) và ứng dụng AI tự động hóa quy trình (<strong style="color:var(--violet)">25%</strong>) — song hành với thế mạnh sáng tạo Game 2D và Edit Video / Motion Graphics. Bấm vào từng trụ cột bên dưới để làm nổi bật nhóm kỹ năng tương ứng.
+            </p>
+          </div>
+
+          <div class="orbit-gauge" aria-label="Biểu đồ tỷ trọng 50% Software, 25% Quality, 25% AI">
+            <svg viewBox="0 0 200 200" role="img" aria-label="Vòng tỷ trọng 50/25/25">
+              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(130,214,255,.12)" stroke-width="1" stroke-dasharray="3 5"/>
+              <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(130,214,255,.14)" stroke-width="12"/>
+              <g transform="rotate(-90 100 100)">
+                <circle cx="100" cy="100" r="76" fill="none" stroke="#4cd8ff" stroke-width="12" stroke-linecap="round" stroke-dasharray="230.76 477.52" stroke-dashoffset="0"/>
+                <circle cx="100" cy="100" r="76" fill="none" stroke="#4de2b1" stroke-width="12" stroke-linecap="round" stroke-dasharray="111.38 477.52" stroke-dashoffset="-238.76"/>
+                <circle cx="100" cy="100" r="76" fill="none" stroke="#a796ff" stroke-width="12" stroke-linecap="round" stroke-dasharray="111.38 477.52" stroke-dashoffset="-358.14"/>
+              </g>
+              <circle cx="100" cy="100" r="56" fill="rgba(5,20,36,.78)" stroke="rgba(130,214,255,.2)" stroke-width="1"/>
+            </svg>
+            <div class="orbit-center">
+              <strong>50·25·25</strong>
+              <span>3 trụ cột</span>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article class="card skill-panel reveal">
-          <h2>Năng lực kỹ thuật &amp; Sản xuất nội dung</h2>
-
-          <div class="skill-group">
-            <div class="skill-group-head">
-              <strong>1. Software &amp; Web Development</strong>
-              <span>50% trọng tâm</span>
+        <div class="pillar-ratio-grid" role="group" aria-label="Chọn trụ cột để xem kỹ năng">
+          <button type="button" class="pillar-btn is-active" data-pillar="se" aria-pressed="true">
+            <div class="pillar-top">
+              <span class="pillar-pct">50%</span>
+              <span class="pillar-tag">TRỤ CỘT CHÍNH</span>
             </div>
+            <h3>Software Engineering</h3>
+            <p>Xây dựng giao diện 2D/3D, web full-stack, cơ sở dữ liệu quan hệ và game HTML5 Canvas mượt 60 fps.</p>
+          </button>
+
+          <button type="button" class="pillar-btn" data-pillar="qe" aria-pressed="false">
+            <div class="pillar-top">
+              <span class="pillar-pct">25%</span>
+              <span class="pillar-tag">KIỂM CHỨNG</span>
+            </div>
+            <h3>Quality Engineering</h3>
+            <p>Kiểm thử đơn vị, responsive, bàn phím và tự review mã nguồn 7 tầng để tránh lỗi hồi quy.</p>
+          </button>
+
+          <button type="button" class="pillar-btn" data-pillar="ai" aria-pressed="false">
+            <div class="pillar-top">
+              <span class="pillar-pct">25%</span>
+              <span class="pillar-tag">TỰ ĐỘNG HÓA</span>
+            </div>
+            <h3>AI Engineering</h3>
+            <p>Thiết kế quy trình AI có kiểm soát, viết script Python và ghi nhật ký prompt minh bạch.</p>
+          </button>
+        </div>
+
+        <div class="creative-ribbon">
+          <div class="creative-ribbon-copy">
+            <span class="creative-dot" aria-hidden="true"></span>
+            <span><strong>Thế mạnh sáng tạo song hành:</strong> Làm Game 2D &amp; Edit Video / Motion Graphics giúp sản phẩm kỹ thuật truyền tải rõ giá trị ngay từ cái nhìn đầu tiên.</span>
+          </div>
+          <div class="creative-ribbon-links">
+            <a href="projects.html?cat=video" class="btn btn-sm">Xem 5 Video</a>
+            <a href="projects.html?cat=game" class="btn btn-sm">Chơi Game 2D</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- KHỐI 3: MA TRẬN BENTO NĂNG LỰC KỸ THUẬT -->
+      <div class="skills-section-head reveal">
+        <h2>Năng lực kỹ thuật &amp; Công cụ thực hành</h2>
+        <p>Tất cả công cụ dưới đây đều gắn trực tiếp với các sản phẩm trong mục Dự án của tôi</p>
+      </div>
+
+      <div class="skills-bento">
+        <!-- BENTO 1: SOFTWARE -->
+        <article class="card bento-skill is-spotlight reveal" data-pillar="se">
+          <div class="bento-halo" aria-hidden="true"></div>
+          <div class="bento-head">
+            <div class="bento-title-wrap">
+              <span class="bento-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="m8 7-5 5 5 5"/><path d="m16 7 5 5-5 5"/><path d="m14 4-4 16"/></svg>
+              </span>
+              <h3>Software &amp; Web Development</h3>
+            </div>
+            <span class="bento-badge">50% trọng tâm</span>
+          </div>
+          <p class="bento-desc">Làm chủ cả lớp giao diện tương tác lẫn phần dữ liệu, CSDL và tự động phát hành.</p>
+          <div class="skill-subblock">
+            <span class="skill-sublabel">Giao diện &amp; Đồ họa tương tác</span>
             <div class="chip-row">
               <span class="chip">HTML5 / CSS3</span>
               <span class="chip">JavaScript (ES6+)</span>
@@ -122,54 +205,82 @@
               <span class="chip">Next.js &amp; Tailwind</span>
               <span class="chip">Three.js &amp; GLSL</span>
               <span class="chip">HTML5 Canvas 2D</span>
+            </div>
+          </div>
+          <div class="skill-subblock">
+            <span class="skill-sublabel">Dữ liệu, Backend &amp; Triển khai</span>
+            <div class="chip-row">
               <span class="chip">Supabase</span>
               <span class="chip">Laravel &amp; MySQL</span>
               <span class="chip">SQL Server 2014</span>
               <span class="chip">Vite &amp; GitHub Actions</span>
             </div>
           </div>
+        </article>
 
-          <div class="skill-group">
-            <div class="skill-group-head">
-              <strong>2. Quality Engineering &amp; Kiểm thử</strong>
-              <span>25% trọng tâm</span>
+        <!-- BENTO 2: QUALITY -->
+        <article class="card bento-skill reveal" data-pillar="qe">
+          <div class="bento-halo" aria-hidden="true"></div>
+          <div class="bento-head">
+            <div class="bento-title-wrap">
+              <span class="bento-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3 4 7v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <h3>Quality Engineering &amp; Kiểm thử</h3>
             </div>
-            <div class="chip-row">
-              <span class="chip">Automated Testing</span>
-              <span class="chip">Unit Test JS</span>
-              <span class="chip">AI Code Review 7 tầng</span>
-              <span class="chip">Keyboard Accessibility</span>
-              <span class="chip">Responsive &amp; Contrast Audit</span>
-              <span class="chip">Video Visual QA</span>
-            </div>
+            <span class="bento-badge">25% trọng tâm</span>
           </div>
+          <p class="bento-desc">Kiểm chứng bằng dữ liệu thật ở cả giao diện web, logic lọc dữ liệu và khung hình video.</p>
+          <ul class="bento-points">
+            <li><strong>Unit Test JS &amp; Automated Testing:</strong> Kiểm tra các nhánh lọc, tìm kiếm tiếng Việt không dấu và trạng thái giao diện.</li>
+            <li><strong>AI Code Review 7 tầng:</strong> Tự rà soát theo lõi Tìm → Xác minh phản biện → Lọc nhiễu kèm bằng chứng <code class="ic">file:line</code>.</li>
+            <li><strong>Accessibility &amp; Responsive Audit:</strong> Đo độ tương phản, điều hướng bàn phím và chống tràn ngang trên nhiều cỡ màn hình.</li>
+            <li><strong>Video Visual QA:</strong> Soi từng beat khung hình và kiểm tra âm lượng trước khi xuất bản.</li>
+          </ul>
+        </article>
 
-          <div class="skill-group">
-            <div class="skill-group-head">
-              <strong>3. AI Engineering &amp; Tự động hóa</strong>
-              <span>25% trọng tâm</span>
+        <!-- BENTO 3: AI -->
+        <article class="card bento-skill reveal" data-pillar="ai">
+          <div class="bento-halo" aria-hidden="true"></div>
+          <div class="bento-head">
+            <div class="bento-title-wrap">
+              <span class="bento-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>
+              </span>
+              <h3>AI Engineering &amp; Tự động hóa</h3>
             </div>
-            <div class="chip-row">
-              <span class="chip">AI Workflow Automation</span>
-              <span class="chip">Prompt Engineering &amp; Audit Log</span>
-              <span class="chip">Python Scripting</span>
-              <span class="chip">Risk-Tiered Review</span>
-              <span class="chip">AI-Assisted Delivery</span>
-            </div>
+            <span class="bento-badge">25% trọng tâm</span>
           </div>
+          <p class="bento-desc">Biến công cụ AI thành quy trình làm việc có kiểm soát, đo được đầu ra và dễ bàn giao.</p>
+          <ul class="bento-points">
+            <li><strong>AI Workflow Automation:</strong> Thiết kế luồng phối hợp nhiều bước rõ vai trò, tách phần kiểm chứng độc lập.</li>
+            <li><strong>Prompt Engineering &amp; Audit Log:</strong> Lưu nhật ký prompt minh bạch cho bài thi và quy trình dựng sản phẩm.</li>
+            <li><strong>Python Scripting:</strong> Viết script tự kiểm tra liên kết, chuẩn hóa tài nguyên ảnh/video và tự động hóa kiểm thử.</li>
+            <li><strong>Risk-Tiered Delivery:</strong> Phân tầng mức độ kiểm duyệt theo độ rủi ro của thay đổi trước khi hợp nhất mã.</li>
+          </ul>
+        </article>
 
-          <div class="skill-group">
-            <div class="skill-group-head">
-              <strong>4. Edit Video &amp; Motion Graphics</strong>
-              <span>Thế mạnh sáng tạo</span>
+        <!-- BENTO 4: VIDEO & MOTION -->
+        <article class="card bento-skill reveal" data-pillar="cr">
+          <div class="bento-halo" aria-hidden="true"></div>
+          <div class="bento-head">
+            <div class="bento-title-wrap">
+              <span class="bento-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg>
+              </span>
+              <h3>Edit Video &amp; Motion Graphics</h3>
             </div>
-            <div class="chip-row">
-              <span class="chip">Short-Form Reels / TikTok / Shorts</span>
-              <span class="chip">Video Quảng Cáo Chuyển Đổi</span>
-              <span class="chip">Motion Explainer Sản Phẩm</span>
-              <span class="chip">Talking-Head Giữ Chân Người Xem</span>
-              <span class="chip">After Effects &amp; GSAP Motion</span>
-            </div>
+            <span class="bento-badge">Thế mạnh sáng tạo</span>
+          </div>
+          <p class="bento-desc">Tạo nhịp dựng giữ chân người xem 3 giây đầu và truyền đạt rõ ngay cả khi tắt tiếng.</p>
+          <ul class="bento-points">
+            <li><strong>Talking-Head &amp; Before/After:</strong> Hook mở màn sắc nét, chèn đồ thị và minh họa bám sát lời nói trên Reels / Shorts.</li>
+            <li><strong>Motion Explainer &amp; Ads chuyển đổi:</strong> Đồ họa editorial giải thích sản phẩm công nghệ, phong cách Apple Clean UI &amp; After Effects / GSAP.</li>
+          </ul>
+          <div class="bento-poster-strip" aria-hidden="true">
+            <div class="bento-poster-tile"><img src="media/video-before-after-poster.jpg" alt="" loading="lazy" /></div>
+            <div class="bento-poster-tile"><img src="media/video-claude-motion-poster.jpg" alt="" loading="lazy" /></div>
+            <div class="bento-poster-tile"><img src="media/antigravity-poster.jpg" alt="" loading="lazy" /></div>
           </div>
         </article>
       </div>
@@ -183,13 +294,13 @@
           <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
           <div>
             <small>Quay về</small>
-            <strong>Trang chính tổng quan</strong>
+            <strong>Trang chủ tổng quan</strong>
           </div>
         </a>
-        <a class="pager-card next" href="video.html">
+        <a class="pager-card next" href="projects.html">
           <div>
             <small>Trang nhánh kế tiếp</small>
-            <strong>Edit Video &amp; Motion Graphics</strong>
+            <strong>Dự án của tôi</strong>
           </div>
           <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
@@ -202,11 +313,11 @@
   <div class="wrap">
     <span>© 2026 Trần Ngọc Huy · Sinh viên CNTT, Đại học Lạc Hồng (LHU) · 0 m → 11.000 m</span>
     <div class="foot-links">
-      <a href="index.html">Trang chính</a>
-      <a href="profile.html">Hồ sơ</a>
-      <a href="video.html">Edit Video</a>
-      <a href="projects.html">Dự án</a>
+      <a href="index.html">Trang chủ</a>
+      <a href="profile.html">Giới thiệu</a>
+      <a href="projects.html">Dự án của tôi</a>
       <a href="experience.html">Kinh nghiệm</a>
+      <a href="philosophy.html">Triết lý sống</a>
       <a href="contact.html">Liên hệ</a>
       <a href="cv.html">Bản in CV</a>
       <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">GitHub</a>

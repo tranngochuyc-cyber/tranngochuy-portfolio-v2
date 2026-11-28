@@ -8,25 +8,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2304101d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%234cd8ff'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body data-page="contact" data-depth-start="9500" data-depth-end="11000">
+<body data-page="contact" data-depth-start="10000" data-depth-end="11000">
 <a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
 
 <div class="ocean" aria-hidden="true"></div>
 <div class="abyss-veil" id="veil" aria-hidden="true"></div>
 <canvas id="snow" aria-hidden="true"></canvas>
 
-<!-- ============ NAVBAR ============ -->
+<!-- ============ NAVBAR (5 PHẦN CHÍNH) ============ -->
 <nav class="site-nav" aria-label="Điều hướng chính">
   <a href="index.html" class="brand"><span class="brand-dot" aria-hidden="true"></span>TRẦN NGỌC HUY</a>
   <div class="nav-links" id="navLinks">
-    <a href="index.html">Trang chính</a>
-    <a href="profile.html">Hồ sơ</a>
-    <a href="video.html">Edit Video</a>
-    <a href="projects.html">Dự án</a>
+    <a href="index.html">Trang chủ</a>
+    <a href="profile.html">Giới thiệu</a>
+    <a href="projects.html">Dự án của tôi</a>
     <a href="experience.html">Kinh nghiệm</a>
-    <a href="contact.html" class="active" aria-current="page">Liên hệ</a>
+    <a href="philosophy.html">Triết lý sống</a>
   </div>
   <div class="nav-actions">
     <button type="button" class="btn btn-primary btn-sm nav-print" id="printCvNav">
@@ -40,17 +40,17 @@
 </nav>
 
 <div class="mobile-drawer" id="mobileDrawer" aria-label="Menu di động">
-  <a href="index.html">Trang chính</a>
-  <a href="profile.html">Hồ sơ &amp; Kỹ năng</a>
-  <a href="video.html">Edit Video &amp; Motion</a>
-  <a href="projects.html">Dự án &amp; Sản phẩm</a>
-  <a href="experience.html">Kinh nghiệm &amp; Tư duy</a>
-  <a href="contact.html" class="active" aria-current="page">Liên hệ</a>
+  <a href="index.html">Trang chủ</a>
+  <a href="profile.html">Giới thiệu</a>
+  <a href="projects.html">Dự án của tôi</a>
+  <a href="experience.html">Kinh nghiệm</a>
+  <a href="philosophy.html">Triết lý sống</a>
+  <a href="contact.html" class="active" aria-current="page">Liên hệ nhanh</a>
   <button type="button" id="printCvMobile">In / Lưu bản CV (PDF)</button>
 </div>
 
 <aside class="depth" aria-hidden="true">
-  <div class="depth-read">Độ sâu · <b id="depthVal">9.500</b> m</div>
+  <div class="depth-read">Độ sâu · <b id="depthVal">10.000</b> m</div>
   <div class="depth-track"><div class="depth-fill" id="depthFill"></div></div>
 </aside>
 
@@ -59,19 +59,19 @@
     <div class="wrap">
       <div class="sub-nav-row">
         <nav class="breadcrumb" aria-label="Đường dẫn trang">
-          <a href="index.html">Trang chính</a>
+          <a href="index.html">Trang chủ</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">Liên hệ</span>
         </nav>
         <a href="index.html" class="btn btn-sm">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-          <span>Về trang chính</span>
+          <span>Về trang chủ</span>
         </a>
       </div>
       <div class="sub-hero-head">
         <div>
           <h1>Liên hệ &amp; <span>Kết nối nhanh</span></h1>
-          <p class="sec-sub">Rất mong được trao đổi với anh/chị tuyển dụng hoặc đối tác về các dự án Web, Quality/AI Engineering, Game hoặc Edit Video.</p>
+          <p class="sec-sub">Rất mong được trao đổi với anh/chị hoặc đối tác về các dự án Website, Game 2D, Quality/AI Engineering hoặc Edit Video / Motion Graphics.</p>
         </div>
       </div>
     </div>
@@ -107,7 +107,7 @@
             <div class="channel-row">
               <div>
                 <small>Trường &amp; Khu vực</small>
-                <strong>Đại học Lạc Hồng (LHU) · Đồng Nai</strong>
+                <strong>Đại học Lạc Hồng (LHU) · Biên Hòa, Đồng Nai</strong>
               </div>
               <button type="button" class="btn btn-sm" id="printCvContact">In / Lưu CV (PDF)</button>
             </div>
@@ -128,8 +128,8 @@
 
           <form class="msg-form" id="contactForm" novalidate>
             <div class="row2">
-              <label>Tên anh/chị hoặc Công ty
-                <input name="sender" required placeholder="VD: Nguyễn Minh — HR Tech" />
+              <label>Tên anh/chị hoặc Tổ chức
+                <input name="sender" required placeholder="VD: Nguyễn Minh — Studio / Doanh nghiệp" />
               </label>
               <label>Email hoặc Kênh phản hồi
                 <input name="replyTo" required placeholder="email@congty.com / Zalo" />
@@ -137,14 +137,14 @@
             </div>
             <label>Chủ đề trao đổi
               <select name="topic">
-                <option value="Trao đổi cơ hội Thực tập / Tuyển dụng">Trao đổi cơ hội Thực tập / Tuyển dụng</option>
                 <option value="Hợp tác dự án Website / Full-stack">Hợp tác dự án Website / Full-stack</option>
                 <option value="Hợp tác Edit Video / Motion Graphics">Hợp tác Edit Video / Motion Graphics</option>
+                <option value="Giao lưu học thuật / Kết nối nghề nghiệp">Giao lưu học thuật / Kết nối nghề nghiệp</option>
                 <option value="Trao đổi khác">Trao đổi khác</option>
               </select>
             </label>
             <label>Nội dung ngắn
-              <textarea name="body" required placeholder="Vị trí, dự án hoặc thời gian thuận tiện để trao đổi..."></textarea>
+              <textarea name="body" required placeholder="Yêu cầu dự án, vị trí hoặc thời gian thuận tiện để trao đổi..."></textarea>
             </label>
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">Mở Email điền sẵn</button>
@@ -160,17 +160,17 @@
   <nav class="pager-wrap" aria-label="Chuyển giữa các trang nhánh">
     <div class="wrap">
       <div class="page-pager">
-        <a class="pager-card" href="experience.html">
+        <a class="pager-card" href="philosophy.html">
           <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
           <div>
             <small>Trang nhánh trước</small>
-            <strong>Kinh nghiệm &amp; Quan điểm làm việc</strong>
+            <strong>Triết lý sống</strong>
           </div>
         </a>
         <a class="pager-card next" href="index.html">
           <div>
             <small>Quay về điểm xuất phát</small>
-            <strong>Trang chính tổng quan</strong>
+            <strong>Trang chủ tổng quan</strong>
           </div>
           <span class="pager-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
@@ -183,11 +183,11 @@
   <div class="wrap">
     <span>© 2026 Trần Ngọc Huy · Sinh viên CNTT, Đại học Lạc Hồng (LHU) · 0 m → 11.000 m</span>
     <div class="foot-links">
-      <a href="index.html">Trang chính</a>
-      <a href="profile.html">Hồ sơ</a>
-      <a href="video.html">Edit Video</a>
-      <a href="projects.html">Dự án</a>
+      <a href="index.html">Trang chủ</a>
+      <a href="profile.html">Giới thiệu</a>
+      <a href="projects.html">Dự án của tôi</a>
       <a href="experience.html">Kinh nghiệm</a>
+      <a href="philosophy.html">Triết lý sống</a>
       <a href="contact.html">Liên hệ</a>
       <a href="cv.html">Bản in CV</a>
       <a href="https://github.com/tranngochuyc-cyber" target="_blank" rel="noopener">GitHub</a>
