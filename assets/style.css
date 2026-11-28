@@ -885,11 +885,16 @@ details.process-acc[open] summary svg{transform:rotate(180deg)}
 }
 .manifesto-sub{margin-top:14px;color:var(--ink-2);font-size:15.5px;max-width:64ch}
 .compass-art{
-  border-radius:16px;border:1px solid rgba(130,214,255,.22);
-  background:radial-gradient(circle at 50% 45%,rgba(76,216,255,.12),rgba(4,16,29,.88));
-  padding:14px;aspect-ratio:4/3;display:grid;place-items:center;
+  position:relative;border-radius:16px;overflow:hidden;
+  border:1px solid var(--line-hi);background:#04101d;
+  aspect-ratio:4/3;box-shadow:0 20px 44px -24px rgba(0,0,0,.85);
 }
-.compass-art svg{width:100%;height:100%}
+.compass-art::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 68%,rgba(4,16,29,.82) 100%);
+}
+.compass-art img{width:100%;height:100%;object-fit:cover;display:block}
+.compass-art .vc-label{z-index:2;left:12px;bottom:12px}
 .next-horizon-card{
   margin-top:26px;padding:28px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
